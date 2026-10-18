@@ -1,0 +1,1431 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DiversaMente — TDAH e neurodiversidade no Brasil</title>
+<meta name="description" content="Revista brasileira sobre TDAH e neurodiversidade na vida adulta: ciência, tratamento, trabalho, direitos e fé sem preconceito.">
+<meta name="theme-color" content="#0B4A57">
+<link rel="canonical" href="https://aldenirfilho.github.io/neurodiversidade-brasil/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230B4A57'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='40' fill='%23fff'%3ED%3C/text%3E%3Crect x='20' y='51' width='24' height='4' rx='2' fill='%23F28C52'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="DiversaMente">
+<meta property="og:title" content="DiversaMente — TDAH e neurodiversidade no Brasil">
+<meta property="og:description" content="Revista brasileira sobre TDAH e neurodiversidade na vida adulta: ciência, tratamento, trabalho, direitos e fé sem preconceito.">
+<meta property="og:url" content="https://aldenirfilho.github.io/neurodiversidade-brasil/">
+<meta property="og:image" content="https://aldenirfilho.github.io/neurodiversidade-brasil/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="DiversaMente: TDAH e neurodiversidade no Brasil">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:wght@600;700&display=swap">
+<style>
+/* Layout: revista de saúde para adultos. Cabeçalho com marca e busca, barra de editorias,
+   capa com destaque + duas chamadas, grade de artigos, central de recursos e editorias.
+   Cada artigo abre em coluna única de leitura, com resumo no topo e fontes no fim. */
+:root{
+  --bg:#FFFFFF; --soft:#F2F5F7; --ink:#17212E; --muted:#556171; --rule:#D8DEE5;
+  --nav:#0B4A57; --nav-ink:#FFFFFF; --feature:#0B4A57; --feature-ink:#FFFFFF;
+  --link:#0B5563; --accent:#C2410C;
+  --ok:#1B7A4B; --warn:#8A5A00; --danger:#B3261E; --info:#1F5FA8; --proj:#5B3FB0;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --sans:"Source Sans 3","Segoe UI",system-ui,-apple-system,sans-serif;
+  --scale:1;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#10161D; --soft:#18212B; --ink:#E7ECF1; --muted:#A1AEBC; --rule:#2C3845;
+    --nav:#0C3741; --nav-ink:#FFFFFF; --feature:#123E4A; --feature-ink:#FFFFFF;
+    --link:#74D0E0; --accent:#FF9457;
+    --ok:#6BD49B; --warn:#F2C062; --danger:#FF8F87; --info:#8FBEF5; --proj:#C3B0FF;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#10161D; --soft:#18212B; --ink:#E7ECF1; --muted:#A1AEBC; --rule:#2C3845;
+  --nav:#0C3741; --nav-ink:#FFFFFF; --feature:#123E4A; --feature-ink:#FFFFFF;
+  --link:#74D0E0; --accent:#FF9457;
+  --ok:#6BD49B; --warn:#F2C062; --danger:#FF8F87; --info:#8FBEF5; --proj:#C3B0FF;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{font-size:calc(100% * var(--scale));scroll-padding-top:4.5rem}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:1.0625rem;line-height:1.65;-webkit-text-size-adjust:100%}
+a{color:var(--link);text-underline-offset:.16em}
+a:hover{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+p{margin:0 0 1em}
+p:last-child{margin-bottom:0}
+ul,ol{margin:0 0 1em;padding-left:1.3rem}
+li{margin-bottom:.35em}
+h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.18;text-wrap:balance;margin:0}
+.wrap{max-width:72rem;margin-inline:auto;padding-inline:clamp(1rem,4vw,2rem)}
+.narrow{max-width:46rem}
+.small{font-size:.9rem;color:var(--muted)}
+.label{font-size:.76rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin:0 0 .35rem;display:block}
+.skip{position:absolute;left:-999px;top:0;background:var(--nav);color:var(--nav-ink);padding:.5rem 1rem;z-index:50}
+.skip:focus{left:1rem;top:1rem}
+
+/* Cabeçalho */
+.util{background:var(--soft);border-bottom:1px solid var(--rule);font-size:.88rem;color:var(--muted)}
+.util .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.4rem 1rem;padding-block:.35rem}
+.tools{display:flex;gap:.3rem}
+.tool{font:inherit;font-size:.85rem;font-weight:600;padding:.25rem .6rem;border:1px solid var(--rule);border-radius:4px;background:var(--bg);color:var(--ink);cursor:pointer}
+.tool:hover{border-color:var(--link);color:var(--link)}
+.mast .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.8rem 2rem;padding-block:1.1rem}
+.logo{font-family:var(--serif);font-weight:700;font-size:clamp(1.9rem,5vw,2.6rem);line-height:1;color:var(--ink);text-decoration:none;letter-spacing:-.01em}
+.logo span{color:var(--accent)}
+.logo:hover{color:var(--ink)}
+.tagline{display:block;font-family:var(--sans);font-weight:600;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.35rem}
+.search{display:flex;gap:.4rem;flex:1 1 16rem;max-width:24rem}
+.search input{font:inherit;flex:1;min-width:0;padding:.5rem .7rem;border:1px solid var(--rule);border-radius:4px;background:var(--bg);color:var(--ink)}
+.btn{font:inherit;font-weight:700;display:inline-block;padding:.55rem 1rem;border:0;border-radius:4px;background:var(--accent);color:var(--bg);text-decoration:none;cursor:pointer;line-height:1.3}
+.btn:hover{background:var(--ink);color:var(--bg)}
+.btn.ghost{background:transparent;color:var(--link);border:1px solid var(--link)}
+.btn.ghost:hover{background:var(--link);color:var(--bg)}
+.catnav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--nav)}
+.catnav .wrap{display:flex;gap:.2rem;overflow-x:auto;scrollbar-width:thin}
+.catnav a{flex:none;color:var(--nav-ink);text-decoration:none;font-weight:600;font-size:.95rem;padding:.7rem .8rem;border-bottom:3px solid transparent;white-space:nowrap}
+.catnav a:hover{color:var(--nav-ink);border-bottom-color:var(--nav-ink)}
+.catnav a[aria-current="true"]{border-bottom-color:var(--accent)}
+
+/* Páginas */
+.view{padding-block:clamp(1.5rem,4vw,2.75rem)}
+.js .view{display:none}
+.js .view.on{display:block}
+.block{margin-top:clamp(2rem,5vw,3.25rem)}
+.block>h2,.sec>h2{font-size:1.55rem;padding-bottom:.5rem;border-bottom:2px solid var(--ink);margin-bottom:1.1rem}
+.hero{display:grid;grid-template-columns:minmax(0,1.9fr) minmax(0,1fr);gap:1.5rem}
+.feature{background:var(--feature);color:var(--feature-ink);padding:clamp(1.4rem,4vw,2.6rem);display:flex;flex-direction:column;justify-content:flex-end;min-height:19rem;text-decoration:none;border-radius:4px}
+.feature:hover{color:var(--feature-ink)}
+.feature .label{color:var(--feature-ink);opacity:.85}
+.feature h2{font-size:clamp(1.8rem,4.6vw,2.9rem)}
+.feature p{font-size:1.1rem;max-width:44ch;margin:.8rem 0 0}
+.feature .more{font-weight:700;margin-top:1rem;text-decoration:underline;text-underline-offset:.2em}
+.side{display:grid;gap:1.5rem;align-content:start}
+.card{display:block;text-decoration:none;color:var(--ink);border-top:3px solid var(--ink);padding-top:.8rem;min-width:0}
+.card:hover{color:var(--ink)}
+.card:hover h3{color:var(--link);text-decoration:underline;text-underline-offset:.15em}
+.card h3{font-size:1.28rem}
+.card p{font-size:.97rem;color:var(--muted);margin:.4rem 0 0}
+.card .min{font-size:.82rem;color:var(--muted);margin-top:.5rem;display:block}
+.cards{display:grid;gap:1.75rem 1.5rem;grid-template-columns:repeat(auto-fill,minmax(min(100%,19rem),1fr))}
+.promo{background:var(--soft);border:1px solid var(--rule);border-left:6px solid var(--accent);padding:1.3rem 1.5rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem 2rem;border-radius:4px}
+.promo h2{font-size:1.4rem}
+.promo p{margin:.3rem 0 0;max-width:52ch;color:var(--muted)}
+.center{background:var(--soft);border:1px solid var(--rule);padding:1.4rem 1.5rem;border-radius:4px}
+.center h2{font-size:1.5rem}
+.center .step{font-weight:700;margin:1rem 0 .4rem}
+.seg{display:flex;flex-wrap:wrap;gap:.5rem}
+.seg button{font:inherit;font-weight:600;padding:.5rem 1rem;border:1px solid var(--link);border-radius:4px;background:var(--bg);color:var(--link);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--link);color:var(--bg)}
+select{font:inherit;padding:.5rem .7rem;border:1px solid var(--rule);border-radius:4px;background:var(--bg);color:var(--ink);max-width:100%}
+.list{list-style:none;padding:0;margin:0}
+.list li{margin:0;padding:.75rem 0;border-bottom:1px solid var(--rule)}
+.list li:last-child{border-bottom:0}
+.list a{font-family:var(--serif);font-weight:600;font-size:1.12rem;text-decoration:none;color:var(--ink)}
+.list a:hover{color:var(--link);text-decoration:underline}
+.list span{display:block;font-size:.93rem;color:var(--muted)}
+.secs{display:grid;gap:2rem 2.5rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,20rem),1fr))}
+.sec>h2{font-size:1.25rem;margin-bottom:.2rem}
+.sec .all{display:inline-block;margin-top:.6rem;font-weight:600;font-size:.93rem}
+.commit{border:1px solid var(--rule);padding:1.4rem 1.5rem;border-radius:4px}
+.commit h2{font-size:1.4rem;margin-bottom:.6rem}
+.commit ul{columns:2 18rem;column-gap:2.5rem;margin:0}
+
+/* Artigo */
+.crumb{font-size:.88rem;color:var(--muted);margin-bottom:1rem}
+.art h1{font-size:clamp(1.9rem,5vw,2.75rem)}
+.dek{font-size:1.2rem;color:var(--muted);margin:.8rem 0 .6rem}
+.meta{font-size:.85rem;color:var(--muted);padding-bottom:1rem;border-bottom:1px solid var(--rule);margin-bottom:1.5rem}
+.art h2{font-size:1.45rem;margin:2rem 0 .7rem}
+.art h3{font-family:var(--sans);font-size:1.08rem;margin:1.3rem 0 .4rem}
+.key{background:var(--soft);border-left:4px solid var(--link);padding:1rem 1.25rem;margin-bottom:1.5rem}
+.key h2{font-family:var(--sans);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--link);margin:0 0 .5rem}
+.key ul{margin:0}
+.note{border:1px solid var(--rule);border-left:4px solid var(--accent);padding:1rem 1.25rem;margin:1.5rem 0}
+.note.alert{border-left-color:var(--danger)}
+.note b.t{display:block;margin-bottom:.3rem}
+.src{font-size:.88rem;color:var(--muted);border-top:1px solid var(--rule);padding-top:1rem;margin-top:2rem}
+.related{margin-top:2rem}
+.related h2{font-family:var(--sans);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 .2rem}
+.back{display:inline-block;margin-top:1.5rem;font-weight:600}
+.scroll-x{overflow-x:auto;margin:1rem 0}
+table{border-collapse:collapse;width:100%;min-width:32rem;font-size:.97rem}
+table.fit{min-width:0}
+th,td{text-align:left;vertical-align:top;padding:.6rem .7rem;border-bottom:1px solid var(--rule)}
+thead th{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.pill{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.05rem .5rem;border:1px solid currentColor;border-radius:3px;white-space:nowrap}
+.pill.vigor,.pill.forte{color:var(--ok)}
+.pill.norma,.pill.moderada{color:var(--info)}
+.pill.projeto,.pill.debate{color:var(--proj)}
+.pill.estadual,.pill.sugestiva{color:var(--warn)}
+.pill.nao{color:var(--danger)}
+.steps{counter-reset:s;list-style:none;padding:0}
+.steps li{counter-increment:s;display:grid;grid-template-columns:2rem minmax(0,1fr);gap:.6rem;margin-bottom:.7rem}
+.steps li::before{content:counter(s);font-weight:700;width:2rem;height:2rem;display:grid;place-items:center;border-radius:50%;background:var(--link);color:var(--bg);font-size:.95rem}
+.qa{border:1px solid var(--rule);border-radius:4px;margin-bottom:.5rem}
+.qa summary{cursor:pointer;padding:.75rem 1rem;font-weight:700}
+.qa summary:hover{color:var(--link)}
+.qa .in{padding:0 1rem .9rem}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;margin:.3rem 0 .8rem}
+.chip{font:inherit;font-size:.9rem;font-weight:600;padding:.35rem .75rem;border:1px solid var(--rule);border-radius:99px;background:var(--bg);color:var(--ink);cursor:pointer}
+.chip:hover{border-color:var(--link)}
+.chip[aria-pressed="true"]{background:var(--link);border-color:var(--link);color:var(--bg)}
+.flabel{font-weight:700;font-size:.88rem;display:block}
+.law .lid{font-weight:700;color:var(--accent);white-space:nowrap}
+.check{list-style:none;padding:0}
+.check li{margin-bottom:.15rem}
+.check label{display:grid;grid-template-columns:1.5rem minmax(0,1fr);gap:.5rem;padding:.4rem .3rem;cursor:pointer;border-radius:4px}
+.check label:hover{background:var(--soft)}
+.check input{width:1.15rem;height:1.15rem;margin-top:.25rem;accent-color:var(--link)}
+.result{background:var(--soft);border:1px solid var(--rule);padding:1rem 1.25rem;margin-top:1rem;font-weight:600}
+.phones{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,11rem),1fr));margin-bottom:1.5rem}
+.phones>*{border:1px solid var(--rule);border-top:3px solid var(--accent);padding:.8rem 1rem}
+.phones a{display:block;color:var(--ink);text-decoration:none}
+.phones a:hover b,.phones a:focus-visible b{color:var(--link);text-decoration:underline;text-underline-offset:.12em}
+.phones b{font-family:var(--serif);font-size:2rem;line-height:1.1;display:block;font-variant-numeric:tabular-nums}
+.phones span{font-size:.92rem;color:var(--muted)}
+footer{background:var(--soft);border-top:1px solid var(--rule);padding-block:2rem 3rem;margin-top:2rem;font-size:.95rem}
+footer .cols{display:grid;gap:1.5rem 2.5rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr))}
+footer h2{font-family:var(--sans);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
+footer ul{list-style:none;padding:0;margin:0}
+@media (max-width:52rem){
+  .hero{grid-template-columns:minmax(0,1fr)}
+  .feature{min-height:15rem}
+}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+/* Barra de editorias: esmaece a borda direita para indicar que há mais itens ao rolar */
+.catnav::after{content:"";position:absolute;top:0;right:0;bottom:0;width:2.5rem;background:linear-gradient(to right,transparent,var(--nav));pointer-events:none}
+.catnav .wrap::after{content:"";flex:0 0 1.5rem}
+.meta .share{margin-left:.5rem;font-size:.8rem;padding:.1rem .55rem;line-height:1.5;vertical-align:baseline;max-width:100%;overflow-wrap:anywhere}
+/* Celular: tabelas viram fichas empilhadas, sem rolagem lateral */
+@media (max-width:40rem){
+  table.stack{min-width:0}
+  table.stack thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+  table.stack tr{display:block;padding:.75rem 0;border-bottom:1px solid var(--rule)}
+  table.stack tbody tr:first-child{border-top:1px solid var(--rule)}
+  table.stack td{display:block;border:0;padding:.1rem 0}
+  table.stack td:first-child{font-size:1.05rem}
+  table.stack td[data-label]:not(:first-child)::before{content:attr(data-label);display:block;margin-top:.45rem;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<header>
+  <div class="util"><div class="wrap">
+    <span>Ciência, direitos e estratégia para a vida adulta com TDAH</span>
+    <div class="tools" role="group" aria-label="Ajustes de leitura">
+      <button class="tool" id="btn-menor" type="button" aria-label="Diminuir a letra">A−</button>
+      <button class="tool" id="btn-maior" type="button" aria-label="Aumentar a letra">A+</button>
+      <button class="tool" id="btn-tema" type="button">Tema claro/escuro</button>
+    </div>
+  </div></div>
+  <div class="mast"><div class="wrap">
+    <a class="logo" href="#inicio">Diversa<span>Mente</span><small class="tagline">TDAH e neurodiversidade no Brasil</small></a>
+    <form class="search" id="f-busca" role="search">
+      <input type="search" id="q" placeholder="Buscar: trabalho, remédio, lei, fé" aria-label="Buscar no site" autocomplete="off">
+      <button class="btn" type="submit">Buscar</button>
+    </form>
+  </div></div>
+</header>
+<nav class="catnav" aria-label="Editorias"><div class="wrap">
+  <a href="#inicio">Início</a>
+  <a href="#c-tdah">TDAH adulto</a>
+  <a href="#c-sintomas">Sinais e testes</a>
+  <a href="#c-tratamento">Tratamento</a>
+  <a href="#c-vida">Vida adulta</a>
+  <a href="#c-direitos">Direitos</a>
+  <a href="#c-fe">Fé e estigma</a>
+  <a href="#c-familia">Família e escola</a>
+  <a href="#c-ciencia">Pesquisa</a>
+  <a href="#apoio">Apoio</a>
+</div></nav>
+
+<main id="conteudo">
+<section class="view on" id="inicio"><div class="wrap">
+  <h1 class="sr-only">DiversaMente: revista sobre TDAH e neurodiversidade na vida adulta, no Brasil</h1>
+  <div class="hero">
+    <a class="feature" href="#tdah-adulto">
+      <span class="label">TDAH adulto</span>
+      <h2>TDAH em adultos: o que é e como ele aparece depois dos 18</h2>
+      <p>Menos correria pela sala, mais prazos perdidos, contas esquecidas e cansaço de se esforçar em dobro. O que muda quando a criança inquieta cresce.</p>
+      <span class="more">Ler o artigo</span>
+    </a>
+    <div class="side">
+      <a class="card" href="#sinais"><span class="label">Sinais e testes</span><h3>Lista de sinais em adultos: vale procurar avaliação?</h3><p>Dezoito situações do dia a dia, em linguagem simples, para levar à consulta.</p></a>
+      <a class="card" href="#dinheiro"><span class="label">Vida adulta</span><h3>TDAH e dinheiro: impulso, dívida e golpes</h3><p>Por que o risco financeiro é maior e sete travas práticas para se proteger.</p></a>
+    </div>
+  </div>
+
+  <div class="promo block">
+    <div><h2>Guia das leis</h2><p>36 leis, decisões e projetos sobre TDAH, autismo e deficiência. Filtre por tema e veja o que vale hoje e o que ainda é promessa.</p></div>
+    <a class="btn" href="#leis">Abrir o guia</a>
+  </div>
+
+  <div class="block">
+    <h2>Mais lidos para começar</h2>
+    <div class="cards">
+      <a class="card" href="#mitos"><span class="label">TDAH adulto</span><h3>Dez mitos sobre TDAH que ainda circulam no Brasil</h3><p>“É moda”, “é falta de vara”, “remédio vicia”. O que a evidência responde.</p></a>
+      <a class="card" href="#tratamento-brasil"><span class="label">Tratamento</span><h3>Tratamento do TDAH adulto no Brasil: o que existe</h3><p>Medicamentos disponíveis, terapia, hábitos e o que esperar de cada um.</p></a>
+      <a class="card" href="#produtividade"><span class="label">Vida adulta</span><h3>Como começar e terminar tarefas: oito estratégias que funcionam</h3><p>Tirar da cabeça, encurtar o prazo, trabalhar acompanhado.</p></a>
+      <a class="card" href="#trabalho"><span class="label">Direitos</span><h3>Seus direitos no trabalho, com ou sem laudo</h3><p>Sigilo do diagnóstico, adaptação, cotas e proteção contra demissão discriminatória.</p></a>
+      <a class="card" href="#fe-frases"><span class="label">Fé e estigma</span><h3>“Isso é falta de fé”: oito frases que ferem e como responder</h3><p>Respostas curtas e respeitosas para a família e a igreja.</p></a>
+      <a class="card" href="#genes"><span class="label">Pesquisa</span><h3>Genes antigos: o que a ciência diz sobre a origem do TDAH</h3><p>O que é fato, o que é hipótese e o que não se sustenta.</p></a>
+    </div>
+  </div>
+
+  <div class="center block" id="central">
+    <h2>Central de recursos</h2>
+    <p class="small">Artigos recomendados para a sua dúvida.</p>
+    <p class="step">1. Quem você quer ajudar?</p>
+    <div class="seg" id="quem">
+      <button type="button" data-quem="adulto" aria-pressed="true">Um adulto</button>
+      <button type="button" data-quem="crianca" aria-pressed="false">Uma criança ou adolescente</button>
+    </div>
+    <p class="step"><label for="tema-sel">2. Qual é a dúvida?</label></p>
+    <select id="tema-sel"></select>
+    <ul class="list" id="central-lista" style="margin-top:.8rem"></ul>
+  </div>
+
+  <div class="secs block" id="editorias"></div>
+
+  <div class="commit block">
+    <h2>Nosso compromisso</h2>
+    <ul>
+      <li>Toda afirmação científica traz a fonte e o grau de evidência.</li>
+      <li>Lei em vigor e projeto de lei nunca aparecem misturados.</li>
+      <li>Texto para adultos: direto, sem infantilizar e sem prometer cura.</li>
+      <li>Respeito à fé de cada um. O alvo é o preconceito, não a religião.</li>
+      <li>Sem anúncio, sem venda de curso e sem vínculo com laboratório.</li>
+      <li>Nada aqui substitui consulta médica, psicológica ou jurídica.</li>
+    </ul>
+  </div>
+</div></section>
+
+<!-- ===== TDAH ADULTO ===== -->
+<article class="view art" id="tdah-adulto" data-cat="tdah" data-min="4"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-tdah">TDAH adulto</a></p>
+<h1>TDAH em adultos: o que é e como ele aparece depois dos 18</h1>
+<p class="dek">Menos correria pela sala, mais prazos perdidos, contas esquecidas e cansaço de se esforçar em dobro.</p>
+<p class="meta">Leitura de 4 min · Atualizado em 10/10/2026</p>
+<div class="key"><h2>Em resumo</h2><ul>
+<li>TDAH é uma condição do neurodesenvolvimento. Começa na infância e, na maioria dos casos, continua na vida adulta.</li>
+<li>Cerca de 2,5% dos adultos têm o transtorno.</li>
+<li>No adulto, a agitação costuma virar inquietação interna. A desatenção e a desorganização ficam.</li>
+<li>Tem tratamento, e ele funciona melhor quando combina mais de uma frente.</li>
+</ul></div>
+<h2>O que é</h2>
+<p>O transtorno do déficit de atenção com hiperatividade é um padrão persistente de desatenção, hiperatividade ou impulsividade que atrapalha a vida em mais de um ambiente. Não é falta de inteligência nem de vontade. Estudos com gêmeos apontam herança genética de 70 a 80%.</p>
+<p>Existem três apresentações: predominantemente desatenta, predominantemente hiperativa e impulsiva, e combinada. A mesma pessoa pode mudar de apresentação ao longo da vida.</p>
+<h2>Como aparece no adulto</h2>
+<ul>
+<li><b>Tempo:</b> atrasos, prazos estourados, sensação de que só existe “agora” e “depois”.</li>
+<li><b>Tarefas:</b> dificuldade para começar o que é chato e para terminar o que começou.</li>
+<li><b>Memória do dia a dia:</b> contas, chaves, compromissos, mensagens sem resposta.</li>
+<li><b>Inquietação:</b> mente que não desliga, perna que balança, dificuldade de relaxar.</li>
+<li><b>Impulso:</b> compras, respostas atravessadas, decisões grandes tomadas rápido demais.</li>
+<li><b>Emoções:</b> irritação e frustração que sobem depressa e demoram a baixar.</li>
+</ul>
+<h2>O custo de não tratar</h2>
+<p>Adultos com TDAH sem acompanhamento têm mais demissões, acidentes, dívidas, separações e problemas de saúde. A maioria convive com pelo menos outra condição, como ansiedade, depressão ou insônia. Esse quadro não é destino: diagnóstico e apoio mudam a trajetória.</p>
+<h2>E o lado bom?</h2>
+<p>Muitos adultos relatam criatividade, energia e bom desempenho em situações de crise. Esses relatos são reais, mas a pesquisa ainda é limitada. O TDAH não é superpoder nem sentença. É um jeito de funcionar que pede ajustes.</p>
+<p class="src">Fontes: Faraone SV e cols., consenso internacional com 208 conclusões, <i>Neuroscience &amp; Biobehavioral Reviews</i>, 2021. Simon V e cols., <i>British Journal of Psychiatry</i>, 2009. Kessler RC e cols., <i>American Journal of Psychiatry</i>, 2006. DSM-5-TR.</p>
+<div class="related" data-rel="sinais diagnostico-tardio tratamento-brasil"></div>
+<a class="back" href="#inicio">← Voltar ao início</a>
+</div></article>
+
+<article class="view art" id="diagnostico-tardio" data-cat="tdah" data-min="4"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-tdah">TDAH adulto</a></p>
+<h1>Diagnóstico tardio: como é feita a avaliação no Brasil</h1>
+<p class="dek">Não existe exame de sangue nem de imagem. O diagnóstico é clínico e depende de uma boa conversa.</p>
+<p class="meta">Leitura de 4 min · Atualizado em 10/10/2026</p>
+<div class="key"><h2>Em resumo</h2><ul>
+<li>Quem diagnostica é o médico, em geral psiquiatra ou neurologista.</li>
+<li>Os sintomas precisam vir da infância e atrapalhar pelo menos duas áreas da vida.</li>
+<li>Teste neuropsicológico ajuda, mas não é obrigatório.</li>
+<li>No SUS, o caminho começa na Unidade Básica de Saúde.</li>
+</ul></div>
+<h2>O que o médico procura</h2>
+<p>Os critérios mais usados são os do DSM-5-TR. Para quem tem 17 anos ou mais:</p>
+<ol class="steps">
+<li><span>Pelo menos cinco sintomas de desatenção, ou cinco de hiperatividade e impulsividade, por seis meses ou mais.</span></li>
+<li><span>Vários desses sintomas já presentes antes dos 12 anos.</span></li>
+<li><span>Sintomas em dois ou mais ambientes: casa, trabalho, estudo, relações.</span></li>
+<li><span>Prejuízo claro no funcionamento.</span></li>
+<li><span>Nenhuma outra condição que explique melhor o quadro.</span></li>
+</ol>
+<h2>O que levar para a consulta</h2>
+<ul>
+<li>Boletins e observações de professores, se ainda existirem.</li>
+<li>Relato de alguém que conviveu com você na infância.</li>
+<li>Exemplos concretos e recentes: o prazo perdido, a multa, a discussão.</li>
+<li>Lista de remédios em uso, sono, álcool e outras substâncias.</li>
+<li>A <a href="#sinais">lista de sinais</a> preenchida.</li>
+</ul>
+<h2>O que não diagnostica</h2>
+<p>Eletroencefalograma, ressonância, exame genético e teste rápido de internet não fecham diagnóstico. A avaliação neuropsicológica, feita por psicólogo, mostra pontos fortes e fracos e ajuda no diagnóstico diferencial, mas não substitui a consulta.</p>
+<h2>Onde procurar</h2>
+<ul>
+<li><b>SUS:</b> Unidade Básica de Saúde, que encaminha ao CAPS ou ao ambulatório de saúde mental.</li>
+<li><b>Plano de saúde:</b> psiquiatria e neurologia têm cobertura obrigatória.</li>
+<li><b>Hospitais universitários:</b> vários mantêm ambulatórios de TDAH em adultos.</li>
+</ul>
+<div class="note"><b class="t">Depois do diagnóstico</b>É comum sentir alívio e luto ao mesmo tempo: alívio por entender, luto pelos anos sem explicação. Os dois passam melhor com informação e acompanhamento.</div>
+<p class="src">Fontes: DSM-5-TR, American Psychiatric Association, 2022. Protocolo Clínico e Diretrizes Terapêuticas do TDAH, Ministério da Saúde, 2022.</p>
+<div class="related" data-rel="parece-tdah sus-plano tdah-mulheres"></div>
+<a class="back" href="#inicio">← Voltar ao início</a>
+</div></article>
+
+<article class="view art" id="tdah-mulheres" data-cat="tdah" data-min="3"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-tdah">TDAH adulto</a></p>
+<h1>TDAH em mulheres: por que tantas descobrem tarde</h1>
+<p class="dek">A menina quieta e distraída não atrapalha a aula. Por isso ninguém a encaminha.</p>
+<p class="meta">Leitura de 3 min · Atualizado em 10/10/2026</p>
+<div class="key"><h2>Em resumo</h2><ul>
+<li>Na infância, meninos são diagnosticados bem mais. Na vida adulta, a diferença quase desaparece.</li>
+<li>Em mulheres predomina a desatenção, que chama menos atenção de pais e professores.</li>
+<li>Muitas recebem primeiro o diagnóstico de ansiedade ou depressão.</li>
+</ul></div>
+<h2>O que atrasa o diagnóstico</h2>
+<ul>
+<li><b>Apresentação desatenta:</b> devaneio, esquecimento e desorganização passam por “jeito dela”.</li>
+<li><b>Camuflagem:</b> esforço enorme para parecer organizada, com alto custo de cansaço.</li>
+<li><b>Expectativa social:</b> a cobrança por cuidar da casa, da agenda e dos outros expõe as falhas e aumenta a culpa.</li>
+<li><b>Diagnóstico parcial:</b> trata-se a ansiedade ou a depressão e o TDAH fica por baixo.</li>
+</ul>
+<h2>Hormônios</h2>
+<p>Muitas mulheres relatam piora dos sintomas antes da menstruação, no pós-parto e na perimenopausa. Um consenso de especialistas reconhece esses relatos, mas a pesquisa ainda é pequena. Vale anotar o padrão e levar ao médico.</p>
+<h2>O que fazer</h2>
+<p>Se você se reconhece, peça avaliação específica para TDAH e conte a história desde a escola. Diga com clareza o que já foi tratado e o que não melhorou.</p>
+<p class="src">Fontes: Young S e cols., consenso de especialistas sobre TDAH em meninas e mulheres, <i>BMC Psychiatry</i>, 2020. Faraone SV e cols., 2021.</p>
+<div class="related" data-rel="diagnostico-tardio emocoes sinais"></div>
+<a class="back" href="#inicio">← Voltar ao início</a>
+</div></article>
+
+<article class="view art" id="mitos" data-cat="tdah" data-min="4"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-tdah">TDAH adulto</a></p>
+<h1>Dez mitos sobre TDAH que ainda circulam no Brasil</h1>
+<p class="dek">O que a evidência responde a cada um, em poucas linhas.</p>
+<p class="meta">Leitura de 4 min · Atualizado em 10/10/2026</p>
+<details class="qa" open><summary>1. “É moda. Antigamente não existia.”</summary><div class="in"><p>A primeira descrição médica é de 1775. Em 2021, 80 pesquisadores de 27 países assinaram um consenso com 208 conclusões baseadas em evidência. O que aumentou foi o diagnóstico, não a condição.</p></div></details>
+<details class="qa"><summary>2. “É falta de disciplina.”</summary><div class="in"><p>A herança genética responde por 70 a 80% da variação. Castigo físico não trata e é proibido pela Lei 13.010/2014.</p></div></details>
+<details class="qa"><summary>3. “Só criança tem.”</summary><div class="in"><p>Cerca de 2,5% dos adultos têm TDAH. A maioria das crianças diagnosticadas mantém sintomas ou prejuízo na vida adulta.</p></div></details>
+<details class="qa"><summary>4. “Todo mundo é um pouco TDAH.”</summary><div class="in"><p>Todo mundo se distrai. O transtorno existe quando o padrão é persistente, vem da infância e prejudica mais de uma área da vida.</p></div></details>
+<details class="qa"><summary>5. “Quem se formou ou tem bom emprego não tem.”</summary><div class="in"><p>O TDAH ocorre em todos os níveis de inteligência e de escolaridade. Muita gente compensa com esforço extra, e paga com exaustão.</p></div></details>
+<details class="qa"><summary>6. “Remédio vicia e muda a personalidade.”</summary><div class="in"><p>Em dose terapêutica e com acompanhamento, os estimulantes são eficazes e seguros para a maioria. Grandes estudos de registro associam o tratamento a menos problemas com álcool e drogas, não a mais. Existe risco de uso indevido, e por isso a receita é controlada.</p></div></details>
+<details class="qa"><summary>7. “Açúcar e telas causam TDAH.”</summary><div class="in"><p>Ensaios controlados não mostram efeito do açúcar no comportamento. Uso intenso de telas aparece associado a mais sintomas, mas causa e efeito não estão demonstrados.</p></div></details>
+<details class="qa"><summary>8. “É preguiça.”</summary><div class="in"><p>A dificuldade está nas funções executivas: planejar, começar, manter e concluir. A pessoa costuma se esforçar mais, não menos.</p></div></details>
+<details class="qa"><summary>9. “Passa com a idade.”</summary><div class="in"><p>A hiperatividade visível diminui. A desatenção e a desorganização tendem a ficar.</p></div></details>
+<details class="qa"><summary>10. “É falta de fé.”</summary><div class="in"><p>Fé não corrige miopia nem diabetes, e ninguém cobra isso dela. Veja <a href="#fe-frases">como responder</a>.</p></div></details>
+<p class="src">Fontes: Faraone SV e cols., 2021. Barkley RA, Peters H, <i>Journal of Attention Disorders</i>, 2012. Wolraich ML e cols., <i>JAMA</i>, 1995. Chang Z e cols., <i>Journal of Child Psychology and Psychiatry</i>, 2014. Quinn PD e cols., <i>American Journal of Psychiatry</i>, 2017.</p>
+<div class="related" data-rel="tdah-adulto genes fe-frases"></div>
+<a class="back" href="#inicio">← Voltar ao início</a>
+</div></article>
+
+<article class="view art" id="perfis" data-cat="tdah" data-min="3"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-tdah">TDAH adulto</a></p>
+<h1>Além do TDAH: autismo, dislexia e outros perfis de neurodiversidade</h1>
+<p class="dek">Neurodiversidade é o fato de que cérebros variam. Muita gente tem mais de um perfil.</p>
+<p class="meta">Leitura de 3 min · Atualizado em 10/10/2026</p>
+<div class="key"><h2>Em resumo</h2><ul>
+<li>Neurodivergente é quem funciona fora do padrão mais comum.</li>
+<li>Os traços abaixo são frequentes, não obrigatórios.</li>
+<li>Desde 2013, TDAH e autismo podem ser diagnosticados na mesma pessoa.</li>
+</ul></div>
+<div class="scroll-x"><table>
+<thead><tr><th>Perfil</th><th>O que é</th><th>Barreiras frequentes</th><th>Lei-chave</th></tr></thead>
+<tbody>
+<tr><td><b>TDAH</b><br><span class="small">CID-11 6A05</span></td><td>Desatenção, inquietação ou impulsividade desde a infância.</td><td>Tempo, organização, tarefas longas.</td><td>Lei 14.254/2021. Deficiência: <a href="#tdah-deficiencia">caso a caso</a>.</td></tr>
+<tr><td><b>Autismo (TEA)</b><br><span class="small">CID-11 6A02</span></td><td>Jeito próprio de se comunicar e interagir, interesses intensos, sentidos mais sensíveis.</td><td>Sobrecarga sensorial, regras não ditas, mudanças bruscas.</td><td>Lei 12.764/2012: deficiência para todos os efeitos legais.</td></tr>
+<tr><td><b>Dislexia</b><br><span class="small">CID-11 6A03.0</span></td><td>Dificuldade persistente para ler com precisão e fluência.</td><td>Leitura com tempo contado, ortografia.</td><td>Lei 14.254/2021.</td></tr>
+<tr><td><b>Discalculia e disgrafia</b><br><span class="small">6A03.2 · 6A03.1</span></td><td>Dificuldade específica com números ou com a escrita.</td><td>Cálculo mental, horários, escrever à mão.</td><td>Lei 14.254/2021.</td></tr>
+<tr><td><b>TDC (dispraxia)</b><br><span class="small">CID-11 6A04</span></td><td>Coordenação motora exige mais esforço.</td><td>Caligrafia, direção, tarefas manuais rápidas.</td><td>Sem lei federal própria.</td></tr>
+<tr><td><b>Tourette</b><br><span class="small">CID-11 8A05.00</span></td><td>Tiques motores e vocais por mais de um ano.</td><td>Olhares, ambientes que exigem silêncio.</td><td>Sem lei federal própria.</td></tr>
+<tr><td><b>Altas habilidades</b><br><span class="small">Não é transtorno</span></td><td>Potencial muito acima da média em uma ou mais áreas.</td><td>Tédio, isolamento, cobrança.</td><td>LDB, arts. 58 a 59-A.</td></tr>
+</tbody></table></div>
+<p class="small">Este quadro ajuda a reconhecer, não a diagnosticar. O Brasil ainda usa a CID-10 nos sistemas oficiais; a CID-11 está prevista para janeiro de 2027.</p>
+<div class="related" data-rel="tdah-adulto parece-tdah leis"></div>
+<a class="back" href="#inicio">← Voltar ao início</a>
+</div></article>
+
+<!-- ===== SINAIS E TESTES ===== -->
+<article class="view art" id="sinais" data-cat="sintomas" data-min="3"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-sintomas">Sinais e testes</a></p>
+<h1>Lista de sinais em adultos: vale procurar avaliação?</h1>
+<p class="dek">Dezoito situações baseadas nos critérios do DSM-5-TR, em linguagem do dia a dia. Marque o que acontece com frequência há pelo menos seis meses.</p>
+<p class="meta">Leitura de 3 min · Não é teste diagnóstico · Atualizado em 10/10/2026</p>
+<h2>Atenção e organização</h2>
+<ul class="check" id="grupo-a">
+<li><label><input type="checkbox" id="a1"><span>Cometo erros por descuido em tarefas que sei fazer.</span></label></li>
+<li><label><input type="checkbox" id="a2"><span>Perco o fio em reuniões, leituras ou conversas longas.</span></label></li>
+<li><label><input type="checkbox" id="a3"><span>Dizem que pareço não ouvir quando falam comigo.</span></label></li>
+<li><label><input type="checkbox" id="a4"><span>Começo tarefas e não termino.</span></label></li>
+<li><label><input type="checkbox" id="a5"><span>Tenho dificuldade para organizar tarefas, papéis e prazos.</span></label></li>
+<li><label><input type="checkbox" id="a6"><span>Adio ou evito o que exige esforço mental prolongado.</span></label></li>
+<li><label><input type="checkbox" id="a7"><span>Perco chaves, carteira, celular ou documentos.</span></label></li>
+<li><label><input type="checkbox" id="a8"><span>Qualquer barulho ou pensamento me tira do que estou fazendo.</span></label></li>
+<li><label><input type="checkbox" id="a9"><span>Esqueço compromissos, contas e recados.</span></label></li>
+</ul>
+<h2>Inquietação e impulso</h2>
+<ul class="check" id="grupo-b">
+<li><label><input type="checkbox" id="b1"><span>Mexo mãos ou pés, ou me remexo na cadeira.</span></label></li>
+<li><label><input type="checkbox" id="b2"><span>Levanto em situações em que se espera que eu fique sentado.</span></label></li>
+<li><label><input type="checkbox" id="b3"><span>Sinto uma inquietação por dentro, mesmo parado.</span></label></li>
+<li><label><input type="checkbox" id="b4"><span>Tenho dificuldade para relaxar ou descansar em silêncio.</span></label></li>
+<li><label><input type="checkbox" id="b5"><span>Vivo “ligado na tomada”, sempre em movimento.</span></label></li>
+<li><label><input type="checkbox" id="b6"><span>Falo demais.</span></label></li>
+<li><label><input type="checkbox" id="b7"><span>Respondo antes de a pergunta terminar.</span></label></li>
+<li><label><input type="checkbox" id="b8"><span>Esperar a vez, na fila ou no trânsito, é muito difícil.</span></label></li>
+<li><label><input type="checkbox" id="b9"><span>Interrompo ou me intrometo na conversa dos outros.</span></label></li>
+</ul>
+<h2>Duas confirmações</h2>
+<ul class="check">
+<li><label><input type="checkbox" id="c1"><span>Vários desses sinais já existiam antes dos meus 12 anos.</span></label></li>
+<li><label><input type="checkbox" id="c2"><span>Eles me prejudicam em duas ou mais áreas: trabalho, estudo, casa, relações.</span></label></li>
+</ul>
+<p class="result" id="sinais-res" aria-live="polite">Marque os itens acima. O resultado aparece aqui.</p>
+<div class="note"><b class="t">Como ler o resultado</b>Esta lista organiza a conversa com o médico. Ela não dá diagnóstico: ansiedade, depressão, sono ruim e outras condições produzem sinais parecidos. Veja <a href="#parece-tdah">o que parece TDAH e não é</a>.</div>
+<p class="src">Base: critérios do DSM-5-TR (2022), redigidos com palavras próprias. Para a escala ASRS, validada no Brasil, consulte a ABDA em tdah.org.br.</p>
+<div class="related" data-rel="diagnostico-tardio parece-tdah tdah-adulto"></div>
+<a class="back" href="#inicio">← Voltar ao início</a>
+</div></article>
+
+<article class="view art" id="parece-tdah" data-cat="sintomas" data-min="3"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-sintomas">Sinais e testes</a></p>
+<h1>O que parece TDAH e não é, ou vem junto</h1>
+<p class="dek">Desatenção é sintoma de muita coisa. Um bom diagnóstico separa as causas e reconhece quando há mais de uma.</p>
+<p class="meta">Leitura de 3 min · Atualizado em 10/10/2026</p>
+<div class="scroll-x"><table>
+<thead><tr><th>Condição</th><th>O que confunde</th><th>O que ajuda a diferenciar</th></tr></thead>
+<tbody>
+<tr><td><b>Ansiedade</b></td><td>Mente acelerada, dificuldade de concentração.</td><td>A distração vem da preocupação. Costuma ter início definido.</td></tr>
+<tr><td><b>Depressão</b></td><td>Falta de iniciativa, esquecimento.</td><td>Humor triste ou perda de prazer por semanas. Antes do episódio, a pessoa funcionava de outro jeito.</td></tr>
+<tr><td><b>Transtorno bipolar</b></td><td>Agitação, impulsividade, fala rápida.</td><td>Vem em episódios, com menos necessidade de sono e humor elevado.</td></tr>
+<tr><td><b>Sono ruim e apneia</b></td><td>Desatenção, irritação, lapsos de memória.</td><td>Ronco, sonolência de dia, melhora quando o sono é tratado.</td></tr>
+<tr><td><b>Autismo</b></td><td>Desorganização, hiperfoco.</td><td>Diferenças na comunicação social e sensibilidade sensorial desde cedo. Pode coexistir.</td></tr>
+<tr><td><b>Álcool e outras substâncias</b></td><td>Impulsividade, lapsos, queda de rendimento.</td><td>Relação com o período de uso. Também pode coexistir.</td></tr>
+<tr><td><b>Trauma</b></td><td>Hipervigilância, distração, explosões.</td><td>Ligação com evento traumático, lembranças intrusivas.</td></tr>
+<tr><td><b>Esgotamento no trabalho</b></td><td>Cansaço, erros, cinismo.</td><td>Aparece depois de longa sobrecarga e melhora fora do contexto.</td></tr>
+<tr><td><b>Causas clínicas</b></td><td>Lentidão ou agitação, falta de foco.</td><td>Tireoide, anemia, efeito de remédios. Exames simples esclarecem.</td></tr>
+</tbody></table></div>
+<div class="note"><b class="t">Mais de uma coisa ao mesmo tempo</b>A maioria dos adultos com TDAH tem pelo menos outra condição associada. Tratar só uma parte costuma falhar. Peça uma avaliação completa.</div>
+<p class="src">Fontes: Kessler RC e cols., 2006. Faraone SV e cols., 2021. DSM-5-TR.</p>
+<div class="related" data-rel="sinais emocoes diagnostico-tardio"></div>
+<a class="back" href="#inicio">← Voltar ao início</a>
+</div></article>
+
+<article class="view art" id="emocoes" data-cat="sintomas" data-min="3"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-sintomas">Sinais e testes</a></p>
+<h1>Emoções à flor da pele: desregulação emocional e sensibilidade à rejeição</h1>
+<p class="dek">A irritação que sobe em segundos e a crítica que dói por dias fazem parte do quadro de muitos adultos.</p>
+<p class="meta">Leitura de 3 min · Atualizado em 10/10/2026</p>
+<div class="key"><h2>Em resumo</h2><ul>
+<li>Entre um terço e dois terços dos adultos com TDAH têm dificuldade importante para regular emoções.</li>
+<li>“Disforia sensível à rejeição” é um termo popular, não um diagnóstico oficial, e ainda tem pouca pesquisa.</li>
+<li>Tratar o TDAH ajuda. Habilidades de regulação também se aprendem.</li>
+</ul></div>
+<h2>Como aparece</h2>
+<ul>
+<li>Frustração e raiva que chegam rápido e demoram a passar.</li>
+<li>Reação intensa a crítica, real ou imaginada.</li>
+<li>Vergonha e autocrítica depois da explosão.</li>
+<li>Evitar situações por medo de errar ou de ser rejeitado.</li>
+</ul>
+<h2>O que ajuda</h2>
+<ol class="steps">
+<li><span><b>Dar nome.</b> “Estou com raiva” já reduz a intensidade.</span></li>
+<li><span><b>Ganhar tempo.</b> Combine consigo mesmo uma regra: mensagem difícil só se responde depois de uma pausa.</span></li>
+<li><span><b>Cuidar do básico.</b> Sono curto e fome deixam o pavio mais curto.</span></li>
+<li><span><b>Combinar um sinal</b> com quem convive, para pedir pausa sem briga.</span></li>
+<li><span><b>Tratar.</b> A medicação tem efeito modesto sobre os sintomas emocionais, e a terapia cognitivo-comportamental ensina estratégias.</span></li>
+</ol>
+<div class="note alert"><b class="t">Quando procurar ajuda logo</b>Se houver pensamento de morte ou de se machucar, ligue <a href="tel:188">188</a> (CVV, 24 horas) ou procure um serviço de emergência.</div>
+<p class="src">Fontes: Shaw P e cols., <i>American Journal of Psychiatry</i>, 2014. Lenzi F e cols., <i>Neuroscience &amp; Biobehavioral Reviews</i>, 2018.</p>
+<div class="related" data-rel="relacionamentos tratamento-brasil parece-tdah"></div>
+<a class="back" href="#inicio">← Voltar ao início</a>
+</div></article>
+
+<!-- ===== TRATAMENTO ===== -->
+<article class="view art" id="tratamento-brasil" data-cat="tratamento" data-min="5"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-tratamento">Tratamento</a></p>
+<h1>Tratamento do TDAH adulto no Brasil: o que existe</h1>
+<p class="dek">Remédio ajuda muito, mas não organiza a agenda sozinho. O melhor resultado vem da combinação.</p>
+<p class="meta">Leitura de 5 min · Atualizado em 10/10/2026</p>
+<div class="key"><h2>Em resumo</h2><ul>
+<li>As frentes com melhor evidência são medicação, psicoeducação e terapia cognitivo-comportamental adaptada ao TDAH.</li>
+<li>No Brasil há estimulantes (metilfenidato e lisdexanfetamina) e um não estimulante aprovado (atomoxetina).</li>
+<li>A escolha e a dose são decisão médica individual. Este texto não substitui consulta.</li>
+</ul></div>
+<h2>Medicação</h2>
+<div class="scroll-x"><table>
+<thead><tr><th>Grupo</th><th>No Brasil</th><th>Receita</th></tr></thead>
+<tbody>
+<tr><td><b>Estimulantes</b></td><td>Metilfenidato, de ação curta e prolongada. Lisdexanfetamina.</td><td>Notificação de Receita A, a “receita amarela”.</td></tr>
+<tr><td><b>Não estimulante</b></td><td>Atomoxetina.</td><td>Receita de controle especial.</td></tr>
+<tr><td><b>Outros</b></td><td>Alguns antidepressivos são usados fora de bula em casos selecionados.</td><td>Conforme o medicamento.</td></tr>
+</tbody></table></div>
+<p>A maior comparação já feita, com 133 ensaios clínicos, concluiu que em adultos as anfetaminas tiveram o melhor equilíbrio entre eficácia e tolerabilidade no curto prazo, com o metilfenidato também eficaz. Os efeitos indesejados mais comuns são perda de apetite, insônia e aumento de pressão e de frequência cardíaca. Por isso o acompanhamento é regular.</p>
+<h2>Psicoterapia e habilidades</h2>
+<ul>
+<li><b>Terapia cognitivo-comportamental para TDAH:</b> trabalha organização, planejamento, adiamento e pensamentos de fracasso. Em ensaio clínico com adultos já medicados, melhorou sintomas além do remédio.</li>
+<li><b>Psicoeducação:</b> entender o próprio funcionamento reduz culpa e melhora a adesão.</li>
+<li><b>Treino de habilidades e coaching:</b> úteis para rotina, com evidência menor.</li>
+</ul>
+<h2>Hábitos</h2>
+<p>Sono, exercício e rotina não substituem o tratamento, mas mudam o dia. Veja <a href="#habitos">o que tem evidência</a>.</p>
+<h2>O que ainda não se sustenta</h2>
+<p>Jogos de “treino cerebral”, dietas restritivas e neurofeedback não mostraram benefício consistente em estudos bem controlados. Desconfie de promessa de cura e de tratamento que pede para parar o remédio.</p>
+<div class="note alert"><b class="t">Segurança</b>Não comece, não pare e não mude dose por conta própria nem por conselho de quem não é o seu médico.</div>
+<p class="src">Fontes: Cortese S e cols., <i>Lancet Psychiatry</i>, 2018. Safren SA e cols., <i>JAMA</i>, 2010. Lopez PL e cols., <i>Cochrane Database of Systematic Reviews</i>, 2018. Cortese S e cols., <i>Journal of the American Academy of Child &amp; Adolescent Psychiatry</i>, 2016. Portaria SVS/MS 344/1998.</p>
+<div class="related" data-rel="sus-plano habitos produtividade"></div>
+<a class="back" href="#inicio">← Voltar ao início</a>
+</div></article>
+
+<article class="view art" id="sus-plano" data-cat="tratamento" data-min="3"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-tratamento">Tratamento</a></p>
+<h1>SUS, plano de saúde e Justiça: como conseguir tratamento</h1>
+<p class="dek">O que cada porta oferece hoje e onde costuma travar.</p>
+<p class="meta">Leitura de 3 min · Atualizado em 18/10/2026</p>
+<h2>No SUS</h2>
+<ul>
+<li><b>Entrada:</b> Unidade Básica de Saúde, que encaminha ao CAPS ou ao ambulatório especializado.</li>
+<li><b>Protocolo federal:</b> existe desde 2022 (Portaria Conjunta 14/2022) e se concentra em tratamento não medicamentoso.</li>
+<li><b>Estimulantes:</b> metilfenidato e lisdexanfetamina foram avaliados pela Conitec e não entraram na lista federal. Alguns estados e municípios fornecem por lista própria. Pergunte na farmácia da sua secretaria de saúde.</li>
+<li><b>Autismo:</b> a Lei 12.764/2012 garante diagnóstico, atendimento multiprofissional e medicamentos. A Lei 15.256/2025 passou a incentivar a investigação diagnóstica em adultos e idosos.</li>
+</ul>
+<h2>No plano de saúde</h2>
+<ul>
+<li>Consultas com psiquiatra e neurologista têm cobertura obrigatória.</li>
+<li>Desde 2022 não há limite de sessões de psicologia, fonoaudiologia, terapia ocupacional e fisioterapia (ANS, RN 541).</li>
+<li>O plano não pode recusar a pessoa por causa do diagnóstico.</li>
+</ul>
+<h2>Pela Justiça</h2>
+<p>Quando o remédio prescrito não é fornecido, o caminho costuma ser a Defensoria Pública. Em 2024 o Supremo fixou critérios mais rígidos para pedidos de medicamentos fora da lista do SUS (Temas 6 e 1234). Em geral se exige laudo médico detalhado, prova de que as alternativas do SUS não servem e de que a pessoa não pode pagar. A Defensoria avalia caso a caso.</p>
+<p class="src">Fontes: <a href="https://www.gov.br/conitec/pt-br/midias/protocolos/portariaconjuntan14pcdttranstornododeficitdeatencaocomhiperatividadetdah.pdf" target="_blank" rel="noopener">Protocolo do TDAH, Ministério da Saúde</a>. ANS, Resoluções Normativas 539 e 541/2022. STF, Temas 6 e 1234 de repercussão geral.</p>
+<div class="related" data-rel="tratamento-brasil leis apoio"></div>
+<a class="back" href="#inicio">← Voltar ao início</a>
+</div></article>
+
+<article class="view art" id="habitos" data-cat="tratamento" data-min="3"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-tratamento">Tratamento</a></p>
+<h1>Sono, exercício e rotina: o que tem evidência</h1>
+<p class="dek">Nenhum hábito trata o TDAH sozinho. Alguns deixam o dia claramente melhor.</p>
+<p class="meta">Leitura de 3 min · Atualizado em 10/10/2026</p>
+<div class="scroll-x"><table>
+<thead><tr><th>Hábito</th><th>O que se sabe</th><th>Evidência</th></tr></thead>
+<tbody>
+<tr><td><b>Exercício aeróbico</b></td><td>Melhora atenção e controle de impulso nas horas seguintes. A maior parte dos estudos é com crianças.</td><td><span class="pill moderada">Moderada</span></td></tr>
+<tr><td><b>Sono regular</b></td><td>Dormir tarde e acordar cansado é muito comum no TDAH. Sono curto piora todos os sintomas.</td><td><span class="pill forte">Forte</span></td></tr>
+<tr><td><b>Rotina externa</b></td><td>Alarmes, agenda única e lugares fixos para os objetos compensam a memória de trabalho.</td><td><span class="pill moderada">Moderada</span></td></tr>
+<tr><td><b>Meditação de atenção plena</b></td><td>Estudos pequenos mostram melhora de sintomas e de regulação emocional.</td><td><span class="pill sugestiva">Sugestiva</span></td></tr>
+<tr><td><b>Ômega-3</b></td><td>Efeito pequeno, observado em crianças.</td><td><span class="pill sugestiva">Sugestiva</span></td></tr>
+<tr><td><b>Dieta sem açúcar ou sem corantes</b></td><td>Sem benefício consistente para a maioria.</td><td><span class="pill nao">Fraca</span></td></tr>
+</tbody></table></div>
+<h2>Três ajustes de maior retorno</h2>
+<ol class="steps">
+<li><span><b>Hora fixa de acordar,</b> inclusive no fim de semana. O horário de dormir se ajusta atrás.</span></li>
+<li><span><b>Movimento antes da tarefa difícil.</b> Vinte minutos de caminhada rápida já ajudam.</span></li>
+<li><span><b>Álcool e cafeína com critério.</b> Os dois pioram o sono, e o álcool reduz o freio do impulso.</span></li>
+</ol>
+<p class="src">Fontes: Faraone SV e cols., 2021. Bloch MH, Qawasmi A, <i>Journal of the American Academy of Child &amp; Adolescent Psychiatry</i>, 2011. Cortese S e cols., 2016.</p>
+<div class="related" data-rel="produtividade tratamento-brasil emocoes"></div>
+<a class="back" href="#inicio">← Voltar ao início</a>
+</div></article>
+
+<!-- ===== VIDA ADULTA ===== -->
+<article class="view art" id="produtividade" data-cat="vida" data-min="4"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-vida">Vida adulta</a></p>
+<h1>Como começar e terminar tarefas: oito estratégias que funcionam</h1>
+<p class="dek">O problema raramente é saber o que fazer. É começar, manter e concluir.</p>
+<p class="meta">Leitura de 4 min · Atualizado em 10/10/2026</p>
+<div class="key"><h2>Em resumo</h2><ul>
+<li>O cérebro com TDAH responde a interesse, urgência e novidade mais do que a importância.</li>
+<li>A saída é pôr a organização fora da cabeça: no papel, no alarme, no ambiente.</li>
+<li>Escolha duas estratégias e teste por duas semanas. Tentar as oito de uma vez não dura.</li>
+</ul></div>
+<ol class="steps">
+<li><span><b>Tire da cabeça.</b> Uma agenda só e uma lista só. O que não está escrito não existe.</span></li>
+<li><span><b>Três prioridades por dia.</b> O resto fica em uma lista de espera.</span></li>
+<li><span><b>Primeiro passo ridículo de pequeno.</b> “Abrir o arquivo” em vez de “fazer o relatório”.</span></li>
+<li><span><b>Relógio à vista.</b> Blocos de 25 minutos com pausa curta. O tempo precisa ser visível.</span></li>
+<li><span><b>Prazo falso com testemunha.</b> Combine a entrega com alguém antes do prazo real.</span></li>
+<li><span><b>Trabalhe acompanhado.</b> Ter outra pessoa por perto, presencial ou por vídeo, ajuda a manter o ritmo. Há pouca pesquisa e muito relato a favor.</span></li>
+<li><span><b>Arrume o ambiente, não a força de vontade.</b> Celular longe, uma aba aberta, fone de ouvido.</span></li>
+<li><span><b>Feche o ciclo.</b> Dois minutos no fim do dia para anotar onde parou e qual é o próximo passo.</span></li>
+</ol>
+<h2>Quando nada funciona</h2>
+<p>Se você conhece as estratégias e não consegue aplicá-las, isso não é falha de caráter. Pode ser sinal de que o tratamento precisa de ajuste ou de que há ansiedade, depressão ou sono ruim no caminho.</p>
+<p class="src">Fontes: Safren SA e cols., <i>JAMA</i>, 2010. Solanto MV e cols., <i>American Journal of Psychiatry</i>, 2010.</p>
+<div class="related" data-rel="adaptacoes habitos dinheiro"></div>
+<a class="back" href="#inicio">← Voltar ao início</a>
+</div></article>
+
+<article class="view art" id="dinheiro" data-cat="vida" data-min="4"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-vida">Vida adulta</a></p>
+<h1>TDAH e dinheiro: impulso, dívida e golpes</h1>
+<p class="dek">Decidir rápido, esquecer vencimento e confiar depressa têm custo. Dá para criar travas.</p>
+<p class="meta">Leitura de 4 min · Atualizado em 10/10/2026</p>
+<div class="key"><h2>Em resumo</h2><ul>
+<li>Adultos com TDAH acumulam mais inadimplência ao longo da vida, segundo estudo com toda a população da Suécia.</li>
+<li>O risco vem de três pontos: compra por impulso, conta esquecida e decisão sob pressa.</li>
+<li>A proteção mais eficaz é automática: limite baixo, débito programado e uma segunda pessoa nas decisões grandes.</li>
+</ul></div>
+<h2>O que a pesquisa mostra</h2>
+<p>No estudo sueco, pessoas com TDAH começaram a vida adulta com crédito parecido com o dos demais e foram acumulando atrasos e calotes com os anos, até perder acesso a crédito. Dificuldade financeira grave apareceu ligada a maior risco de suicídio. Cuidar do dinheiro, portanto, também é cuidar da saúde.</p>
+<h2>Sete travas práticas</h2>
+<ol class="steps">
+<li><span><b>Reduza os limites de Pix e de cartão</b> no aplicativo do banco. A redução vale na hora.</span></li>
+<li><span><b>Débito automático</b> para as contas fixas, com vencimento logo depois do salário.</span></li>
+<li><span><b>Regra das 24 horas.</b> Compra não planejada espera um dia no carrinho.</span></li>
+<li><span><b>Segunda pessoa.</b> Empréstimo, contrato, investimento e sociedade só com a leitura de alguém de confiança.</span></li>
+<li><span><b>Pressa é sinal de golpe.</b> “Só hoje”, “última vaga” e “não conte a ninguém” encerram a conversa.</span></li>
+<li><span><b>Retorno garantido não existe.</b> Confira a empresa na CVM e no Banco Central antes de transferir.</span></li>
+<li><span><b>Nunca informe senha ou código</b> por telefone, mensagem ou link. O banco não pede.</span></li>
+</ol>
+<h2>Se já aconteceu</h2>
+<ul>
+<li><b>Golpe por Pix:</b> avise o seu banco imediatamente e peça o Mecanismo Especial de Devolução (MED). Registre boletim de ocorrência.</li>
+<li><b>Compra por impulso fora de loja física:</b> o Código de Defesa do Consumidor dá sete dias para desistir (art. 49).</li>
+<li><b>Dívida que não cabe no orçamento:</b> a Lei 14.181/2021 permite renegociar todas as dívidas de consumo de uma vez, preservando o mínimo para viver. Procure o Procon ou a Defensoria.</li>
+<li><b>Contas e empréstimos no seu nome:</b> consulte de graça o Registrato, no site do Banco Central.</li>
+</ul>
+<p class="small">Este artigo é educativo e não é recomendação de investimento.</p>
+<p class="src">Fontes: Beauchaine TP, Ben-David I, Bos M, <i>Science Advances</i>, 2020. Lei 8.078/1990. Lei 14.181/2021. Banco Central do Brasil.</p>
+<div class="related" data-rel="produtividade emocoes apoio"></div>
+<a class="back" href="#inicio">← Voltar ao início</a>
+</div></article>
+
+<article class="view art" id="relacionamentos" data-cat="vida" data-min="3"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-vida">Vida adulta</a></p>
+<h1>TDAH a dois: o que desgasta e o que protege</h1>
+<p class="dek">O esquecimento é lido como descaso. A cobrança é lida como ataque. O casal entra em um ciclo que tem saída.</p>
+<p class="meta">Leitura de 3 min · Atualizado em 10/10/2026</p>
+<h2>O ciclo mais comum</h2>
+<ol class="steps">
+<li><span>Uma pessoa esquece, atrasa ou não termina.</span></li>
+<li><span>A outra assume as tarefas e passa a cobrar.</span></li>
+<li><span>Quem tem TDAH se sente vigiado e se fecha ou explode.</span></li>
+<li><span>A relação vira a de gerente e subordinado, e o afeto diminui.</span></li>
+</ol>
+<h2>O que protege</h2>
+<ul>
+<li><b>Dar nome ao problema.</b> O adversário é o sintoma, não a pessoa.</li>
+<li><b>Dividir por aptidão.</b> Quem esquece conta não cuida de vencimento. Cuida de outra coisa, por inteiro.</li>
+<li><b>Sistemas no lugar de lembretes falados.</b> Agenda compartilhada, quadro na cozinha, débito automático.</li>
+<li><b>Reunião semanal de quinze minutos</b> para agenda e pendências, sem celular.</li>
+<li><b>Sinal de pausa</b> combinado para discussões que esquentam.</li>
+<li><b>Tratar.</b> Sintoma controlado muda o clima da casa.</li>
+</ul>
+<p>Estudos de registro mostram mais separações entre adultos com TDAH. Informação para os dois e, quando preciso, terapia de casal com profissional que conheça o transtorno reduzem esse risco.</p>
+<p class="src">Fontes: Faraone SV e cols., 2021. Barkley RA, <i>Taking Charge of Adult ADHD</i>, 2ª ed., 2021.</p>
+<div class="related" data-rel="emocoes produtividade tdah-mulheres"></div>
+<a class="back" href="#inicio">← Voltar ao início</a>
+</div></article>
+
+<!-- ===== DIREITOS ===== -->
+<article class="view art" id="trabalho" data-cat="direitos" data-min="4"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-direitos">Direitos</a></p>
+<h1>Seus direitos no trabalho, com ou sem laudo</h1>
+<p class="dek">Há uma proteção que vale para todos e outra, maior, para quem é reconhecido como pessoa com deficiência.</p>
+<p class="meta">Leitura de 4 min · Atualizado em 10/10/2026</p>
+<div class="key"><h2>Em resumo</h2><ul>
+<li>Ninguém pode barrar ou demitir você por causa de um diagnóstico.</li>
+<li>Você não é obrigado a contar o diagnóstico na entrevista.</li>
+<li>Toda pessoa com autismo é pessoa com deficiência perante a lei. No TDAH, <a href="#tdah-deficiencia">depende de avaliação</a>.</li>
+</ul></div>
+<h2>Vale para todo trabalhador</h2>
+<ul>
+<li><b>Discriminação proibida.</b> A Lei 9.029/1995 protege a entrada e a permanência no emprego. Demissão discriminatória dá direito a reintegração ou a indenização em dobro.</li>
+<li><b>Sigilo.</b> Dado de saúde é dado sensível (LGPD). O atestado só leva o código da doença com a sua autorização (Resolução CFM 1.658/2002).</li>
+<li><b>Assédio e sobrecarga são risco ocupacional.</b> Desde maio de 2026 a fiscalização da NR-1 cobra das empresas a gestão dos riscos psicossociais.</li>
+<li><b>Afastamento.</b> Se o quadro impedir o trabalho por mais de 15 dias, cabe o benefício por incapacidade temporária do INSS.</li>
+</ul>
+<h2>Para quem é reconhecido como pessoa com deficiência</h2>
+<div class="scroll-x"><table class="fit">
+<thead><tr><th>Empregados na empresa</th><th>Vagas reservadas</th></tr></thead>
+<tbody><tr><td>100 a 200</td><td>2%</td></tr><tr><td>201 a 500</td><td>3%</td></tr><tr><td>501 a 1.000</td><td>4%</td></tr><tr><td>1.001 ou mais</td><td>5%</td></tr></tbody></table></div>
+<ul>
+<li><b>Demissão condicionada.</b> O cotista só pode ser dispensado sem justa causa depois que a empresa contrata outro trabalhador com deficiência (Lei 8.213/1991, art. 93, § 1º).</li>
+<li><b>Adaptação razoável é direito.</b> Recusar é discriminação (Lei 13.146/2015, art. 4º, § 1º).</li>
+<li><b>Prioridade no teletrabalho</b> (CLT, art. 75-F) e aprendizagem sem limite de idade.</li>
+<li><b>Aposentadoria com requisitos menores</b> (LC 142/2013).</li>
+</ul>
+<h2>No serviço público</h2>
+<ul>
+<li><b>Concursos federais:</b> no mínimo 5% e até 20% das vagas, com prova adaptada e tempo adicional.</li>
+<li><b>Horário especial sem compensação,</b> com laudo de junta médica oficial (Lei 8.112/1990, art. 98, § 2º).</li>
+<li><b>Estados e municípios também.</b> O STF estendeu a regra a todos os servidores (Tema 1097).</li>
+</ul>
+<h2>Para quem cuida</h2>
+<ul>
+<li>Servidor com cônjuge, filho ou dependente com deficiência tem direito a horário especial (art. 98, § 3º, e Tema 1097).</li>
+<li>Na iniciativa privada, quem tem filho com deficiência tem prioridade em teletrabalho e jornada flexível (Lei 14.457/2022).</li>
+</ul>
+<p class="src">Fontes: textos legais no <a href="#leis">Guia das leis</a>. Última conferência: 09/10/2026.</p>
+<div class="related" data-rel="adaptacoes discriminacao tdah-deficiencia"></div>
+<a class="back" href="#inicio">← Voltar ao início</a>
+</div></article>
+
+<article class="view art" id="adaptacoes" data-cat="direitos" data-min="3"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-direitos">Direitos</a></p>
+<h1>Doze adaptações para pedir no trabalho, e como pedir</h1>
+<p class="dek">A maioria custa pouco ou nada. O pedido funciona melhor quando vem com a solução pronta.</p>
+<p class="meta">Leitura de 3 min · Atualizado em 10/10/2026</p>
+<h2>Comunicação e prazos</h2>
+<ul><li>Instruções por escrito, com prioridades numeradas.</li><li>Prazos intermediários em tarefas longas.</li><li>Pauta enviada antes da reunião.</li><li>Retorno direto, sem indiretas.</li></ul>
+<h2>Ambiente</h2>
+<ul><li>Lugar silencioso ou fone com cancelamento de ruído.</li><li>Luz estável.</li><li>Teletrabalho parcial, quando a função permite.</li><li>Aviso antecipado de mudança de rotina.</li></ul>
+<h2>Tempo e ferramentas</h2>
+<ul><li>Horário flexível de entrada e saída.</li><li>Pausas curtas programadas.</li><li>Programa de leitura em voz alta ou de ditado.</li><li>Liberdade para ficar de pé ou se mexer.</li></ul>
+<h2>Contar ou não contar?</h2>
+<p>A decisão é sua. Contar abre o caminho para adaptações formais e para a proteção da lei. Não contar preserva a privacidade. Um meio-termo comum é pedir o ajuste sem citar o diagnóstico: “Rendo mais com instruções por escrito”.</p>
+<h2>Como pedir</h2>
+<ol class="steps">
+<li><span><b>Por escrito,</b> ao gestor ou ao RH.</span></li>
+<li><span><b>Com o problema e a solução:</b> “Em sala aberta eu erro mais. Com fone, entrego no prazo.”</span></li>
+<li><span><b>Com prazo de teste:</b> “Podemos testar por 30 dias?”</span></li>
+<li><span><b>Guardando cópia</b> do pedido e da resposta.</span></li>
+</ol>
+<p class="small">São exemplos práticos, não uma lista legal. A adaptação certa é a que resolve a barreira de cada pessoa.</p>
+<div class="related" data-rel="trabalho produtividade discriminacao"></div>
+<a class="back" href="#inicio">← Voltar ao início</a>
+</div></article>
+
+<article class="view art" id="discriminacao" data-cat="direitos" data-min="2"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-direitos">Direitos</a></p>
+<h1>Sofreu discriminação? O que fazer em cinco passos</h1>
+<p class="dek">No trabalho, na escola, no serviço público ou na igreja, o roteiro é o mesmo.</p>
+<p class="meta">Leitura de 2 min · Atualizado em 10/10/2026</p>
+<ol class="steps">
+<li><span><b>Registre.</b> Guarde mensagens, e-mails, datas e nomes de testemunhas.</span></li>
+<li><span><b>Formalize.</b> Reclame por escrito ao RH, à direção ou à ouvidoria.</span></li>
+<li><span><b>Peça orientação.</b> Sindicato, Defensoria Pública ou advogado.</span></li>
+<li><span><b>Denuncie.</b> Ministério Público do Trabalho, Disque 100, Ministério Público ou delegacia. Os contatos estão em <a href="#apoio">Apoio</a>.</span></li>
+<li><span><b>Olho no prazo.</b> A ação trabalhista pode ser proposta até dois anos depois do fim do contrato e alcança os últimos cinco (Constituição, art. 7º, XXIX).</span></li>
+</ol>
+<div class="note alert" id="crime"><b class="t">Quando é crime</b>Praticar, induzir ou incitar discriminação contra pessoa por causa de deficiência: reclusão de 1 a 3 anos e multa. Por meio de comunicação social ou de publicação de qualquer natureza: 2 a 5 anos (Lei 13.146/2015, art. 88). Recusar matrícula por deficiência também é crime (Lei 7.853/1989, art. 8º).</div>
+<div class="related" data-rel="trabalho leis apoio"></div>
+<a class="back" href="#inicio">← Voltar ao início</a>
+</div></article>
+
+<article class="view art" id="tdah-deficiencia" data-cat="direitos" data-min="2"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-direitos">Direitos</a></p>
+<h1>TDAH é deficiência perante a lei?</h1>
+<p class="dek">Hoje, na lei federal, a resposta é: depende de avaliação caso a caso.</p>
+<p class="meta">Leitura de 2 min · Atualizado em 10/10/2026</p>
+<div class="scroll-x"><table>
+<thead><tr><th>Condição</th><th>Situação</th><th>Base</th></tr></thead>
+<tbody>
+<tr><td><b>Autismo</b></td><td>Pessoa com deficiência para todos os efeitos legais, sempre.</td><td>Lei 12.764/2012</td></tr>
+<tr><td><b>TDAH, dislexia, Tourette</b></td><td>Não é automático. Reconhecimento possível mediante avaliação biopsicossocial que comprove impedimento de longo prazo somado a barreiras.</td><td>Lei 13.146/2015, art. 2º</td></tr>
+</tbody></table></div>
+<h2>O que pode mudar</h2>
+<ul>
+<li><b>PL 4.225/2023:</b> aprovado por unanimidade na Câmara em 17/06/2026 e em análise no Senado. Cria uma política nacional para transtornos do neurodesenvolvimento, garante adaptações em provas e concursos e mantém a avaliação caso a caso para equiparar à deficiência.</li>
+<li><b>PL 479/2025:</b> propõe o reconhecimento direto do TDAH como deficiência. Tramita na Câmara.</li>
+<li><b>Nos estados:</b> Mato Grosso tem política estadual para TDAH (Lei 12.895/2025). No Ceará há projetos em tramitação.</li>
+</ul>
+<div class="note"><b class="t">Na prática</b>Sem o status de pessoa com deficiência você continua protegido contra discriminação, tem direito a sigilo e pode pedir adaptações. Com o status, entram cotas, demissão condicionada e os demais direitos da Lei Brasileira de Inclusão.</div>
+<p class="src">Fontes: textos legais no <a href="#leis">Guia das leis</a>. Senado Federal, tramitação do PL 4.225/2023, consultada em 18/10/2026.</p>
+<div class="related" data-rel="leis trabalho discriminacao"></div>
+<a class="back" href="#inicio">← Voltar ao início</a>
+</div></article>
+
+<article class="view art" id="leis" data-cat="direitos" data-min="5"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-direitos">Direitos</a></p>
+<h1>Guia das leis: o que vale hoje e o que ainda é projeto</h1>
+<p class="dek">36 leis, decisões e projetos. A proteção é forte para o autismo, parcial para TDAH e dislexia, e projeto de lei não é lei.</p>
+<p class="meta">Conferido em 09/10/2026 · Abra o link oficial antes de citar em processo</p>
+<span class="flabel" id="lbl-s">Mostrar</span>
+<div class="chips" role="group" aria-labelledby="lbl-s" id="chips-s">
+<button class="chip" type="button" data-s="top" aria-pressed="true">As 8 essenciais</button>
+<button class="chip" type="button" data-s="todas" aria-pressed="false">Todas</button>
+<button class="chip" type="button" data-s="vigor" aria-pressed="false">Em vigor</button>
+<button class="chip" type="button" data-s="norma" aria-pressed="false">Decisão ou norma</button>
+<button class="chip" type="button" data-s="projeto" aria-pressed="false">Projeto de lei</button>
+<button class="chip" type="button" data-s="estadual" aria-pressed="false">Estadual</button>
+</div>
+<span class="flabel" id="lbl-t">Tema</span>
+<div class="chips" role="group" aria-labelledby="lbl-t" id="chips-t">
+<button class="chip" type="button" data-t="todos" aria-pressed="true">Todos</button>
+<button class="chip" type="button" data-t="tdah" aria-pressed="false">TDAH</button>
+<button class="chip" type="button" data-t="tea" aria-pressed="false">Autismo</button>
+<button class="chip" type="button" data-t="trabalho" aria-pressed="false">Trabalho</button>
+<button class="chip" type="button" data-t="educacao" aria-pressed="false">Educação</button>
+<button class="chip" type="button" data-t="saude" aria-pressed="false">Saúde</button>
+<button class="chip" type="button" data-t="discriminacao" aria-pressed="false">Discriminação</button>
+<button class="chip" type="button" data-t="fe" aria-pressed="false">Fé</button>
+</div>
+<p class="small" id="contagem" aria-live="polite">Toque em um item para abrir.</p>
+<div id="lista">
+<details class="qa law" data-s="vigor top" data-t="discriminacao trabalho educacao saude tea tdah"><summary><span class="pill vigor">Em vigor</span> <span class="lid">Lei 13.146/2015</span> · Lei Brasileira de Inclusão</summary><div class="in"><p>Define deficiência com avaliação biopsicossocial (art. 2º). Recusar adaptação razoável é discriminação (art. 4º, § 1º). Escola particular não pode cobrar a mais (art. 28, § 1º). Trabalho sem discriminação na seleção, na permanência e na promoção (art. 34). Discriminar é crime: 1 a 3 anos de reclusão (art. 88).</p><a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13146.htm" target="_blank" rel="noopener">Texto no Planalto</a></div></details>
+<details class="qa law" data-s="vigor top" data-t="tea educacao saude trabalho discriminacao"><summary><span class="pill vigor">Em vigor</span> <span class="lid">Lei 12.764/2012</span> · Lei Berenice Piana (autismo)</summary><div class="in"><p>Autismo é deficiência para todos os efeitos legais. Garante diagnóstico precoce, atendimento multiprofissional, acompanhante especializado em sala quando comprovada a necessidade e acesso a plano de saúde. Gestor que recusa matrícula paga multa de 3 a 20 salários mínimos.</p><a href="https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12764.htm" target="_blank" rel="noopener">Texto no Planalto</a></div></details>
+<details class="qa law" data-s="vigor top" data-t="tdah educacao saude"><summary><span class="pill vigor">Em vigor</span> <span class="lid">Lei 14.254/2021</span> · Apoio escolar para TDAH e dislexia</summary><div class="in"><p>Programa público com identificação precoce, encaminhamento para diagnóstico, apoio na escola e apoio terapêutico na saúde. Prevê formação de professores.</p><a href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14254.htm" target="_blank" rel="noopener">Texto no Planalto</a></div></details>
+<details class="qa law" data-s="vigor top" data-t="trabalho discriminacao tdah"><summary><span class="pill vigor">Em vigor</span> <span class="lid">Lei 9.029/1995</span> · Proibido discriminar no emprego</summary><div class="in"><p>Proíbe discriminar para admitir ou manter alguém no trabalho por deficiência, reabilitação, idade e outros motivos. A lista é aberta. Demissão discriminatória: reintegração ou indenização em dobro (art. 4º).</p><a href="https://www.planalto.gov.br/ccivil_03/leis/l9029.htm" target="_blank" rel="noopener">Texto no Planalto</a></div></details>
+<details class="qa law" data-s="vigor top" data-t="trabalho"><summary><span class="pill vigor">Em vigor</span> <span class="lid">Lei 8.213/1991, art. 93</span> · Lei de Cotas</summary><div class="in"><p>Empresa com 100 ou mais empregados reserva de 2% a 5% das vagas. O cotista só pode ser dispensado sem justa causa depois da contratação de outro trabalhador com deficiência.</p><a href="https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm" target="_blank" rel="noopener">Texto no Planalto</a></div></details>
+<details class="qa law" data-s="norma top" data-t="trabalho tea"><summary><span class="pill norma">Decisão do STF</span> <span class="lid">Tema 1097</span> · Horário especial para servidor estadual e municipal</summary><div class="in"><p>Em 2022 o Supremo estendeu a servidores de estados e municípios o art. 98, §§ 2º e 3º, da Lei 8.112/1990. Vale para o servidor com deficiência e para quem tem filho ou dependente com deficiência, mesmo sem lei local.</p><a href="https://portal.stf.jus.br/jurisprudenciaRepercussao/tema.asp?num=1097" target="_blank" rel="noopener">Tema no portal do STF</a></div></details>
+<details class="qa law" data-s="vigor top" data-t="tea tdah discriminacao"><summary><span class="pill vigor">Em vigor</span> <span class="lid">Lei 14.624/2023</span> · Cordão de girassol</summary><div class="in"><p>Símbolo nacional de identificação de pessoas com deficiências ocultas. Uso opcional. Não substitui documento quando ele for pedido.</p><a href="https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14624.htm" target="_blank" rel="noopener">Texto no Planalto</a></div></details>
+<details class="qa law" data-s="projeto top" data-t="tdah educacao saude trabalho"><summary><span class="pill projeto">No Senado</span> <span class="lid">PL 4.225/2023</span> · Política nacional para transtornos do neurodesenvolvimento</summary><div class="in"><p><b>Ainda não é lei.</b> Aprovado por unanimidade na Câmara em 17/06/2026; no Senado desde julho de 2026, aguardando despacho. Prevê identificação precoce, plano educacional individualizado, adaptações em provas, concursos e seleções, e o Dia Nacional de Conscientização sobre o TDAH em 13 de julho. A equiparação à deficiência depende de avaliação biopsicossocial.</p><a href="https://www25.senado.leg.br/web/atividade/materias/-/materia/175222" target="_blank" rel="noopener">Acompanhar no Senado</a></div></details>
+<details class="qa law" data-s="vigor" data-t="discriminacao trabalho educacao fe"><summary><span class="pill vigor">Em vigor</span> <span class="lid">CF/1988</span> · Constituição Federal</summary><div class="in"><p>Proíbe discriminação (art. 3º, IV). Garante liberdade de crença (art. 5º, VI). Proíbe discriminar o trabalhador com deficiência (art. 7º, XXXI). Reserva cargos públicos (art. 37, VIII). Garante atendimento educacional especializado (art. 208, III).</p><a href="https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm" target="_blank" rel="noopener">Texto no Planalto</a></div></details>
+<details class="qa law" data-s="vigor" data-t="discriminacao trabalho educacao saude"><summary><span class="pill vigor">Em vigor</span> <span class="lid">Decreto 6.949/2009</span> · Convenção da ONU</summary><div class="in"><p>Tem força de emenda constitucional. Traz o modelo social da deficiência e o direito à adaptação razoável.</p><a href="https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2009/decreto/d6949.htm" target="_blank" rel="noopener">Texto no Planalto</a></div></details>
+<details class="qa law" data-s="vigor" data-t="tea"><summary><span class="pill vigor">Em vigor</span> <span class="lid">Lei 13.977/2020</span> · Lei Romeo Mion</summary><div class="in"><p>Cria a Ciptea, carteira gratuita de identificação da pessoa com autismo, válida por cinco anos.</p><a href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2020/lei/l13977.htm" target="_blank" rel="noopener">Texto no Planalto</a></div></details>
+<details class="qa law" data-s="vigor" data-t="tdah saude"><summary><span class="pill vigor">Em vigor</span> <span class="lid">Lei 14.420/2022</span> · Semana Nacional do TDAH</summary><div class="in"><p>Todo ano, na semana do dia 1º de agosto.</p><a href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2022/lei/L14420.htm" target="_blank" rel="noopener">Texto no Planalto</a></div></details>
+<details class="qa law" data-s="vigor" data-t="tea"><summary><span class="pill vigor">Em vigor</span> <span class="lid">Lei 14.626/2023</span> · Atendimento prioritário para autistas</summary><div class="in"><p>Inclui as pessoas com autismo no atendimento prioritário em repartições, bancos e serviços.</p><a href="https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14626.htm" target="_blank" rel="noopener">Texto no Planalto</a></div></details>
+<details class="qa law" data-s="vigor" data-t="tea trabalho"><summary><span class="pill vigor">Em vigor</span> <span class="lid">Lei 14.992/2024</span> · Autismo e mercado de trabalho</summary><div class="in"><p>Liga o cadastro nacional de pessoas com autismo ao Sine para intermediar vagas e contratos de aprendizagem.</p><a href="https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/lei/l14992.htm" target="_blank" rel="noopener">Texto no Planalto</a></div></details>
+<details class="qa law" data-s="vigor" data-t="tea saude"><summary><span class="pill vigor">Em vigor</span> <span class="lid">Lei 15.131/2025</span> · Terapia nutricional no autismo</summary><div class="in"><p>Acrescenta à Lei Berenice Piana o direito à nutrição adequada e à terapia nutricional.</p><a href="https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15131.htm" target="_blank" rel="noopener">Texto no Planalto</a></div></details>
+<details class="qa law" data-s="vigor" data-t="tea saude"><summary><span class="pill vigor">Em vigor</span> <span class="lid">Lei 15.256/2025</span> · Diagnóstico de autismo em adultos e idosos</summary><div class="in"><p>Incentiva a investigação de autismo em adultos e idosos.</p><a href="https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15256.htm" target="_blank" rel="noopener">Texto no Planalto</a></div></details>
+<details class="qa law" data-s="vigor" data-t="trabalho"><summary><span class="pill vigor">Em vigor</span> <span class="lid">Lei 8.112/1990</span> · Servidor público federal</summary><div class="in"><p>Até 20% das vagas de concurso (art. 5º, § 2º). Horário especial sem compensação, com laudo de junta médica oficial (art. 98, § 2º), também para quem tem cônjuge, filho ou dependente com deficiência (§ 3º).</p><a href="https://www.planalto.gov.br/ccivil_03/leis/l8112cons.htm" target="_blank" rel="noopener">Texto no Planalto</a></div></details>
+<details class="qa law" data-s="norma" data-t="trabalho"><summary><span class="pill norma">Norma</span> <span class="lid">Decreto 9.508/2018</span> · Concursos federais</summary><div class="in"><p>Mínimo de 5% das vagas, com adaptação das provas e tempo adicional.</p><a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/decreto/d9508.htm" target="_blank" rel="noopener">Texto no Planalto</a></div></details>
+<details class="qa law" data-s="vigor" data-t="trabalho"><summary><span class="pill vigor">Em vigor</span> <span class="lid">CLT, arts. 75-F e 428</span> · Teletrabalho e aprendizagem</summary><div class="in"><p>Prioridade no teletrabalho para empregados com deficiência e com filhos de até 4 anos. Aprendizagem sem limite de idade para a pessoa com deficiência.</p><a href="https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm" target="_blank" rel="noopener">Texto no Planalto</a></div></details>
+<details class="qa law" data-s="vigor" data-t="trabalho"><summary><span class="pill vigor">Em vigor</span> <span class="lid">Lei 14.457/2022</span> · Jornada flexível para quem cuida</summary><div class="in"><p>Prioridade no teletrabalho (art. 7º) e na flexibilização da jornada, como horário flexível de entrada e saída (art. 8º), para quem tem filho de até 6 anos ou filho com deficiência.</p><a href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2022/lei/l14457.htm" target="_blank" rel="noopener">Texto no Planalto</a></div></details>
+<details class="qa law" data-s="vigor" data-t="trabalho"><summary><span class="pill vigor">Em vigor</span> <span class="lid">LC 142/2013</span> · Aposentadoria da pessoa com deficiência</summary><div class="in"><p>Reduz tempo de contribuição ou idade, conforme o grau da deficiência.</p><a href="https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp142.htm" target="_blank" rel="noopener">Texto no Planalto</a></div></details>
+<details class="qa law" data-s="vigor" data-t="saude"><summary><span class="pill vigor">Em vigor</span> <span class="lid">Lei 8.742/1993, art. 20</span> · BPC</summary><div class="in"><p>Um salário mínimo por mês para a pessoa com deficiência de baixa renda, após avaliação do INSS.</p><a href="https://www.planalto.gov.br/ccivil_03/leis/l8742.htm" target="_blank" rel="noopener">Texto no Planalto</a></div></details>
+<details class="qa law" data-s="vigor" data-t="educacao"><summary><span class="pill vigor">Em vigor</span> <span class="lid">LDB 9.394/1996</span> · Educação especial e altas habilidades</summary><div class="in"><p>Atende alunos com deficiência, transtornos globais do desenvolvimento e altas habilidades (arts. 58 a 59-A).</p><a href="https://www.planalto.gov.br/ccivil_03/leis/l9394.htm" target="_blank" rel="noopener">Texto no Planalto</a></div></details>
+<details class="qa law" data-s="vigor" data-t="educacao"><summary><span class="pill vigor">Em vigor</span> <span class="lid">Lei 13.935/2019</span> · Psicologia e serviço social na escola pública</summary><div class="in"><p>As redes públicas de educação básica devem contar com esses serviços.</p><a href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/lei/l13935.htm" target="_blank" rel="noopener">Texto no Planalto</a></div></details>
+<details class="qa law" data-s="vigor" data-t="educacao discriminacao fe"><summary><span class="pill vigor">Em vigor</span> <span class="lid">Lei 13.010/2014</span> · Lei Menino Bernardo</summary><div class="in"><p>Criança e adolescente têm direito de ser educados sem castigo físico, em casa, na escola e em qualquer instituição.</p><a href="https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l13010.htm" target="_blank" rel="noopener">Texto no Planalto</a></div></details>
+<details class="qa law" data-s="vigor" data-t="trabalho saude discriminacao tdah"><summary><span class="pill vigor">Em vigor</span> <span class="lid">Lei 13.709/2018</span> · LGPD: diagnóstico é dado sensível</summary><div class="in"><p>Informação de saúde só pode ser tratada nas hipóteses do art. 11. Empresa, escola ou igreja não pode expor o seu diagnóstico.</p><a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm" target="_blank" rel="noopener">Texto no Planalto</a></div></details>
+<details class="qa law" data-s="vigor" data-t="fe discriminacao"><summary><span class="pill vigor">Em vigor</span> <span class="lid">Lei 7.716/1989</span> · Crimes de preconceito, inclusive religioso</summary><div class="in"><p>Discriminar por raça, cor, etnia, religião ou procedência nacional é crime (art. 20). O respeito vale nos dois sentidos.</p><a href="https://www.planalto.gov.br/ccivil_03/leis/l7716.htm" target="_blank" rel="noopener">Texto no Planalto</a></div></details>
+<details class="qa law" data-s="norma" data-t="trabalho discriminacao"><summary><span class="pill norma">Jurisprudência</span> <span class="lid">TST, Súmula 443</span> · Demissão discriminatória presumida</summary><div class="in"><p>Presume-se discriminatória a demissão de empregado com doença grave que cause estigma. Para transtornos mentais e do neurodesenvolvimento, a aplicação é caso a caso.</p></div></details>
+<details class="qa law" data-s="norma" data-t="trabalho saude"><summary><span class="pill norma">Norma</span> <span class="lid">NR-1</span> · Riscos psicossociais no trabalho</summary><div class="in"><p>Desde 26/05/2026 a fiscalização cobra das empresas a gestão de fatores como assédio e sobrecarga.</p></div></details>
+<details class="qa law" data-s="norma" data-t="tdah saude"><summary><span class="pill norma">Norma</span> <span class="lid">Portaria Conjunta 14/2022</span> · Protocolo do SUS para TDAH</summary><div class="in"><p>Orienta diagnóstico e tratamento não medicamentoso. Os estimulantes não entraram na lista federal do SUS.</p><a href="https://www.gov.br/conitec/pt-br/midias/protocolos/portariaconjuntan14pcdttranstornododeficitdeatencaocomhiperatividadetdah.pdf" target="_blank" rel="noopener">Protocolo na Conitec (PDF)</a></div></details>
+<details class="qa law" data-s="norma" data-t="saude tea tdah"><summary><span class="pill norma">Norma</span> <span class="lid">ANS, RN 539 e 541/2022</span> · Plano de saúde sem limite de sessões</summary><div class="in"><p>Sem limite para psicologia, fonoaudiologia, terapia ocupacional e fisioterapia. No autismo, o plano cobre o método indicado pelo médico.</p></div></details>
+<details class="qa law" data-s="projeto" data-t="tdah saude educacao trabalho"><summary><span class="pill projeto">Na Câmara</span> <span class="lid">PL 2.630/2021</span> · Política nacional de proteção da pessoa com TDAH</summary><div class="in"><p><b>Ainda não é lei.</b> Parecer aprovado na Comissão de Finanças e Tributação em 09/06/2026.</p><a href="https://www.camara.leg.br/propostas-legislativas/2291884" target="_blank" rel="noopener">Acompanhar na Câmara</a></div></details>
+<details class="qa law" data-s="projeto" data-t="tdah saude educacao discriminacao"><summary><span class="pill projeto">Na Câmara</span> <span class="lid">PL 479/2025</span> · TDAH como deficiência para todos os efeitos</summary><div class="in"><p><b>Ainda não é lei.</b> Propõe reconhecimento direto, proíbe exclusão de planos de saúde e multa a escola que recusar matrícula.</p><a href="https://www.congressoemfoco.com.br/noticia/107467/deputado-propoe-que-tdah-seja-reconhecido-como-deficiencia" target="_blank" rel="noopener">Notícia no Congresso em Foco</a></div></details>
+<details class="qa law" data-s="projeto" data-t="tdah saude"><summary><span class="pill projeto">Na Câmara</span> <span class="lid">PL 6.002/2025</span> · Tratamento integral do TDAH no SUS</summary><div class="in"><p><b>Ainda não é lei.</b> Propõe tratamento integral com equipe multidisciplinar.</p><a href="https://www.folhavitoria.com.br/inclusao/sus-podera-ofertar-tratamento-integral-para-tdah-em-todo-o-pais/" target="_blank" rel="noopener">Notícia na Folha Vitória</a></div></details>
+<details class="qa law" data-s="estadual" data-t="tdah saude educacao trabalho"><summary><span class="pill estadual">Estadual</span> <span class="lid">MT · Lei 12.895/2025</span> · Política estadual para TDAH</summary><div class="in"><p>Atenção integral à saúde e estímulo à inserção no trabalho. Em Santa Catarina, a Lei 19.321/2025 garante atendimento especializado em concursos e vestibulares estaduais.</p><a href="https://www.al.mt.gov.br/norma-juridica/urn:lex:br;mato.grosso:estadual:lei.ordinaria:2025-06-05;12895/gerar-pdf-redacao" target="_blank" rel="noopener">Texto na Assembleia de MT</a></div></details>
+<details class="qa law" data-s="estadual projeto" data-t="tdah saude educacao trabalho"><summary><span class="pill projeto">Em tramitação</span> <span class="lid">CE · projetos</span> · Ceará: TDAH como deficiência e proteção à neurodiversidade</summary><div class="in"><p><b>Ainda não são lei.</b> Um projeto de 2026 reconhece o TDAH como deficiência no estado; o PL 258/2024 traz diretrizes de proteção à neurodiversidade. Confira o andamento antes de citar.</p><a href="https://www2.al.ce.gov.br/legislativo/tramit2024/pl258_24.pdf" target="_blank" rel="noopener">PL 258/2024 (PDF)</a></div></details>
+</div>
+<p class="result" id="vazio" hidden>Nada com esses filtros. Toque em “Todas”.</p>
+<div class="related" data-rel="tdah-deficiencia trabalho escola"></div>
+<a class="back" href="#inicio">← Voltar ao início</a>
+</div></article>
+
+<!-- ===== FAMÍLIA E ESCOLA ===== -->
+<article class="view art" id="escola" data-cat="familia" data-min="3"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-familia">Família e escola</a></p>
+<h1>Direitos na escola: matrícula, apoio e provas</h1>
+<p class="dek">O que a escola é obrigada a fazer e como cobrar por escrito.</p>
+<p class="meta">Leitura de 3 min · Atualizado em 10/10/2026</p>
+<div class="key"><h2>Em resumo</h2><ul>
+<li>Escola não pode recusar matrícula nem cobrar a mais.</li>
+<li>Para TDAH e dislexia, a escola deve identificar cedo, encaminhar e apoiar.</li>
+<li>Castigo físico é proibido em casa e na escola.</li>
+</ul></div>
+<ul>
+<li><b>Matrícula garantida.</b> Recusar aluno por deficiência é crime (Lei 7.853/1989, art. 8º). No autismo, o gestor ainda paga multa de 3 a 20 salários mínimos.</li>
+<li><b>Sem taxa extra</b> em escola particular (Lei 13.146/2015, art. 28, § 1º).</li>
+<li><b>TDAH e dislexia:</b> identificação precoce, encaminhamento e apoio pedagógico (Lei 14.254/2021).</li>
+<li><b>Autismo:</b> acompanhante especializado em sala, quando comprovada a necessidade (Lei 12.764/2012).</li>
+<li><b>Plano individual:</b> peça por escrito um plano educacional individualizado, com as adaptações combinadas.</li>
+<li><b>Enem:</b> o edital prevê atendimento especializado e tempo adicional mediante laudo.</li>
+<li><b>Altas habilidades:</b> também são público da educação especial (LDB, arts. 58 a 59-A).</li>
+</ul>
+<h2>Se a escola negar</h2>
+<ol class="steps">
+<li><span>Faça o pedido por escrito e guarde o protocolo.</span></li>
+<li><span>Procure a Secretaria de Educação.</span></li>
+<li><span>Sem resposta, leve o caso ao Ministério Público ou à Defensoria Pública.</span></li>
+</ol>
+<div class="related" data-rel="leis perfis fe-frases"></div>
+<a class="back" href="#inicio">← Voltar ao início</a>
+</div></article>
+
+<!-- ===== FÉ E ESTIGMA ===== -->
+<article class="view art" id="fe-frases" data-cat="fe" data-min="3"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-fe">Fé e estigma</a></p>
+<h1>“Isso é falta de fé”: oito frases que ferem e como responder</h1>
+<p class="dek">Respostas curtas e respeitosas, para usar em família e na comunidade religiosa.</p>
+<p class="meta">Leitura de 3 min · Atualizado em 10/10/2026</p>
+<details class="qa" open><summary>“Isso é falta de fé.”</summary><div class="in"><p>Fé não corrige miopia, e ninguém acusa de pouca fé quem usa óculos. Dá para orar e tratar. Uma coisa não exclui a outra.</p></div></details>
+<details class="qa"><summary>“É falta de disciplina. No meu tempo, resolvia na vara.”</summary><div class="in"><p>O TDAH tem de 70 a 80% de herança genética. Castigo físico não trata e é proibido por lei. O que funciona é rotina, apoio e, quando indicado, tratamento.</p></div></details>
+<details class="qa"><summary>“Isso é espírito. Tem que expulsar.”</summary><div class="in"><p>Autismo e TDAH são condições do neurodesenvolvimento reconhecidas pela Organização Mundial da Saúde. Tratar a condição de alguém como possessão humilha a pessoa e pode ser discriminação, que é crime.</p></div></details>
+<details class="qa"><summary>“Deus já curou. Pode parar o remédio.”</summary><div class="in"><p>Só o médico que acompanha suspende ou ajusta medicação. Parar por conta própria traz risco real. Quem tem fé também toma insulina e antibiótico.</p></div></details>
+<details class="qa"><summary>“Na minha época não existia isso.”</summary><div class="in"><p>Existia. Não tinha nome. A primeira descrição médica é de 1775.</p></div></details>
+<details class="qa"><summary>“Todo mundo é um pouco TDAH.”</summary><div class="in"><p>Todo mundo se distrai. O transtorno existe quando isso é persistente, vem da infância e prejudica mais de uma área da vida.</p></div></details>
+<details class="qa"><summary>“Essa criança atrapalha o culto.”</summary><div class="in"><p>Uma comunidade em que não cabe uma criança inquieta está pequena demais. Dá para adaptar: lugar perto da saída, sala tranquila, objeto para ocupar as mãos.</p></div></details>
+<details class="qa"><summary>“Você não parece autista.”</summary><div class="in"><p>Autismo não tem cara. Muita gente aprende a camuflar o tempo todo e paga caro por isso, em cansaço e em saúde mental.</p></div></details>
+<div class="related" data-rel="fe-escrituras fe-guia mitos"></div>
+<a class="back" href="#inicio">← Voltar ao início</a>
+</div></article>
+
+<article class="view art" id="fe-escrituras" data-cat="fe" data-min="4"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-fe">Fé e estigma</a></p>
+<h1>Por que as escrituras não falam de TDAH nem de autismo</h1>
+<p class="dek">O nome não existia. As pessoas existiam. O silêncio dos textos abriu espaço para rótulos morais que duram até hoje.</p>
+<p class="meta">Leitura de 4 min · Atualizado em 10/10/2026</p>
+<div class="key"><h2>Em resumo</h2><ul>
+<li>Este texto não é contra religião nenhuma. É contra tratar condição do cérebro como pecado, castigo, possessão ou falta de fé.</li>
+<li>Os textos sagrados não condenam a pessoa neurodivergente. Eles não a nomeiam.</li>
+<li>As mesmas escrituras trazem princípios claros de dignidade e de inclusão.</li>
+</ul></div>
+<h2>Três razões para o silêncio</h2>
+<ol class="steps">
+<li><span><b>A categoria é recente.</b> Os textos bíblicos têm de 1.900 a 3.000 anos. A primeira descrição médica da desatenção é de 1775. O autismo entrou na medicina no século XX.</span></li>
+<li><span><b>O comportamento recebia nome moral.</b> Quem não parava, esquecia ou se distraía era chamado de preguiçoso, insensato ou rebelde.</span></li>
+<li><span><b>Diferença invisível não entra em registro antigo.</b> Cegueira, surdez e paralisia aparecem nos textos. Diferenças de atenção e de interação, não.</span></li>
+</ol>
+<p>Quando falta nome, sobra julgamento. Esse é o custo do silêncio, e ele ainda é pago em muitas famílias e comunidades.</p>
+<h2>O que os textos dizem que protege</h2>
+<div class="scroll-x"><table class="fit">
+<thead><tr><th>Referência</th><th>Ideia central</th></tr></thead>
+<tbody>
+<tr><td>Gênesis 1:27</td><td>Toda pessoa é criada à imagem de Deus. A dignidade não depende de desempenho.</td></tr>
+<tr><td>Êxodo 4:10–12</td><td>Moisés diz ter dificuldade para falar e mesmo assim é escolhido.</td></tr>
+<tr><td>Levítico 19:14</td><td>Proíbe amaldiçoar o surdo e pôr tropeço diante do cego. Tirar barreiras é dever de quem pode.</td></tr>
+<tr><td>1 Samuel 16:7</td><td>As pessoas olham a aparência; Deus olha o coração.</td></tr>
+<tr><td>Salmo 139:13–14</td><td>A pessoa é formada de modo admirável desde o ventre.</td></tr>
+<tr><td>João 9:1–3</td><td>Perguntam se a cegueira de um homem era castigo por pecado. A resposta é não.</td></tr>
+<tr><td>1 Coríntios 12:12–26</td><td>A comunidade é um corpo de membros diferentes, e os que parecem mais fracos são necessários.</td></tr>
+<tr><td>Lucas 14:12–14</td><td>O convite é chamar para a mesa quem costuma ficar de fora.</td></tr>
+<tr><td>Alcorão 80:1–10</td><td>O texto repreende quem deu as costas a um homem cego que buscava aprender.</td></tr>
+</tbody></table></div>
+<p class="small">Passagens resumidas com palavras próprias. Leia cada uma na tradução da sua tradição.</p>
+<h2>Textos usados para ferir</h2>
+<ul>
+<li><b>“Vara da correção”</b> (Provérbios 22:15; 23:13): já serviu para justificar surra em criança inquieta. Castigo físico não trata TDAH e é proibido pela Lei 13.010/2014.</li>
+<li><b>“O preguiçoso”</b> (Provérbios 6:6–11): aplicado a quem tem dificuldade de começar e de terminar tarefas. No TDAH isso é disfunção executiva, não má vontade.</li>
+<li><b>Relatos de possessão</b> (Marcos 9): usados como modelo para “expulsar” autismo, embora muitos estudiosos leiam ali um quadro de epilepsia.</li>
+</ul>
+<div class="note"><b class="t">Convicção de quem criou este site</b>Acredito que esses traços acompanham a humanidade desde o começo, que nenhuma escritura chamou essas pessoas pelo nome e que esse silêncio custou séculos de julgamento. Acredito que, se toda pessoa é imagem de Deus, elas também são, por inteiro. Isto é convicção de fé, não resultado de pesquisa: a genética não coloca ninguém mais perto nem mais longe da origem. Veja <a href="#genes">o que a ciência sustenta</a>.</div>
+<p class="src">Fontes: Barkley RA, Peters H, 2012. “A desqualificação do autista pelo discurso religioso”, revista <a href="https://revistas.metodista.br/index.php/psicologoinformacao/article/download/1078/1451/5240" target="_blank" rel="noopener">Psicólogo inFormação</a>, Universidade Metodista.</p>
+<div class="related" data-rel="fe-frases fe-guia genes"></div>
+<a class="back" href="#inicio">← Voltar ao início</a>
+</div></article>
+
+<article class="view art" id="fe-guia" data-cat="fe" data-min="3"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-fe">Fé e estigma</a></p>
+<h1>Guia de acolhimento para comunidades de fé</h1>
+<p class="dek">Dez práticas para igrejas, paróquias, centros espíritas, terreiros, sinagogas, mesquitas e templos.</p>
+<p class="meta">Leitura de 3 min · Atualizado em 18/10/2026</p>
+<div class="key"><h2>Por que importa</h2><ul>
+<li>Em pesquisa com 416 famílias de crianças com deficiência nos Estados Unidos, um terço trocou de comunidade religiosa porque o filho não foi incluído.</li>
+<li>No Brasil, em 2024, a imprensa noticiou um culto em que o pregador tratou o autismo como “invenção” e falou em “expulsar o espírito maligno” de crianças. Dias depois, ele se retratou.</li>
+<li>Também há bons exemplos: ministérios de inclusão, catequese inclusiva e seminários de acessibilidade com milhares de participantes.</li>
+</ul></div>
+<ol class="steps">
+<li><span><b>Pergunte</b> à pessoa ou à família o que ajuda.</span></li>
+<li><span><b>Permita movimento:</b> levantar, andar, ficar no fundo.</span></li>
+<li><span><b>Reserve um espaço tranquilo</b> para quem precisa se regular.</span></li>
+<li><span><b>Reduza estímulos</b> em pelo menos um encontro: som mais baixo, luz estável, abraço só para quem quer.</span></li>
+<li><span><b>Avise a programação</b> com antecedência.</span></li>
+<li><span><b>Forme quem ensina</b> crianças e jovens.</span></li>
+<li><span><b>Nunca trate diagnóstico</b> como pecado, castigo, possessão ou falta de fé.</span></li>
+<li><span><b>Nunca oriente</b> suspender tratamento.</span></li>
+<li><span><b>Dê função e voz.</b> Incluir não é só tolerar a presença.</span></li>
+<li><span><b>Reconheça o cordão de girassol,</b> sinal de deficiência oculta (Lei 14.624/2023).</span></li>
+</ol>
+<div class="note alert"><b class="t">Quando o preconceito vira crime</b>Discriminar pessoa por causa de deficiência dá reclusão de 1 a 3 anos, ou de 2 a 5 se for por meio de comunicação ou publicação (Lei 13.146/2015, art. 88). A liberdade religiosa protege a crença e o culto. Não protege a humilhação de ninguém. A intolerância contra religiões também é crime (Lei 7.716/1989).</div>
+<p class="src">Fontes: Ault MJ, Collins BC, Carter EW, 2013, em <a href="https://www.christiancentury.org/print/pdf/node/19588" target="_blank" rel="noopener">The Christian Century</a>. <a href="https://jornaldebrasilia.com.br/noticias/brasil/em-fala-capacitista-pastor-diz-que-autismo-nao-existe/" target="_blank" rel="noopener">Jornal de Brasília</a>, 2024. <a href="https://www.agazeta.com.br/conteudo-de-marca/unindo-ciencia-e-fe-igreja-crista-maranata-realiza-seminario-de-acessibilidade-0425" target="_blank" rel="noopener">A Gazeta</a>, 2025.</p>
+<div class="related" data-rel="fe-frases fe-escrituras discriminacao"></div>
+<a class="back" href="#inicio">← Voltar ao início</a>
+</div></article>
+
+<!-- ===== PESQUISA ===== -->
+<article class="view art" id="genes" data-cat="ciencia" data-min="4"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-ciencia">Pesquisa</a></p>
+<h1>Genes antigos: o que a ciência diz sobre a origem do TDAH</h1>
+<p class="dek">Há dados reais por trás da ideia do “cérebro de caçador”. Há também limites que precisam ser ditos.</p>
+<p class="meta">Leitura de 4 min · Atualizado em 10/10/2026</p>
+<div class="key"><h2>Em resumo</h2><ul>
+<li>Fato: o TDAH é fortemente genético, e as variantes ligadas a ele são muito antigas.</li>
+<li>Hipótese: esses traços ajudavam quem explorava e coletava.</li>
+<li>Sem base: a ideia de que alguém seja “mais primitivo” ou mais próximo da origem humana.</li>
+</ul></div>
+<div class="scroll-x"><table>
+<thead><tr><th>Afirmação</th><th>O que os estudos mostram</th><th>Evidência</th></tr></thead>
+<tbody>
+<tr><td><b>“O TDAH é genético.”</b></td><td>Herdabilidade de 70 a 80% em gêmeos. São milhares de variantes de efeito pequeno. O maior estudo, com 38.691 pessoas com TDAH, encontrou 27 regiões do genoma associadas.</td><td><span class="pill forte">Forte</span></td></tr>
+<tr><td><b>“As variantes são muito antigas.”</b></td><td>Em DNA antigo, o alelo de risco tende a ser a versão ancestral. A frequência dessas variantes cai de forma contínua desde o Paleolítico, em amostras de 45.000 anos até hoje.</td><td><span class="pill moderada">Moderada</span></td></tr>
+<tr><td><b>“Há herança dos neandertais.”</b></td><td>Os trechos de DNA herdados dos neandertais são mais ricos em variantes de risco do que o esperado ao acaso.</td><td><span class="pill moderada">Moderada</span></td></tr>
+<tr><td><b>“Esses traços ajudavam quem explorava.”</b></td><td>Em um jogo de coleta com 457 adultos, quem tinha mais sintomas trocava de arbusto mais cedo e colhia mais. Entre nômades do Quênia, um alelo do gene DRD4 vinha com melhor nutrição; entre sedentários, com pior.</td><td><span class="pill sugestiva">Sugestiva</span></td></tr>
+<tr><td><b>“O mundo moderno é que não combina.”</b></td><td>A teoria do descompasso é compatível com os dados, mas o estudo de 2020 mostra seleção contra essas variantes há pelo menos 45.000 anos, bem antes da agricultura.</td><td><span class="pill debate">Em debate</span></td></tr>
+<tr><td><b>“Humanos antigos tinham TDAH.”</b></td><td>Os próprios autores dizem que os resultados não permitem afirmar isso.</td><td><span class="pill nao">Não se pode afirmar</span></td></tr>
+<tr><td><b>“TDAH grave tem genes mais primitivos.”</b></td><td>Nenhum estudo mostra isso. A gravidade vem da soma de muitas variantes, do ambiente, do sono, de outras condições e do apoio recebido. “Ancestral”, em genética, descreve uma letra do DNA, não uma pessoa.</td><td><span class="pill nao">Sem evidência</span></td></tr>
+</tbody></table></div>
+<h2>O que dá para dizer</h2>
+<p>Esses traços acompanham a humanidade há dezenas de milhares de anos. Não são moda, não nasceram com as telas e não são falha de caráter. A ciência não ordena pessoas em mais ou menos originais, e a dignidade de ninguém depende disso.</p>
+<h2>Linha do tempo</h2>
+<div class="scroll-x"><table class="fit"><tbody>
+<tr><td><b>1775</b></td><td>Melchior Adam Weikard publica a primeira descrição médica conhecida da “falta de atenção”.</td></tr>
+<tr><td><b>1902</b></td><td>George Still descreve crianças com “defeito do controle moral”. O vocabulário ainda é de julgamento.</td></tr>
+<tr><td><b>1937</b></td><td>Charles Bradley observa que um estimulante melhora comportamento e desempenho escolar.</td></tr>
+<tr><td><b>1980</b></td><td>O DSM-III cria o “transtorno de déficit de atenção”.</td></tr>
+<tr><td><b>2007</b></td><td>Pesquisadores brasileiros lideram o estudo que estima em cerca de 5% a prevalência mundial em crianças.</td></tr>
+<tr><td><b>2021</b></td><td>Brasil: Lei 14.254, de apoio escolar para TDAH e dislexia.</td></tr>
+<tr><td><b>2026</b></td><td>A Câmara aprova o PL 4.225/2023. O Senado ainda vai decidir.</td></tr>
+</tbody></table></div>
+<p class="src">Fontes: Esteller-Cucala P e cols., <a href="https://doi.org/10.1038/s41598-020-65322-4" target="_blank" rel="noopener"><i>Scientific Reports</i>, 2020</a>. Barack DL e cols., <a href="https://doi.org/10.1098/rspb.2022.2584" target="_blank" rel="noopener"><i>Proceedings of the Royal Society B</i>, 2024</a>. Demontis D e cols., <a href="https://doi.org/10.1038/s41588-022-01285-8" target="_blank" rel="noopener"><i>Nature Genetics</i>, 2023</a>. Eisenberg DTA e cols., <i>BMC Evolutionary Biology</i>, 2008. Polanczyk G e cols., <i>American Journal of Psychiatry</i>, 2007.</p>
+<div class="related" data-rel="mitos expectativa-vida fe-escrituras"></div>
+<a class="back" href="#inicio">← Voltar ao início</a>
+</div></article>
+
+<article class="view art" id="expectativa-vida" data-cat="ciencia" data-min="2"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-ciencia">Pesquisa</a></p>
+<h1>Adultos com TDAH vivem menos? O que diz o estudo britânico</h1>
+<p class="dek">A diferença encontrada é grande. A causa apontada pelos autores é evitável.</p>
+<p class="meta">Leitura de 2 min · Atualizado em 10/10/2026</p>
+<div class="key"><h2>Em resumo</h2><ul>
+<li>Em 2025, um estudo com cerca de 30 mil adultos britânicos com diagnóstico de TDAH estimou perda de 6,8 anos de vida em homens e de 8,6 anos em mulheres.</li>
+<li>Os autores atribuem a diferença a fatores modificáveis e a necessidades de apoio e de tratamento não atendidas.</li>
+<li>O número pode estar superestimado, porque só uma minoria dos adultos com TDAH tem diagnóstico registrado.</li>
+</ul></div>
+<p>O TDAH não encurta a vida por si só. O que pesa são as consequências sem cuidado: acidentes, tabaco, álcool, sono ruim, dívidas, depressão e doenças que ficam sem acompanhamento. Cada um desses pontos tem prevenção.</p>
+<p>A leitura prática é direta: diagnosticar e apoiar adultos é uma questão de saúde pública, não de conforto.</p>
+<p class="src">Fonte: O’Nions E e cols., <a href="https://doi.org/10.1192/bjp.2024.199" target="_blank" rel="noopener"><i>British Journal of Psychiatry</i>, 2025</a>.</p>
+<div class="related" data-rel="tratamento-brasil habitos dinheiro"></div>
+<a class="back" href="#inicio">← Voltar ao início</a>
+</div></article>
+
+<!-- ===== APOIO ===== -->
+<section class="view" id="apoio"><div class="wrap narrow art">
+<p class="crumb"><a href="#inicio">Início</a> › Apoio</p>
+<h1>Rede de apoio</h1>
+<p class="dek">Telefones gratuitos, associações e canais para exigir direitos.</p>
+<div class="phones" style="margin-top:1.5rem">
+<a href="tel:188"><b>188</b><span>CVV. Apoio emocional, 24 horas. Chat em cvv.org.br</span></a>
+<a href="tel:192"><b>192</b><span>SAMU. Emergência médica</span></a>
+<a href="tel:100"><b>100</b><span>Disque Direitos Humanos. Denúncia, 24 horas</span></a>
+<a href="tel:129"><b>129</b><span>Defensoria Pública, em vários estados, inclusive o Ceará</span></a>
+</div>
+<p class="small">No celular, toque no número para ligar.</p>
+<h2>Associações nacionais</h2>
+<ul class="list">
+<li><a href="https://tdah.org.br" target="_blank" rel="noopener">ABDA · Associação Brasileira do Déficit de Atenção</a><span>Informação, lista de leis e grupos de apoio sobre TDAH.</span></li>
+<li><a href="https://autistas.org.br" target="_blank" rel="noopener">Autistas Brasil</a><span>Associação nacional para inclusão das pessoas autistas.</span></li>
+<li><a href="https://abraca.net.br" target="_blank" rel="noopener">Abraça</a><span>Associação Brasileira para Ação por Direitos das Pessoas Autistas.</span></li>
+<li><a href="https://www.institutoabcd.org.br" target="_blank" rel="noopener">Instituto ABCD</a><span>Dislexia e outros transtornos de aprendizagem.</span></li>
+<li><a href="https://conbrasd.org" target="_blank" rel="noopener">ConBraSD</a><span>Altas habilidades e superdotação.</span></li>
+<li><a href="https://www.astocst.com.br" target="_blank" rel="noopener">ASTOC ST</a><span>Tourette, tiques e TOC.</span></li>
+</ul>
+<h2>Para denunciar e exigir direitos</h2>
+<ul class="list">
+<li><a href="https://mpt.mp.br/pgt/servicos/servico-denuncie" target="_blank" rel="noopener">Ministério Público do Trabalho</a><span>Discriminação no emprego, cotas não cumpridas, assédio. Denúncia pela internet, com opção de sigilo.</span></li>
+<li><a href="https://www.defensoria.ce.def.br" target="_blank" rel="noopener">Defensoria Pública do Ceará</a><span>Ações de saúde, educação e benefícios, de graça. Cada estado tem a sua.</span></li>
+<li><b>Ministério Público</b><span>Recusa de matrícula e falha de serviço público. Procure a promotoria da sua cidade.</span></li>
+<li><b>Na sua cidade</b><span>UBS e CAPS para cuidado. CRAS para benefícios. Procon para dívidas e golpes.</span></li>
+</ul>
+<a class="back" href="#inicio">← Voltar ao início</a>
+</div></section>
+
+<!-- ===== LISTAGENS ===== -->
+<section class="view" id="categoria"><div class="wrap">
+<p class="crumb"><a href="#inicio">Início</a> › Editoria</p>
+<h1 id="cat-titulo" style="font-size:clamp(1.9rem,5vw,2.6rem);margin-bottom:1.5rem">Editoria</h1>
+<div class="cards" id="cat-lista"></div>
+</div></section>
+<section class="view" id="resultado"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › Busca</p>
+<h1 id="res-titulo" style="font-size:clamp(1.6rem,4vw,2.2rem);margin-bottom:1rem">Busca</h1>
+<ul class="list" id="res-lista"></ul>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+<div class="cols">
+<div><h2>DiversaMente</h2><p>Projeto independente e sem fins lucrativos. O formato de revista se inspira em portais internacionais sobre TDAH, como a norte-americana ADDitude, com a qual não tem vínculo. O conteúdo é próprio, escrito para as leis e a realidade do Brasil.</p></div>
+<div><h2>Editorias</h2><ul>
+<li><a href="#c-tdah">TDAH adulto</a></li><li><a href="#c-sintomas">Sinais e testes</a></li><li><a href="#c-tratamento">Tratamento</a></li><li><a href="#c-vida">Vida adulta</a></li><li><a href="#c-direitos">Direitos</a></li><li><a href="#c-fe">Fé e estigma</a></li><li><a href="#c-familia">Família e escola</a></li><li><a href="#c-ciencia">Pesquisa</a></li>
+</ul></div>
+<div><h2>Precisa de ajuda agora?</h2><p><a href="tel:188"><b>188</b></a> CVV, 24 horas · <a href="tel:192"><b>192</b></a> SAMU · <a href="tel:100"><b>100</b></a> Direitos Humanos</p><p><a href="#apoio">Ver a rede de apoio</a></p></div>
+<div><h2>Aviso</h2><p>Conteúdo educativo. Não substitui consulta médica, psicológica ou jurídica. Leis e projetos conferidos em 09/10/2026.</p></div>
+</div>
+</div></footer>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var store = {
+    get: function (k) { try { return window.localStorage.getItem(k); } catch (e) { return null; } },
+    set: function (k, v) { try { window.localStorage.setItem(k, v); } catch (e) {} }
+  };
+  function $(id) { return document.getElementById(id); }
+  function all(sel, el) { return Array.prototype.slice.call((el || document).querySelectorAll(sel)); }
+  function el(tag, cls, text) { var n = document.createElement(tag); if (cls) n.className = cls; if (text) n.textContent = text; return n; }
+  function norm(s) { return (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); }
+  root.classList.add('js');
+
+  /* Ajustes de leitura */
+  var saved = store.get('dm-tema');
+  if (!root.hasAttribute('data-theme') && (saved === 'light' || saved === 'dark')) root.setAttribute('data-theme', saved);
+  $('btn-tema').addEventListener('click', function () {
+    var t = root.getAttribute('data-theme');
+    if (t !== 'light' && t !== 'dark') t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+    var next = t === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next); store.set('dm-tema', next);
+  });
+  var scale = parseFloat(store.get('dm-escala')) || 1;
+  function setScale(v) {
+    scale = Math.min(1.4, Math.max(0.9, Math.round(v * 100) / 100));
+    root.style.setProperty('--scale', String(scale)); store.set('dm-escala', String(scale));
+  }
+  setScale(scale);
+  $('btn-maior').addEventListener('click', function () { setScale(scale + 0.1); });
+  $('btn-menor').addEventListener('click', function () { setScale(scale - 0.1); });
+
+  /* Índice de artigos */
+  var CATS = { tdah: 'TDAH adulto', sintomas: 'Sinais e testes', tratamento: 'Tratamento', vida: 'Vida adulta', direitos: 'Direitos', fe: 'Fé e estigma', familia: 'Família e escola', ciencia: 'Pesquisa' };
+  var EXTRA = { familia: ['perfis', 'sus-plano', 'mitos', 'fe-guia'], vida: ['trabalho', 'adaptacoes', 'habitos'] };
+  var arts = {}, order = [];
+  function bodyText(a) {
+    var c = a.cloneNode(true);
+    all('.crumb, .meta, .back, .related', c).forEach(function (n) { n.parentNode.removeChild(n); });
+    var w = document.createTreeWalker(c, NodeFilter.SHOW_TEXT), parts = [], n;
+    while ((n = w.nextNode())) parts.push(n.nodeValue);
+    return norm(parts.join(' '));
+  }
+  all('article.art, #apoio').forEach(function (a) {
+    var h = a.querySelector('h1'), d = a.querySelector('.dek');
+    arts[a.id] = { id: a.id, cat: a.getAttribute('data-cat') || 'apoio', min: a.getAttribute('data-min'), title: h ? h.textContent : a.id, dek: d ? d.textContent : '', text: bodyText(a), head: norm(h ? h.textContent : '') };
+    order.push(a.id);
+  });
+  function card(a) {
+    var c = el('a', 'card'); c.href = '#' + a.id;
+    c.appendChild(el('span', 'label', CATS[a.cat] || ''));
+    c.appendChild(el('h3', '', a.title));
+    c.appendChild(el('p', '', a.dek));
+    c.appendChild(el('span', 'min', 'Leitura de ' + a.min + ' min'));
+    return c;
+  }
+  function item(a) {
+    var li = el('li'), l = el('a', '', a.title); l.href = '#' + a.id;
+    li.appendChild(l); li.appendChild(el('span', '', a.dek));
+    return li;
+  }
+  function inCat(cat) {
+    var ids = order.filter(function (id) { return arts[id].cat === cat; });
+    (EXTRA[cat] || []).forEach(function (id) { if (arts[id] && ids.indexOf(id) === -1) ids.push(id); });
+    return ids;
+  }
+
+  /* Tabelas: no celular viram fichas (rótulo de cada coluna antes do valor) */
+  all('table:not(.fit)').forEach(function (t) {
+    var heads = all('thead th', t).map(function (th) { return th.textContent.trim(); });
+    if (!heads.length) return;
+    t.classList.add('stack');
+    all('tbody tr', t).forEach(function (tr) {
+      Array.prototype.forEach.call(tr.children, function (td, i) { if (heads[i]) td.setAttribute('data-label', heads[i]); });
+    });
+  });
+
+  /* Compartilhar: menu do celular (WhatsApp etc.) ou cópia do link */
+  all('article.art .meta').forEach(function (m) {
+    var art = m.closest('article'), b = el('button', 'tool share', 'Compartilhar');
+    b.type = 'button';
+    b.setAttribute('aria-live', 'polite');
+    b.addEventListener('click', function () {
+      var url = window.location.href.split('#')[0] + '#' + art.id;
+      function done(t) { b.textContent = t; setTimeout(function () { b.textContent = 'Compartilhar'; }, 3000); }
+      function copy() {
+        try { navigator.clipboard.writeText(url).then(function () { done('Link copiado'); }, function () { done(url); }); }
+        catch (err) { done(url); }
+      }
+      if (navigator.share && window.top === window.self) {
+        navigator.share({ title: arts[art.id].title + ' · DiversaMente', url: url }).catch(function (err) { if (!err || err.name !== 'AbortError') copy(); });
+      } else copy();
+    });
+    m.appendChild(b);
+  });
+
+  /* Leia também */
+  all('.related').forEach(function (box) {
+    var ids = (box.getAttribute('data-rel') || '').split(' ').filter(function (id) { return arts[id]; });
+    if (!ids.length) return;
+    box.appendChild(el('h2', '', 'Leia também'));
+    var ul = el('ul', 'list');
+    ids.forEach(function (id) { ul.appendChild(item(arts[id])); });
+    box.appendChild(ul);
+  });
+
+  /* Editorias na capa */
+  var ed = $('editorias');
+  ['vida', 'tratamento', 'direitos', 'sintomas', 'fe', 'ciencia'].forEach(function (cat) {
+    var sec = el('div', 'sec');
+    sec.appendChild(el('h2', '', CATS[cat]));
+    var ul = el('ul', 'list');
+    inCat(cat).slice(0, 3).forEach(function (id) { ul.appendChild(item(arts[id])); });
+    sec.appendChild(ul);
+    var more = el('a', 'all', 'Ver tudo em ' + CATS[cat]); more.href = '#c-' + cat;
+    sec.appendChild(more);
+    ed.appendChild(sec);
+  });
+
+  /* Navegação: uma página por vez */
+  var views = all('.view'), navLinks = all('.catnav a'), curCat = '';
+  function markNav(href) {
+    navLinks.forEach(function (a) {
+      if (a.getAttribute('href') === href) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
+    });
+  }
+  var baseTitle = document.title;
+  function show(view, target) {
+    views.forEach(function (v) { v.classList.toggle('on', v === view); });
+    if (view.id === 'categoria') markNav('#c-' + curCat);
+    else if (arts[view.id] && CATS[arts[view.id].cat]) markNav('#c-' + arts[view.id].cat);
+    else markNav('#' + view.id);
+    var h1 = view.querySelector('h1');
+    document.title = (view.id === 'inicio' || !h1) ? baseTitle : h1.textContent + ' · DiversaMente';
+    if (target && target !== view) {
+      var d = target;
+      while (d) { if (d.tagName === 'DETAILS') d.open = true; d = d.parentElement; }
+      target.scrollIntoView({ block: 'start' });
+    } else { window.scrollTo(0, 0); }
+  }
+  function go(id) {
+    if (id && id.indexOf('c-') === 0 && CATS[id.slice(2)]) {
+      curCat = id.slice(2);
+      $('cat-titulo').textContent = CATS[curCat];
+      var box = $('cat-lista'); box.textContent = '';
+      inCat(curCat).forEach(function (aid) { box.appendChild(card(arts[aid])); });
+      show($('categoria'));
+      return true;
+    }
+    var t = id ? $(id) : null;
+    if (!t) { if (id) return false; t = $('inicio'); }
+    var view = t.closest('.view');
+    if (!view) { t.scrollIntoView({ block: 'start' }); return true; }
+    show(view, t);
+    return true;
+  }
+  function focusView(id, scroll) {
+    var v = document.querySelector('.view.on'); if (!v) return;
+    var x = id ? $(id) : null;
+    var t = (x && x !== v && v.contains(x)) ? x : (v.querySelector('h1') || v);
+    if (!t.hasAttribute('tabindex')) t.setAttribute('tabindex', '-1');
+    try { t.focus({ preventScroll: !scroll }); } catch (err) { t.focus(); }
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a[href^="#"]') : null;
+    if (!a) return;
+    var id = a.getAttribute('href').slice(1);
+    if (id === 'conteudo') { e.preventDefault(); focusView('', true); return; }
+    if (!go(id)) return;
+    e.preventDefault();
+    try { window.history.pushState(null, '', '#' + id); } catch (err) {}
+    focusView(id);
+  });
+  window.addEventListener('popstate', function () { go(window.location.hash.slice(1)) || go(''); });
+  go(window.location.hash.slice(1)) || go('');
+
+  /* Busca */
+  function escRe(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+  function search(raw) {
+    var words = norm(raw).split(/[^a-z0-9.\-]+/).map(function (w) { return w.replace(/^[.\-]+|[.\-]+$/g, ''); })
+      .filter(function (w) { return w.length > 1 || /\d/.test(w); });
+    if (!words.length) return [];
+    function run(prefix) {
+      var out = [];
+      order.forEach(function (id) {
+        var a = arts[id], score = 0, ok = true;
+        words.forEach(function (w) {
+          if (!ok) return;
+          var pat = '(^|[^a-z0-9])' + escRe(w) + (prefix ? '' : '(?:s|es)?(?![a-z0-9])');
+          var n = (a.text.match(new RegExp(pat, 'g')) || []).length;
+          if (!n) { ok = false; return; }
+          score += n + (new RegExp(pat).test(a.head) ? 25 : 0);
+        });
+        if (ok) out.push([id, score]);
+      });
+      out.sort(function (x, y) { return y[1] - x[1]; });
+      return out.map(function (x) { return x[0]; });
+    }
+    var hits = run(false);
+    return hits.length ? hits : run(true);
+  }
+  $('f-busca').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var raw = $('q').value.trim();
+    var ul = $('res-lista'); ul.textContent = '';
+    var hits = raw ? search(raw) : [];
+    $('res-titulo').textContent = raw ? (hits.length + (hits.length === 1 ? ' resultado para “' : ' resultados para “') + raw + '”') : 'Digite uma palavra para buscar';
+    hits.forEach(function (id) { ul.appendChild(item(arts[id])); });
+    if (raw && !hits.length) ul.appendChild(el('li', '', 'Nada encontrado. Tente outra palavra ou navegue pelas editorias.'));
+    show($('resultado'));
+    $('q').blur();
+    focusView('');
+  });
+
+  /* Central de recursos */
+  var TOPICS = {
+    adulto: [
+      ['Será que eu tenho TDAH?', ['sinais', 'tdah-adulto', 'diagnostico-tardio', 'tdah-mulheres']],
+      ['O que parece TDAH e não é?', ['parece-tdah', 'emocoes']],
+      ['O que preciso saber sobre tratamento?', ['tratamento-brasil', 'sus-plano', 'habitos']],
+      ['Como render mais no dia a dia?', ['produtividade', 'adaptacoes', 'habitos']],
+      ['Como lidar com emoções e relacionamentos?', ['emocoes', 'relacionamentos']],
+      ['Como proteger meu dinheiro?', ['dinheiro']],
+      ['Quais são meus direitos no trabalho?', ['trabalho', 'adaptacoes', 'tdah-deficiencia', 'discriminacao']],
+      ['Como lidar com preconceito na igreja e na família?', ['fe-frases', 'fe-escrituras', 'fe-guia']]
+    ],
+    crianca: [
+      ['Meu filho pode ter TDAH ou outro perfil?', ['perfis', 'mitos', 'parece-tdah']],
+      ['Quais são os direitos na escola?', ['escola', 'leis']],
+      ['Como conseguir tratamento?', ['sus-plano', 'tratamento-brasil']],
+      ['Trabalho e preciso de tempo para cuidar', ['trabalho']],
+      ['Dizem que é falta de vara ou de fé', ['fe-frases', 'fe-guia']]
+    ]
+  };
+  var quem = 'adulto', sel = $('tema-sel');
+  function fillTopics() {
+    sel.textContent = '';
+    TOPICS[quem].forEach(function (t, i) { var o = el('option', '', t[0]); o.value = String(i); sel.appendChild(o); });
+    fillList();
+  }
+  function fillList() {
+    var ul = $('central-lista'); ul.textContent = '';
+    var t = TOPICS[quem][parseInt(sel.value, 10) || 0];
+    t[1].forEach(function (id) { if (arts[id]) ul.appendChild(item(arts[id])); });
+  }
+  all('#quem button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      quem = b.getAttribute('data-quem');
+      all('#quem button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      fillTopics();
+    });
+  });
+  sel.addEventListener('change', fillList);
+  fillTopics();
+
+  /* Lista de sinais */
+  function count(prefix) { var n = 0; for (var i = 1; i <= 9; i++) { if ($(prefix + i).checked) n++; } return n; }
+  function sinais() {
+    var a = count('a'), b = count('b'), inf = $('c1').checked, areas = $('c2').checked;
+    var base = 'Atenção e organização: ' + a + ' de 9. Inquietação e impulso: ' + b + ' de 9. ';
+    var msg;
+    if (a + b === 0) msg = 'Marque os itens acima. O resultado aparece aqui.';
+    else if ((a >= 5 || b >= 5) && inf && areas) msg = base + 'Esse padrão justifica procurar avaliação médica. Leve esta lista para a consulta.';
+    else if (a >= 5 || b >= 5) msg = base + 'Há sinais em número suficiente, mas o diagnóstico também exige início na infância e prejuízo em mais de uma área. Vale conversar com um profissional.';
+    else msg = base + 'Poucos sinais marcados para TDAH. Se ainda há prejuízo no dia a dia, outras condições podem explicar e merecem avaliação.';
+    $('sinais-res').textContent = msg;
+  }
+  all('#sinais input[type="checkbox"]').forEach(function (c) { c.addEventListener('change', sinais); });
+
+  /* Filtro do guia das leis */
+  var laws = all('#lista .law'), fS = 'top', fT = 'todos';
+  function press(group, btn) { all('.chip', group).forEach(function (c) { c.setAttribute('aria-pressed', c === btn ? 'true' : 'false'); }); }
+  function applyFilter() {
+    var shown = 0;
+    laws.forEach(function (li) {
+      var okS = fS === 'todas' || li.getAttribute('data-s').split(' ').indexOf(fS) > -1;
+      var okT = fT === 'todos' || li.getAttribute('data-t').split(' ').indexOf(fT) > -1;
+      li.hidden = !(okS && okT);
+      if (okS && okT) shown++;
+    });
+    $('contagem').textContent = 'Mostrando ' + shown + ' de ' + laws.length + '. Toque em um item para abrir.';
+    $('vazio').hidden = shown !== 0;
+  }
+  all('#chips-s .chip').forEach(function (c) { c.addEventListener('click', function () { fS = c.getAttribute('data-s'); press($('chips-s'), c); applyFilter(); }); });
+  all('#chips-t .chip').forEach(function (c) { c.addEventListener('click', function () { fT = c.getAttribute('data-t'); press($('chips-t'), c); applyFilter(); }); });
+  applyFilter();
+})();
+</script>
+</body>
+</html>
