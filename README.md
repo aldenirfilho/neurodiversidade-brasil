@@ -1,46 +1,67 @@
 # DiversaMente
 
-Revista digital brasileira sobre **TDAH e neurodiversidade na vida adulta**: ciência, tratamento, trabalho, direitos e fé sem preconceito.
+Revista digital brasileira para **adultos com TDAH**: força no máximo, risco sob controle. Ciência, travas práticas, direitos e fé sem preconceito.
 
 🔗 **Site:** https://aldenirfilho.github.io/neurodiversidade-brasil/
 
-## O que tem no site
+## O que tem no site (v4 · Fase 1)
 
-- **25 artigos em 8 editorias** (TDAH adulto · Sinais e testes · Tratamento · Vida adulta · Direitos · Fé e estigma · Família e escola · Pesquisa) e a página **Apoio**, com telefones de ajuda que dá para tocar e ligar no celular.
-- **Guia das leis**: 36 leis, decisões e projetos sobre TDAH, autismo, deficiência, trabalho, educação, saúde e fé, com filtro por tema e link para o texto oficial.
-- **Lista de sinais em adultos**: 18 itens baseados nos critérios do DSM-5-TR, redigidos com palavras próprias. Serve para organizar a consulta e não é teste diagnóstico.
-- **Central de recursos**: escolha quem você quer ajudar e qual é a dúvida, e o site indica os artigos.
-- **Fé e estigma**: respostas a frases capacitistas, por que as escrituras não falam de TDAH nem de autismo e um guia de acolhimento para comunidades de fé.
-- Busca, tema claro ou escuro, ajuste do tamanho da letra e botão **Compartilhar** em cada artigo.
+- **37 artigos em 8 editorias:** Entenda · Forças · Travas · Rotina e trabalho · Vínculos · Saúde · Direitos · Fé e estigma. Mais as páginas **Apoio**, **Manifesto** e **Privacidade**.
+- **Ferramentas**, sem cadastro e sem enviar dados:
+  - **Mapa Força–Trava:** a pessoa marca os traços que reconhece e recebe forças, riscos, travas (verbo + duração, com grau de evidência) e ambientes em que tende a render.
+  - **Kit de Travas Financeiras:** Pix, cartão, débito automático, regra das 24 horas, segunda pessoa, Registrato, autoexclusão de apostas, o que fazer em golpe e em superendividamento. Progresso salvo no aparelho.
+  - **Modo Dia Difícil:** botão no alto e no fim de cada página. Mostra uma prioridade, uma ação curta e os telefones de apoio.
+  - **Lista de sinais em adultos** (18 itens, DSM-5-TR em palavras próprias; não é teste diagnóstico).
+  - **Guia das leis** (36 leis, decisões e projetos, com filtro).
+- Cada artigo novo traz **Em resumo**, **grau de evidência**, **Faça agora** (1 a 3 ações no formato verbo + duração), fontes e **Leia também**.
+- Busca, **Central de recursos** (um adulto · uma criança · alguém com quem convivo), tema claro ou escuro, tamanho da letra e botão **Compartilhar**.
+
+### Artigos novos da Fase 1
+
+Mapa de forças · Hiperfoco · Rendimento sob pressão · Ambientes e carreiras · Apostas online · TDAH ao volante · Decisões grandes com segunda pessoa · Sono · Relevar sem se abandonar · Manual de Mim · Guia para quem convive · Rotina mínima para dias difíceis.
 
 ## Regras editoriais
 
 1. Lei em vigor e projeto de lei nunca aparecem misturados. Projeto leva o aviso "Ainda não é lei".
-2. Toda afirmação científica traz fonte e grau de evidência. Hipótese aparece como hipótese.
-3. Convicção de fé aparece separada e identificada, nunca como resultado de pesquisa.
-4. O alvo é o capacitismo em ambiente religioso, não a religião de ninguém.
-5. Medicação: só informação geral, sem doses.
-6. Escalas protegidas, como a ASRS, não são reproduzidas. O site remete à ABDA.
-7. Conteúdo educativo. Não substitui consulta médica, psicológica ou jurídica.
+2. Toda afirmação traz fonte e grau de evidência: **Forte** · **Moderada** · **Limitada** · **Prática** (bom senso clínico, sem estudo específico).
+3. Forças são descritas como "frequentes em relatos", nunca como "superpoder".
+4. Convicção de fé aparece separada e identificada, nunca como resultado de pesquisa.
+5. O alvo é o capacitismo em ambiente religioso, não a religião de ninguém.
+6. Medicação: só informação geral, sem doses.
+7. Crise: CVV 188 sempre visível e nenhuma descrição de métodos.
+8. Escalas protegidas, como a ASRS, não são reproduzidas.
+9. Nenhum dado pessoal ou de saúde do idealizador ou de terceiros.
+
+## Privacidade
+
+- Sem login, sem anúncios, sem cookies de rastreamento e sem contador de visitas.
+- As ferramentas guardam dados só no `localStorage` do navegador: `dm-tema`, `dm-escala`, `dm-mapa`, `dm-kit`, `dm-dd`.
+- A página **Privacidade** tem os botões **Exportar meus dados** e **Apagar meus dados**.
+- Terceiros: GitHub Pages (hospedagem) e Google Fonts (fontes do texto).
 
 ## Como é feito
 
-- Um único arquivo `index.html` com HTML, CSS e JavaScript puro. Não tem etapa de build nem dependências, só as fontes Source Serif 4 e Source Sans 3 (Google Fonts).
-- A navegação usa âncoras (`#nome-do-artigo`), então funciona no GitHub Pages sem nenhuma configuração extra.
-- `og-image.png` é a imagem de prévia quando o link é compartilhado no WhatsApp e em redes sociais.
-- `.nojekyll` desliga o processamento Jekyll do GitHub Pages.
+- Um único `index.html` com HTML, CSS e JavaScript puro. Sem etapa de build e sem dependências além das fontes Source Serif 4 e Source Sans 3.
+- Cerca de 212 KB no arquivo e 61 KB comprimido na transferência.
+- A navegação usa âncoras (`#nome-do-artigo`) e funciona no GitHub Pages sem configuração extra.
+- `og-image.png` é a prévia do link no WhatsApp e nas redes. `.nojekyll` desliga o Jekyll.
+- Conferido com Playwright em 390 px e 1280 px, temas claro e escuro: sem erros de console, sem rolagem lateral, sem links internos quebrados e sem violações nas regras WCAG 2.2 A/AA verificadas pelo axe-core.
 
 ## Publicar e atualizar
 
-1. Em **Settings → Pages → Build and deployment**, escolha **Deploy from a branch**, branch `main`, pasta `/ (root)`.
-2. Para atualizar, edite `index.html` e faça commit na `main`. O GitHub Pages publica em 1 a 2 minutos.
+1. **Settings → Pages → Build and deployment → Deploy from a branch**, branch `main`, pasta `/ (root)`.
+2. Para atualizar, edite `index.html` e faça commit na `main`. O Pages publica em 1 a 2 minutos.
 
 ## O que reconferir de tempos em tempos
 
-PL 4.225/2023 (Senado) · PL 2.630/2021, PL 479/2025 e PL 6.002/2025 (Câmara) · projetos sobre TDAH no Ceará · estimulantes no SUS · adoção da CID-11 no Brasil · regras do Pix e do MED no Banco Central.
+PL 4.225/2023 (Senado) · PL 2.630/2021, PL 479/2025 e PL 6.002/2025 (Câmara) · projetos sobre TDAH no Ceará · estimulantes no SUS · CID-11 no Brasil · regras do Pix e do MED (etapa do MED 2.0 prevista para 26/10/2026) · Plataforma de Autoexclusão de apostas · teleatendimento do SUS para apostas · NR-1.
+
+## Responsável técnico
+
+Dr. Aldenir Rocha de Oliveira Filho, médico · CRM-CE 16587 · Clínica Médica, RQE 11846. Uma iniciativa do Projeto 360X.
 
 ## Aviso
 
-Projeto independente e sem fins lucrativos. O formato de revista se inspira em portais internacionais sobre TDAH, como a norte-americana ADDitude, com a qual não tem vínculo. O conteúdo é próprio, escrito para as leis e a realidade do Brasil.
+Projeto sem fins lucrativos, sem anúncio e sem vínculo com laboratório. O formato de revista se inspira na norte-americana ADDitude, com a qual não tem vínculo. O conteúdo é próprio, escrito para as leis e a realidade do Brasil. Conteúdo educativo: não substitui consulta médica, psicológica ou jurídica.
 
-Leis e projetos conferidos em 09/10/2026, com revisão parcial em 18/10/2026.
+Leis e projetos conferidos em 09/10/2026; regras de Pix, MED e apostas, em 18/10/2026.

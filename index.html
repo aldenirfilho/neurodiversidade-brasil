@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>DiversaMente — TDAH e neurodiversidade no Brasil</title>
-<meta name="description" content="Revista brasileira sobre TDAH e neurodiversidade na vida adulta: ciência, tratamento, trabalho, direitos e fé sem preconceito.">
+<meta name="description" content="Revista brasileira para adultos com TDAH: forças, travas para os riscos, direitos, tratamento e fé sem preconceito.">
 <meta name="theme-color" content="#0B4A57">
 <link rel="canonical" href="https://aldenirfilho.github.io/neurodiversidade-brasil/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230B4A57'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='40' fill='%23fff'%3ED%3C/text%3E%3Crect x='20' y='51' width='24' height='4' rx='2' fill='%23F28C52'/%3E%3C/svg%3E">
@@ -12,7 +12,7 @@
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="DiversaMente">
 <meta property="og:title" content="DiversaMente — TDAH e neurodiversidade no Brasil">
-<meta property="og:description" content="Revista brasileira sobre TDAH e neurodiversidade na vida adulta: ciência, tratamento, trabalho, direitos e fé sem preconceito.">
+<meta property="og:description" content="Revista brasileira para adultos com TDAH: forças, travas para os riscos, direitos, tratamento e fé sem preconceito.">
 <meta property="og:url" content="https://aldenirfilho.github.io/neurodiversidade-brasil/">
 <meta property="og:image" content="https://aldenirfilho.github.io/neurodiversidade-brasil/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -215,53 +215,128 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   table.stack td:first-child{font-size:1.05rem}
   table.stack td[data-label]:not(:first-child)::before{content:attr(data-label);display:block;margin-top:.45rem;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 }
+/* Fase 1: Dia difícil, Faça agora, grau de evidência, faixa Força · Trava · Relevar, ferramentas */
+.utilr{display:flex;flex-wrap:wrap;align-items:center;gap:.3rem}
+.tool-dd{border-color:var(--accent);color:var(--accent)}
+.tool-dd:hover{background:var(--accent);border-color:var(--accent);color:var(--bg)}
+.mt{margin-top:1.2rem}
+.do{border:1px solid var(--rule);border-left:4px solid var(--ok);padding:1rem 1.25rem;margin:1.75rem 0}
+.do h2{font-family:var(--sans);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ok);margin:0 0 .5rem}
+.do ol{margin:0;padding-left:1.3rem}
+.do li{margin-bottom:.4rem}
+.do .t,.first .t,.trait .t,.check .t{color:var(--muted);white-space:nowrap}
+.ev{font-size:.9rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:.35rem .6rem;align-items:center;margin:0 0 1.25rem}
+.pill.limitada{color:var(--warn)}
+.pill.pratica{color:var(--muted)}
+.band{display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr))}
+.band a{display:block;min-width:0;text-decoration:none;color:var(--ink);border-top:3px solid var(--accent);padding-top:.8rem}
+.band a:hover{color:var(--ink)}
+.band a:hover h3{color:var(--link);text-decoration:underline;text-underline-offset:.15em}
+.band .k{display:block;font-weight:700;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.band h3{font-size:1.28rem;margin:.25rem 0 .35rem}
+.band p{font-size:.97rem;color:var(--muted);margin:0}
+.linkbtn{font-family:var(--serif);font-weight:600;font-size:1.12rem;line-height:1.4;color:var(--ink);background:none;border:0;padding:0;cursor:pointer;text-align:left}
+.linkbtn:hover{color:var(--link);text-decoration:underline}
+.actions{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0}
+fieldset.plain{border:0;padding:0;margin:0;min-width:0}
+fieldset.plain legend{padding:0;margin-bottom:.4rem}
+.first{background:var(--soft);border:1px solid var(--rule);padding:1rem 1.25rem;margin:1.25rem 0}
+.first h2{font-family:var(--sans);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--link);margin:0 0 .5rem}
+.first ol{margin:0}
+.trait{border-top:3px solid var(--ink);padding-top:.9rem;margin-top:1.5rem}
+.trait h3{font-family:var(--serif);font-size:1.3rem;margin:0 0 .3rem}
+.trait dl{margin:0}
+.trait dt{font-size:.76rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:.7rem}
+.trait dd{margin:.1rem 0 0}
+.trait dd ul{margin:.2rem 0 0}
+.trait .more{margin-top:.6rem;font-weight:600}
+.prog{height:.6rem;background:var(--soft);border:1px solid var(--rule);border-radius:99px;overflow:hidden;margin:.4rem 0 1rem}
+.prog i{display:block;height:100%;width:0;background:var(--ok);transition:width .2s}
+.check small{display:block;color:var(--muted);font-size:.92rem;margin-top:.15rem}
+pre.model{white-space:pre-wrap;font-family:var(--sans);font-size:.97rem;line-height:1.7;background:var(--soft);border:1px solid var(--rule);padding:1rem 1.25rem;margin:1rem 0 .5rem;border-radius:4px}
+input[type="text"],textarea{font:inherit;width:100%;padding:.55rem .7rem;border:1px solid var(--rule);border-radius:4px;background:var(--bg);color:var(--ink)}
+textarea{resize:vertical}
+/* Modo Dia Difícil: diálogo que cobre o resto da página */
+dialog.ddlg{border:0;padding:0;width:calc(100% - 2rem);max-width:38rem;max-height:calc(100% - 2rem);background:var(--bg);color:var(--ink);border-radius:6px;box-shadow:0 12px 40px rgba(0,0,0,.4)}
+dialog.ddlg::backdrop{background:rgba(8,16,22,.78)}
+dialog.ddlg:not([open]){display:none}
+dialog.ddlg.fallback{position:fixed;inset:0;margin:auto;z-index:100;overflow:auto}
+.dd-in{padding:1.4rem 1.5rem 1.5rem}
+.dd-in h2{font-size:1.65rem;margin:0 0 .4rem}
+.dd-in .step{display:block;font-weight:700;margin:1.1rem 0 .4rem}
+.dd-help{border-top:1px solid var(--rule);margin-top:1.2rem;padding-top:1rem;font-size:.95rem}
+.dd-help .phones{margin:.6rem 0 0}
+@media (max-width:40rem){
+  dialog.ddlg{width:100%;max-width:none;height:100%;max-height:none;border-radius:0}
+  .dd-in{padding:max(1.2rem,env(safe-area-inset-top,0px)) max(1rem,env(safe-area-inset-right,0px)) max(1.5rem,env(safe-area-inset-bottom,0px)) max(1rem,env(safe-area-inset-left,0px))}
+}
+@media (prefers-reduced-motion:reduce){.prog i{transition:none}}
+@media print{
+  header,.catnav,footer,.related,.back,.share,.noprint,.do,.skip,dialog{display:none!important}
+  .js .view{display:none!important}
+  .js .view.on{display:block!important}
+  body{font-size:11pt;background:#fff;color:#000}
+  a{color:inherit;text-decoration:none}
+}
 </style>
 </head>
 <body>
 <a class="skip" href="#conteudo">Pular para o conteúdo</a>
 <header>
   <div class="util"><div class="wrap">
-    <span>Ciência, direitos e estratégia para a vida adulta com TDAH</span>
-    <div class="tools" role="group" aria-label="Ajustes de leitura">
-      <button class="tool" id="btn-menor" type="button" aria-label="Diminuir a letra">A−</button>
-      <button class="tool" id="btn-maior" type="button" aria-label="Aumentar a letra">A+</button>
-      <button class="tool" id="btn-tema" type="button">Tema claro/escuro</button>
+    <span>Força no máximo, risco sob controle</span>
+    <div class="utilr">
+      <button class="tool tool-dd" id="btn-dd" type="button" aria-haspopup="dialog" data-open-dd>Dia difícil</button>
+      <div class="tools" role="group" aria-label="Ajustes de leitura">
+        <button class="tool" id="btn-menor" type="button" aria-label="Diminuir a letra">A−</button>
+        <button class="tool" id="btn-maior" type="button" aria-label="Aumentar a letra">A+</button>
+        <button class="tool" id="btn-tema" type="button">Tema claro/escuro</button>
+      </div>
     </div>
   </div></div>
   <div class="mast"><div class="wrap">
     <a class="logo" href="#inicio">Diversa<span>Mente</span><small class="tagline">TDAH e neurodiversidade no Brasil</small></a>
     <form class="search" id="f-busca" role="search">
-      <input type="search" id="q" placeholder="Buscar: trabalho, remédio, lei, fé" aria-label="Buscar no site" autocomplete="off">
+      <input type="search" id="q" placeholder="Buscar: Pix, sono, trabalho, fé" aria-label="Buscar no site" autocomplete="off">
       <button class="btn" type="submit">Buscar</button>
     </form>
   </div></div>
 </header>
 <nav class="catnav" aria-label="Editorias"><div class="wrap">
   <a href="#inicio">Início</a>
-  <a href="#c-tdah">TDAH adulto</a>
-  <a href="#c-sintomas">Sinais e testes</a>
-  <a href="#c-tratamento">Tratamento</a>
-  <a href="#c-vida">Vida adulta</a>
+  <a href="#c-entenda">Entenda</a>
+  <a href="#c-forcas">Forças</a>
+  <a href="#c-travas">Travas</a>
+  <a href="#c-rotina">Rotina e trabalho</a>
+  <a href="#c-vinculos">Vínculos</a>
+  <a href="#c-saude">Saúde</a>
   <a href="#c-direitos">Direitos</a>
   <a href="#c-fe">Fé e estigma</a>
-  <a href="#c-familia">Família e escola</a>
-  <a href="#c-ciencia">Pesquisa</a>
   <a href="#apoio">Apoio</a>
 </div></nav>
 
 <main id="conteudo">
 <section class="view on" id="inicio"><div class="wrap">
-  <h1 class="sr-only">DiversaMente: revista sobre TDAH e neurodiversidade na vida adulta, no Brasil</h1>
+  <h1 class="sr-only">DiversaMente: revista para adultos com TDAH no Brasil. Força no máximo, risco sob controle.</h1>
   <div class="hero">
-    <a class="feature" href="#tdah-adulto">
-      <span class="label">TDAH adulto</span>
-      <h2>TDAH em adultos: o que é e como ele aparece depois dos 18</h2>
-      <p>Menos correria pela sala, mais prazos perdidos, contas esquecidas e cansaço de se esforçar em dobro. O que muda quando a criança inquieta cresce.</p>
-      <span class="more">Ler o artigo</span>
+    <a class="feature" href="#mapa">
+      <span class="label">Ferramenta</span>
+      <h2>Mapa Força–Trava: onde o seu TDAH rende e onde ele precisa de trava</h2>
+      <p>Marque os traços que você reconhece. Em cinco minutos, veja as forças, as zonas de risco e as três primeiras travas para instalar.</p>
+      <span class="more">Abrir o mapa</span>
     </a>
     <div class="side">
-      <a class="card" href="#sinais"><span class="label">Sinais e testes</span><h3>Lista de sinais em adultos: vale procurar avaliação?</h3><p>Dezoito situações do dia a dia, em linguagem simples, para levar à consulta.</p></a>
-      <a class="card" href="#dinheiro"><span class="label">Vida adulta</span><h3>TDAH e dinheiro: impulso, dívida e golpes</h3><p>Por que o risco financeiro é maior e sete travas práticas para se proteger.</p></a>
+      <a class="card" href="#kit-travas"><span class="label">Ferramenta</span><h3>Kit de Travas Financeiras</h3><p>Pix, cartão, apostas e golpes: proteções automáticas para o dinheiro não depender da força de vontade.</p></a>
+      <a class="card" href="#tdah-adulto"><span class="label">Entenda</span><h3>TDAH em adultos: o que é e como ele aparece depois dos 18</h3><p>Menos correria pela sala, mais prazos perdidos e cansaço de se esforçar em dobro.</p></a>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>Força, trava e relevar</h2>
+    <div class="band">
+      <a href="#mapa-forcas"><span class="k">Força</span><h3>Reconhecer onde você rende</h3><p>Criatividade, energia e hiperfoco: o que a pesquisa já mediu e o ambiente que faz a força aparecer.</p></a>
+      <a href="#kit-travas"><span class="k">Trava</span><h3>Conter o risco com estruturas simples</h3><p>Limites automáticos, segunda pessoa e regra das 24 horas. Proteção que funciona até no dia ruim.</p></a>
+      <a href="#relevar"><span class="k">Relevar</span><h3>Tirar a culpa do que é sintoma</h3><p>Reparar o que precisa ser reparado e soltar o resto, sem se abandonar.</p></a>
     </div>
   </div>
 
@@ -271,14 +346,14 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   </div>
 
   <div class="block">
-    <h2>Mais lidos para começar</h2>
+    <h2>Para começar</h2>
     <div class="cards">
-      <a class="card" href="#mitos"><span class="label">TDAH adulto</span><h3>Dez mitos sobre TDAH que ainda circulam no Brasil</h3><p>“É moda”, “é falta de vara”, “remédio vicia”. O que a evidência responde.</p></a>
-      <a class="card" href="#tratamento-brasil"><span class="label">Tratamento</span><h3>Tratamento do TDAH adulto no Brasil: o que existe</h3><p>Medicamentos disponíveis, terapia, hábitos e o que esperar de cada um.</p></a>
-      <a class="card" href="#produtividade"><span class="label">Vida adulta</span><h3>Como começar e terminar tarefas: oito estratégias que funcionam</h3><p>Tirar da cabeça, encurtar o prazo, trabalhar acompanhado.</p></a>
+      <a class="card" href="#sinais"><span class="label">Entenda</span><h3>Lista de sinais em adultos: vale procurar avaliação?</h3><p>Dezoito situações do dia a dia, em linguagem simples, para levar à consulta.</p></a>
+      <a class="card" href="#hiperfoco"><span class="label">Forças</span><h3>Hiperfoco: como aproveitar sem se queimar</h3><p>Decidir a hora de sair antes de entrar, e outras quatro travas.</p></a>
+      <a class="card" href="#apostas"><span class="label">Travas</span><h3>Apostas online: como travar antes que vire dívida</h3><p>Autoexclusão no gov.br, Pix com limite e tratamento gratuito pelo SUS.</p></a>
+      <a class="card" href="#sono"><span class="label">Travas</span><h3>Sono no TDAH adulto: por que você dorme tarde e como ajustar</h3><p>O relógio biológico atrasado e os ajustes de maior retorno.</p></a>
       <a class="card" href="#trabalho"><span class="label">Direitos</span><h3>Seus direitos no trabalho, com ou sem laudo</h3><p>Sigilo do diagnóstico, adaptação, cotas e proteção contra demissão discriminatória.</p></a>
       <a class="card" href="#fe-frases"><span class="label">Fé e estigma</span><h3>“Isso é falta de fé”: oito frases que ferem e como responder</h3><p>Respostas curtas e respeitosas para a família e a igreja.</p></a>
-      <a class="card" href="#genes"><span class="label">Pesquisa</span><h3>Genes antigos: o que a ciência diz sobre a origem do TDAH</h3><p>O que é fato, o que é hipótese e o que não se sustenta.</p></a>
     </div>
   </div>
 
@@ -287,12 +362,24 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <p class="small">Artigos recomendados para a sua dúvida.</p>
     <p class="step">1. Quem você quer ajudar?</p>
     <div class="seg" id="quem">
-      <button type="button" data-quem="adulto" aria-pressed="true">Um adulto</button>
+      <button type="button" data-quem="adulto" aria-pressed="true">Um adulto, ou eu mesmo</button>
       <button type="button" data-quem="crianca" aria-pressed="false">Uma criança ou adolescente</button>
+      <button type="button" data-quem="convive" aria-pressed="false">Alguém com quem convivo</button>
     </div>
     <p class="step"><label for="tema-sel">2. Qual é a dúvida?</label></p>
     <select id="tema-sel"></select>
     <ul class="list" id="central-lista" style="margin-top:.8rem"></ul>
+  </div>
+
+  <div class="block">
+    <h2>Ferramentas</h2>
+    <ul class="list">
+      <li><a href="#mapa">Mapa Força–Trava</a><span>Forças, riscos e travas a partir dos traços que você marca. Uso de 5 min.</span></li>
+      <li><a href="#kit-travas">Kit de Travas Financeiras</a><span>Oito travas com progresso salvo no seu aparelho. Faça aos poucos.</span></li>
+      <li><button class="linkbtn" type="button" data-open-dd>Modo Dia Difícil</button><span>Uma prioridade, uma ação curta e os telefones de apoio. Também no alto e no fim de cada página.</span></li>
+      <li><a href="#sinais">Lista de sinais em adultos</a><span>Dezoito situações para levar à consulta. Não é teste diagnóstico.</span></li>
+      <li><a href="#leis">Guia das leis</a><span>36 leis, decisões e projetos, com filtro por tema.</span></li>
+    </ul>
   </div>
 
   <div class="secs block" id="editorias"></div>
@@ -305,14 +392,16 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
       <li>Texto para adultos: direto, sem infantilizar e sem prometer cura.</li>
       <li>Respeito à fé de cada um. O alvo é o preconceito, não a religião.</li>
       <li>Sem anúncio, sem venda de curso e sem vínculo com laboratório.</li>
+      <li>Ferramentas sem cadastro: o que você marca fica no seu aparelho.</li>
       <li>Nada aqui substitui consulta médica, psicológica ou jurídica.</li>
     </ul>
+    <p class="mt"><a href="#manifesto">Leia o manifesto</a> · <a href="#privacidade">Veja como cuidamos da privacidade</a></p>
   </div>
 </div></section>
 
 <!-- ===== TDAH ADULTO ===== -->
-<article class="view art" id="tdah-adulto" data-cat="tdah" data-min="4"><div class="wrap narrow">
-<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-tdah">TDAH adulto</a></p>
+<article class="view art" id="tdah-adulto" data-cat="entenda" data-min="4"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-entenda">Entenda</a></p>
 <h1>TDAH em adultos: o que é e como ele aparece depois dos 18</h1>
 <p class="dek">Menos correria pela sala, mais prazos perdidos, contas esquecidas e cansaço de se esforçar em dobro.</p>
 <p class="meta">Leitura de 4 min · Atualizado em 10/10/2026</p>
@@ -343,8 +432,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 <a class="back" href="#inicio">← Voltar ao início</a>
 </div></article>
 
-<article class="view art" id="diagnostico-tardio" data-cat="tdah" data-min="4"><div class="wrap narrow">
-<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-tdah">TDAH adulto</a></p>
+<article class="view art" id="diagnostico-tardio" data-cat="entenda" data-min="4"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-entenda">Entenda</a></p>
 <h1>Diagnóstico tardio: como é feita a avaliação no Brasil</h1>
 <p class="dek">Não existe exame de sangue nem de imagem. O diagnóstico é clínico e depende de uma boa conversa.</p>
 <p class="meta">Leitura de 4 min · Atualizado em 10/10/2026</p>
@@ -385,8 +474,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 <a class="back" href="#inicio">← Voltar ao início</a>
 </div></article>
 
-<article class="view art" id="tdah-mulheres" data-cat="tdah" data-min="3"><div class="wrap narrow">
-<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-tdah">TDAH adulto</a></p>
+<article class="view art" id="tdah-mulheres" data-cat="entenda" data-min="3"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-entenda">Entenda</a></p>
 <h1>TDAH em mulheres: por que tantas descobrem tarde</h1>
 <p class="dek">A menina quieta e distraída não atrapalha a aula. Por isso ninguém a encaminha.</p>
 <p class="meta">Leitura de 3 min · Atualizado em 10/10/2026</p>
@@ -411,8 +500,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 <a class="back" href="#inicio">← Voltar ao início</a>
 </div></article>
 
-<article class="view art" id="mitos" data-cat="tdah" data-min="4"><div class="wrap narrow">
-<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-tdah">TDAH adulto</a></p>
+<article class="view art" id="mitos" data-cat="entenda" data-min="4"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-entenda">Entenda</a></p>
 <h1>Dez mitos sobre TDAH que ainda circulam no Brasil</h1>
 <p class="dek">O que a evidência responde a cada um, em poucas linhas.</p>
 <p class="meta">Leitura de 4 min · Atualizado em 10/10/2026</p>
@@ -431,8 +520,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 <a class="back" href="#inicio">← Voltar ao início</a>
 </div></article>
 
-<article class="view art" id="perfis" data-cat="tdah" data-min="3"><div class="wrap narrow">
-<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-tdah">TDAH adulto</a></p>
+<article class="view art" id="perfis" data-cat="entenda" data-min="3"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-entenda">Entenda</a></p>
 <h1>Além do TDAH: autismo, dislexia e outros perfis de neurodiversidade</h1>
 <p class="dek">Neurodiversidade é o fato de que cérebros variam. Muita gente tem mais de um perfil.</p>
 <p class="meta">Leitura de 3 min · Atualizado em 10/10/2026</p>
@@ -458,8 +547,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 </div></article>
 
 <!-- ===== SINAIS E TESTES ===== -->
-<article class="view art" id="sinais" data-cat="sintomas" data-min="3"><div class="wrap narrow">
-<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-sintomas">Sinais e testes</a></p>
+<article class="view art" id="sinais" data-cat="entenda" data-min="3"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-entenda">Entenda</a></p>
 <h1>Lista de sinais em adultos: vale procurar avaliação?</h1>
 <p class="dek">Dezoito situações baseadas nos critérios do DSM-5-TR, em linguagem do dia a dia. Marque o que acontece com frequência há pelo menos seis meses.</p>
 <p class="meta">Leitura de 3 min · Não é teste diagnóstico · Atualizado em 10/10/2026</p>
@@ -499,8 +588,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 <a class="back" href="#inicio">← Voltar ao início</a>
 </div></article>
 
-<article class="view art" id="parece-tdah" data-cat="sintomas" data-min="3"><div class="wrap narrow">
-<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-sintomas">Sinais e testes</a></p>
+<article class="view art" id="parece-tdah" data-cat="entenda" data-min="3"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-entenda">Entenda</a></p>
 <h1>O que parece TDAH e não é, ou vem junto</h1>
 <p class="dek">Desatenção é sintoma de muita coisa. Um bom diagnóstico separa as causas e reconhece quando há mais de uma.</p>
 <p class="meta">Leitura de 3 min · Atualizado em 10/10/2026</p>
@@ -523,8 +612,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 <a class="back" href="#inicio">← Voltar ao início</a>
 </div></article>
 
-<article class="view art" id="emocoes" data-cat="sintomas" data-min="3"><div class="wrap narrow">
-<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-sintomas">Sinais e testes</a></p>
+<article class="view art" id="emocoes" data-cat="saude" data-min="3"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-saude">Saúde</a></p>
 <h1>Emoções à flor da pele: desregulação emocional e sensibilidade à rejeição</h1>
 <p class="dek">A irritação que sobe em segundos e a crítica que dói por dias fazem parte do quadro de muitos adultos.</p>
 <p class="meta">Leitura de 3 min · Atualizado em 10/10/2026</p>
@@ -550,13 +639,13 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 </ol>
 <div class="note alert"><b class="t">Quando procurar ajuda logo</b>Se houver pensamento de morte ou de se machucar, ligue <a href="tel:188">188</a> (CVV, 24 horas) ou procure um serviço de emergência.</div>
 <p class="src">Fontes: Shaw P e cols., <i>American Journal of Psychiatry</i>, 2014. Lenzi F e cols., <i>Neuroscience &amp; Biobehavioral Reviews</i>, 2018.</p>
-<div class="related" data-rel="relacionamentos tratamento-brasil parece-tdah"></div>
+<div class="related" data-rel="relevar relacionamentos tratamento-brasil"></div>
 <a class="back" href="#inicio">← Voltar ao início</a>
 </div></article>
 
 <!-- ===== TRATAMENTO ===== -->
-<article class="view art" id="tratamento-brasil" data-cat="tratamento" data-min="5"><div class="wrap narrow">
-<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-tratamento">Tratamento</a></p>
+<article class="view art" id="tratamento-brasil" data-cat="saude" data-min="5"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-saude">Saúde</a></p>
 <h1>Tratamento do TDAH adulto no Brasil: o que existe</h1>
 <p class="dek">Remédio ajuda muito, mas não organiza a agenda sozinho. O melhor resultado vem da combinação.</p>
 <p class="meta">Leitura de 5 min · Atualizado em 10/10/2026</p>
@@ -590,8 +679,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 <a class="back" href="#inicio">← Voltar ao início</a>
 </div></article>
 
-<article class="view art" id="sus-plano" data-cat="tratamento" data-min="3"><div class="wrap narrow">
-<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-tratamento">Tratamento</a></p>
+<article class="view art" id="sus-plano" data-cat="saude" data-min="3"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-saude">Saúde</a></p>
 <h1>SUS, plano de saúde e Justiça: como conseguir tratamento</h1>
 <p class="dek">O que cada porta oferece hoje e onde costuma travar.</p>
 <p class="meta">Leitura de 3 min · Atualizado em 18/10/2026</p>
@@ -615,8 +704,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 <a class="back" href="#inicio">← Voltar ao início</a>
 </div></article>
 
-<article class="view art" id="habitos" data-cat="tratamento" data-min="3"><div class="wrap narrow">
-<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-tratamento">Tratamento</a></p>
+<article class="view art" id="habitos" data-cat="saude" data-min="3"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-saude">Saúde</a></p>
 <h1>Sono, exercício e rotina: o que tem evidência</h1>
 <p class="dek">Nenhum hábito trata o TDAH sozinho. Alguns deixam o dia claramente melhor.</p>
 <p class="meta">Leitura de 3 min · Atualizado em 10/10/2026</p>
@@ -637,13 +726,13 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 <li><span><b>Álcool e cafeína com critério.</b> Os dois pioram o sono, e o álcool reduz o freio do impulso.</span></li>
 </ol>
 <p class="src">Fontes: Faraone SV e cols., 2021. Bloch MH, Qawasmi A, <i>Journal of the American Academy of Child &amp; Adolescent Psychiatry</i>, 2011. Cortese S e cols., 2016.</p>
-<div class="related" data-rel="produtividade tratamento-brasil emocoes"></div>
+<div class="related" data-rel="sono produtividade tratamento-brasil"></div>
 <a class="back" href="#inicio">← Voltar ao início</a>
 </div></article>
 
 <!-- ===== VIDA ADULTA ===== -->
-<article class="view art" id="produtividade" data-cat="vida" data-min="4"><div class="wrap narrow">
-<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-vida">Vida adulta</a></p>
+<article class="view art" id="produtividade" data-cat="rotina" data-min="4"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-rotina">Rotina e trabalho</a></p>
 <h1>Como começar e terminar tarefas: oito estratégias que funcionam</h1>
 <p class="dek">O problema raramente é saber o que fazer. É começar, manter e concluir.</p>
 <p class="meta">Leitura de 4 min · Atualizado em 10/10/2026</p>
@@ -665,12 +754,12 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 <h2>Quando nada funciona</h2>
 <p>Se você conhece as estratégias e não consegue aplicá-las, isso não é falha de caráter. Pode ser sinal de que o tratamento precisa de ajuste ou de que há ansiedade, depressão ou sono ruim no caminho.</p>
 <p class="src">Fontes: Safren SA e cols., <i>JAMA</i>, 2010. Solanto MV e cols., <i>American Journal of Psychiatry</i>, 2010.</p>
-<div class="related" data-rel="adaptacoes habitos dinheiro"></div>
+<div class="related" data-rel="sob-pressao rotina-minima adaptacoes"></div>
 <a class="back" href="#inicio">← Voltar ao início</a>
 </div></article>
 
-<article class="view art" id="dinheiro" data-cat="vida" data-min="4"><div class="wrap narrow">
-<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-vida">Vida adulta</a></p>
+<article class="view art" id="dinheiro" data-cat="travas" data-min="4"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-travas">Travas</a></p>
 <h1>TDAH e dinheiro: impulso, dívida e golpes</h1>
 <p class="dek">Decidir rápido, esquecer vencimento e confiar depressa têm custo. Dá para criar travas.</p>
 <p class="meta">Leitura de 4 min · Atualizado em 10/10/2026</p>
@@ -698,14 +787,15 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 <li><b>Dívida que não cabe no orçamento:</b> a Lei 14.181/2021 permite renegociar todas as dívidas de consumo de uma vez, preservando o mínimo para viver. Procure o Procon ou a Defensoria.</li>
 <li><b>Contas e empréstimos no seu nome:</b> consulte de graça o Registrato, no site do Banco Central.</li>
 </ul>
+<p>Marque o que já fez no <a href="#kit-travas">Kit de Travas Financeiras</a>. O progresso fica salvo só no seu aparelho.</p>
 <p class="small">Este artigo é educativo e não é recomendação de investimento.</p>
 <p class="src">Fontes: Beauchaine TP, Ben-David I, Bos M, <i>Science Advances</i>, 2020. Lei 8.078/1990. Lei 14.181/2021. Banco Central do Brasil.</p>
-<div class="related" data-rel="produtividade emocoes apoio"></div>
+<div class="related" data-rel="kit-travas decisoes apostas"></div>
 <a class="back" href="#inicio">← Voltar ao início</a>
 </div></article>
 
-<article class="view art" id="relacionamentos" data-cat="vida" data-min="3"><div class="wrap narrow">
-<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-vida">Vida adulta</a></p>
+<article class="view art" id="relacionamentos" data-cat="vinculos" data-min="3"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-vinculos">Vínculos</a></p>
 <h1>TDAH a dois: o que desgasta e o que protege</h1>
 <p class="dek">O esquecimento é lido como descaso. A cobrança é lida como ataque. O casal entra em um ciclo que tem saída.</p>
 <p class="meta">Leitura de 3 min · Atualizado em 10/10/2026</p>
@@ -727,7 +817,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 </ul>
 <p>Estudos de registro mostram mais separações entre adultos com TDAH. Informação para os dois e, quando preciso, terapia de casal com profissional que conheça o transtorno reduzem esse risco.</p>
 <p class="src">Fontes: Faraone SV e cols., 2021. Barkley RA, <i>Taking Charge of Adult ADHD</i>, 2ª ed., 2021.</p>
-<div class="related" data-rel="emocoes produtividade tdah-mulheres"></div>
+<div class="related" data-rel="convivio manual-de-mim emocoes"></div>
 <a class="back" href="#inicio">← Voltar ao início</a>
 </div></article>
 
@@ -775,8 +865,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 <a class="back" href="#inicio">← Voltar ao início</a>
 </div></article>
 
-<article class="view art" id="adaptacoes" data-cat="direitos" data-min="3"><div class="wrap narrow">
-<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-direitos">Direitos</a></p>
+<article class="view art" id="adaptacoes" data-cat="rotina" data-min="3"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-rotina">Rotina e trabalho</a></p>
 <h1>Doze adaptações para pedir no trabalho, e como pedir</h1>
 <p class="dek">A maioria custa pouco ou nada. O pedido funciona melhor quando vem com a solução pronta.</p>
 <p class="meta">Leitura de 3 min · Atualizado em 10/10/2026</p>
@@ -796,7 +886,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 <li><span><b>Guardando cópia</b> do pedido e da resposta.</span></li>
 </ol>
 <p class="small">São exemplos práticos, não uma lista legal. A adaptação certa é a que resolve a barreira de cada pessoa.</p>
-<div class="related" data-rel="trabalho produtividade discriminacao"></div>
+<div class="related" data-rel="manual-de-mim ambientes trabalho"></div>
 <a class="back" href="#inicio">← Voltar ao início</a>
 </div></article>
 
@@ -910,8 +1000,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 </div></article>
 
 <!-- ===== FAMÍLIA E ESCOLA ===== -->
-<article class="view art" id="escola" data-cat="familia" data-min="3"><div class="wrap narrow">
-<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-familia">Família e escola</a></p>
+<article class="view art" id="escola" data-cat="direitos" data-min="3"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-direitos">Direitos</a></p>
 <h1>Direitos na escola: matrícula, apoio e provas</h1>
 <p class="dek">O que a escola é obrigada a fazer e como cobrar por escrito.</p>
 <p class="meta">Leitura de 3 min · Atualizado em 10/10/2026</p>
@@ -1030,8 +1120,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 </div></article>
 
 <!-- ===== PESQUISA ===== -->
-<article class="view art" id="genes" data-cat="ciencia" data-min="4"><div class="wrap narrow">
-<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-ciencia">Pesquisa</a></p>
+<article class="view art" id="genes" data-cat="entenda" data-min="4"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-entenda">Entenda</a></p>
 <h1>Genes antigos: o que a ciência diz sobre a origem do TDAH</h1>
 <p class="dek">Há dados reais por trás da ideia do “cérebro de caçador”. Há também limites que precisam ser ditos.</p>
 <p class="meta">Leitura de 4 min · Atualizado em 10/10/2026</p>
@@ -1068,8 +1158,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 <a class="back" href="#inicio">← Voltar ao início</a>
 </div></article>
 
-<article class="view art" id="expectativa-vida" data-cat="ciencia" data-min="2"><div class="wrap narrow">
-<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-ciencia">Pesquisa</a></p>
+<article class="view art" id="expectativa-vida" data-cat="saude" data-min="2"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-saude">Saúde</a></p>
 <h1>Adultos com TDAH vivem menos? O que diz o estudo britânico</h1>
 <p class="dek">A diferença encontrada é grande. A causa apontada pelos autores é evitável.</p>
 <p class="meta">Leitura de 2 min · Atualizado em 10/10/2026</p>
@@ -1085,6 +1175,618 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 <a class="back" href="#inicio">← Voltar ao início</a>
 </div></article>
 
+<!-- ===== FERRAMENTAS ===== -->
+<article class="view art" id="mapa" data-cat="ferramentas" data-min="5"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-forcas">Forças</a></p>
+<h1>Mapa Força–Trava</h1>
+<p class="dek">Marque os traços que você reconhece em si. O mapa mostra onde eles costumam render, onde costumam custar caro e quais travas instalar primeiro.</p>
+<p class="meta">Uso de 5 min · Conferido em 18/10/2026</p>
+<div class="note"><b class="t">Antes de começar</b>Não é teste nem diagnóstico. Serve para conversar consigo mesmo, com quem convive e com quem trata você. O que você marcar fica salvo só neste aparelho.</div>
+<fieldset class="plain noprint">
+<legend class="flabel">Quais destes traços você reconhece?</legend>
+<ul class="check" id="mapa-lista">
+<li><label><input type="checkbox" id="m-hiperfoco"><span><b>Hiperfoco.</b> Mergulho tão fundo no que me interessa que perco a noção do tempo.</span></label></li>
+<li><label><input type="checkbox" id="m-impulso"><span><b>Ação rápida e impulso.</b> Decido e ajo rápido, às vezes antes de pensar nas consequências.</span></label></li>
+<li><label><input type="checkbox" id="m-novidade"><span><b>Busca de novidade.</b> Me empolgo com o novo e perco o interesse quando vira rotina.</span></label></li>
+<li><label><input type="checkbox" id="m-energia"><span><b>Energia e inquietação.</b> Sinto o corpo ou a cabeça sempre ligados.</span></label></li>
+<li><label><input type="checkbox" id="m-emocao"><span><b>Intensidade emocional.</b> Sinto tudo forte: entusiasmo, raiva, injustiça, rejeição.</span></label></li>
+<li><label><input type="checkbox" id="m-divergente"><span><b>Pensamento divergente.</b> Penso em saltos e associações. Processos lineares me cansam.</span></label></li>
+<li><label><input type="checkbox" id="m-pressao"><span><b>Rendimento sob pressão.</b> Funciono melhor com prazo curto, emergência ou alguém esperando.</span></label></li>
+</ul>
+</fieldset>
+<div id="mapa-res" aria-live="polite"></div>
+<div class="actions noprint">
+<button class="btn ghost" type="button" id="mapa-copiar">Copiar resumo</button>
+<button class="btn ghost" type="button" id="mapa-imprimir">Imprimir ou salvar em PDF</button>
+<button class="btn ghost" type="button" id="mapa-limpar">Apagar marcações</button>
+</div>
+<textarea id="mapa-txt" rows="8" readonly hidden aria-label="Resumo do mapa em texto"></textarea>
+<h2>Como ler o grau de evidência</h2>
+<p class="ev"><span class="pill forte">Forte</span> estudos grandes e consistentes</p>
+<p class="ev"><span class="pill moderada">Moderada</span> bons estudos, mas menores ou indiretos</p>
+<p class="ev"><span class="pill limitada">Limitada</span> poucos estudos ou só relatos</p>
+<p class="ev"><span class="pill pratica">Prática</span> recomendação de bom senso clínico, sem estudo específico</p>
+<p class="small">As forças vêm de relatos e de estudos pequenos, com evidência limitada. Os principais riscos, como dívidas, acidentes e problemas de saúde, vêm de grandes estudos populacionais, com evidência forte. Cada trava traz o próprio grau.</p>
+<p class="src">Fontes: Schippers LM e cols., <i>Frontiers in Psychiatry</i>, 2022. Sedgwick JA, Merwood A, Asherson P, <i>ADHD Attention Deficit and Hyperactivity Disorders</i>, 2019. Lasky AK e cols., <i>Social Science &amp; Medicine</i>, 2016. Faraone SV e cols., <i>Neuroscience &amp; Biobehavioral Reviews</i>, 2021. Fontes de cada trava nos artigos indicados.</p>
+<div class="related" data-rel="mapa-forcas relevar kit-travas"></div>
+<a class="back" href="#inicio">← Voltar ao início</a>
+</div></article>
+
+<article class="view art" id="kit-travas" data-cat="ferramentas" data-min="10"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-travas">Travas</a></p>
+<h1>Kit de Travas Financeiras</h1>
+<p class="dek">Proteções automáticas para o dinheiro não depender da força de vontade. Marque o que já fez. Fica salvo só neste aparelho.</p>
+<p class="meta">Uso de 10 a 40 min, aos poucos · Conferido em 18/10/2026</p>
+<p class="flabel" id="kit-cont" aria-live="polite">Travas instaladas: 0 de 8</p>
+<div class="prog" aria-hidden="true"><i id="kit-barra"></i></div>
+<h2>Antes: instale as travas</h2>
+<ul class="check" id="kit">
+<li><label><input type="checkbox" id="k-pix"><span><b>Reduzir o limite do Pix, de dia e à noite</b> <span class="t">· 3 min</span><small>No aplicativo do banco. A redução vale na hora. O aumento leva de 24 a 48 horas, e essa espera protege contra o impulso. Dá para escolher se o período noturno começa às 20h ou às 22h.</small></span></label></li>
+<li><label><input type="checkbox" id="k-cartao"><span><b>Baixar o limite do cartão de crédito</b> <span class="t">· 3 min</span><small>Um limite menor diminui o estrago de uma compra por impulso ou de um golpe.</small></span></label></li>
+<li><label><input type="checkbox" id="k-avisos"><span><b>Ligar as notificações de compras e transferências</b> <span class="t">· 3 min</span><small>Você vê na hora qualquer gasto, inclusive o que não fez.</small></span></label></li>
+<li><label><input type="checkbox" id="k-debito"><span><b>Programar débito automático das contas fixas</b> <span class="t">· 10 min</span><small>Com vencimento logo depois do salário. Conta esquecida deixa de virar multa e juros.</small></span></label></li>
+<li><label><input type="checkbox" id="k-24h"><span><b>Combinar a regra das 24 horas</b> <span class="t">· 2 min</span><small>Compra fora do plano espera um dia no carrinho. Pessoas com TDAH tendem a preferir o ganho imediato ao maior e mais tardio, e a espera devolve a escolha.</small></span></label></li>
+<li><label><input type="checkbox" id="k-segunda"><span><b>Escolher sua segunda pessoa</b> <span class="t">· 10 min</span><small>Alguém de confiança e sem interesse no negócio, para ler contrato, empréstimo, investimento ou sociedade antes de você assinar.</small></span></label></li>
+<li><label><input type="checkbox" id="k-registrato"><span><b>Consultar o Registrato</b> <span class="t">· 10 min</span><small>Serviço gratuito do Banco Central, com conta gov.br prata ou ouro. Mostra empréstimos, contas e chaves Pix em seu nome.</small></span></label></li>
+<li><label><input type="checkbox" id="k-apostas"><span><b>Fazer a autoexclusão de apostas, se apostar é um risco para você</b> <span class="t">· 10 min</span><small>Em gov.br/autoexclusaoapostas, com conta gov.br prata ou ouro. Escolha 1, 3, 6 ou 12 meses, ou tempo indeterminado. Bloqueia cadastro e acesso em todas as casas autorizadas e corta a publicidade dirigida. Prazo fixo não pode ser desfeito antes do fim.</small></span></label></li>
+</ul>
+<p class="small">Mais detalhes em <a href="#decisoes">decisões com segunda pessoa</a> e em <a href="#apostas">apostas online</a>.</p>
+<h2>Se cair em golpe: aja na primeira hora</h2>
+<ol class="steps">
+<li><span><b>Conteste o Pix no aplicativo do banco</b> · 5 min. Desde outubro de 2025 os bancos oferecem essa opção no próprio app, para Pix feitos nos últimos 80 dias. Quanto antes, maior a chance de ainda haver saldo para bloquear. A devolução não é garantida.</span></li>
+<li><span><b>Guarde as provas</b> · 10 min. Comprovante, conversas, perfil ou número de quem aplicou o golpe e anúncios.</span></li>
+<li><span><b>Registre boletim de ocorrência</b> na delegacia on-line do seu estado · 20 min.</span></li>
+<li><span><b>Compra no cartão:</b> peça ao banco a contestação da compra · 10 min.</span></li>
+<li><span><b>Troque senhas e avise seus contatos</b> se o WhatsApp ou um e-mail foi invadido · 15 min.</span></li>
+</ol>
+<div class="note alert"><b class="t">Cuidado com o segundo golpe</b>Depois do primeiro golpe, é comum aparecer alguém oferecendo ajuda para recuperar o dinheiro mediante pagamento. É outro golpe. Fale com o banco só pelo aplicativo ou pelo telefone que está no verso do cartão.</div>
+<h2>Se a dívida apertou</h2>
+<ul>
+<li><b>Superendividamento:</b> a Lei 14.181/2021 permite reunir as dívidas de consumo em um plano de pagamento de até cinco anos, preservando o mínimo para viver. Comece pelo Procon ou pela Defensoria Pública.</li>
+<li><b>Pressão para contratar crédito é proibida,</b> sobretudo com pessoa doente ou em vulnerabilidade agravada (Código de Defesa do Consumidor, art. 54-C).</li>
+<li><b>Compra fora de loja física:</b> sete dias para desistir, sem precisar justificar (CDC, art. 49).</li>
+<li><b>Empréstimo para cobrir dívida ou aposta:</b> só depois de ler o custo total com a sua segunda pessoa.</li>
+</ul>
+<div class="actions noprint"><button class="btn ghost" type="button" id="kit-limpar">Apagar marcações</button></div>
+<p class="small">Este kit é educativo e não é recomendação financeira.</p>
+<p class="src">Fontes: Banco Central do Brasil: Instrução Normativa BCB 331/2022 (limites do Pix), Mecanismo Especial de Devolução e Registrato. Ministério da Fazenda: Plataforma Centralizada de Autoexclusão, 2025. Lei 8.078/1990 (CDC), arts. 49 e 54-C. Lei 14.181/2021. Jackson JNS, MacKillop J, <i>Biological Psychiatry: Cognitive Neuroscience and Neuroimaging</i>, 2016.</p>
+<div class="related" data-rel="dinheiro apostas decisoes"></div>
+<a class="back" href="#inicio">← Voltar ao início</a>
+</div></article>
+
+<!-- ===== FORÇAS ===== -->
+<article class="view art" id="mapa-forcas" data-cat="forcas" data-min="4"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-forcas">Forças</a></p>
+<h1>Mapa de forças: o lado bom do TDAH, sem romantizar</h1>
+<p class="dek">Criatividade, energia e hiperfoco aparecem com frequência nos relatos de adultos com TDAH. A ciência começou a medir isso há pouco, e o ambiente decide se a força aparece.</p>
+<p class="meta">Leitura de 4 min · Atualizado em 18/10/2026</p>
+<div class="key"><h2>Em resumo</h2><ul>
+<li>Em um estudo holandês com 206 adultos com TDAH, quase todos citaram aspectos positivos. Os mais lembrados foram criatividade, energia e hiperfoco.</li>
+<li>A evidência sobre as forças ainda é limitada: relatos e estudos pequenos. A evidência sobre os riscos é forte.</li>
+<li>O mesmo traço pode render ou custar caro. O que muda é o ambiente e a trava instalada.</li>
+<li>Não é superpoder. É um jeito de funcionar que pede o lugar certo e algumas proteções.</li>
+</ul></div>
+<p class="ev"><span>Grau de evidência:</span> forças <span class="pill limitada">Limitada</span> riscos <span class="pill forte">Forte</span></p>
+<h2>O que os estudos encontraram</h2>
+<div class="scroll-x"><table>
+<thead><tr><th>Força relatada</th><th>O que se sabe</th><th>Evidência</th></tr></thead>
+<tbody>
+<tr><td><b>Criatividade</b></td><td>Mais pensamento divergente, a capacidade de gerar muitas ideias, em quem tem sintomas altos sem diagnóstico. Em quem tem o transtorno, os resultados são mistos.</td><td><span class="pill limitada">Limitada</span></td></tr>
+<tr><td><b>Energia e entusiasmo</b></td><td>Entre os aspectos positivos mais citados por adultos com TDAH.</td><td><span class="pill limitada">Limitada</span></td></tr>
+<tr><td><b>Hiperfoco</b></td><td>Adultos com mais sintomas relatam mais episódios de foco intenso e prolongado.</td><td><span class="pill limitada">Limitada</span></td></tr>
+<tr><td><b>Coragem e resiliência</b></td><td>Temas centrais em entrevistas com seis adultos bem-sucedidos com TDAH.</td><td><span class="pill limitada">Limitada</span></td></tr>
+<tr><td><b>Empatia e senso de justiça</b></td><td>Citados por parte dos participantes do estudo holandês.</td><td><span class="pill limitada">Limitada</span></td></tr>
+<tr><td><b>Exploração</b></td><td>Em um jogo on-line de coleta, quem pontuou para TDAH trocava de área mais cedo e obteve mais recompensa. Foi um estudo só, em tarefa artificial.</td><td><span class="pill limitada">Limitada</span></td></tr>
+</tbody></table></div>
+<h2>Por que o mesmo traço rende ou atrapalha</h2>
+<p>Pesquisadores entrevistaram 125 jovens adultos diagnosticados com TDAH na infância. Muitos disseram que os sintomas mudavam conforme o lugar. Em tarefas desafiadoras, novas, rápidas, práticas ou de interesse próprio, a atenção melhorava e a energia virava vantagem. Em tarefas lentas, repetitivas e sem retorno, o mesmo traço virava problema.</p>
+<p>Por isso este site trabalha com três movimentos: <b>reconhecer</b> a força e montar o ambiente em que ela rende, <b>travar</b> o risco com estruturas simples e <b>relevar</b> o resto, sem culpa pelo que é sintoma.</p>
+<h2>Como usar o mapa</h2>
+<ol class="steps">
+<li><span><b>Reconheça.</b> Marque no <a href="#mapa">Mapa Força–Trava</a> os traços que você vê em si.</span></li>
+<li><span><b>Monte o ambiente.</b> Procure tarefas e lugares que puxem a face forte. Veja <a href="#ambientes">os critérios</a>.</span></li>
+<li><span><b>Instale travas.</b> Comece pelas três que o mapa indicar.</span></li>
+<li><span><b>Releve o resto.</b> Separe sintoma de caráter. Veja <a href="#relevar">como fazer</a>.</span></li>
+</ol>
+<div class="do"><h2>Faça agora</h2><ol>
+<li><b>Abrir o Mapa Força–Trava</b> e marcar os traços que reconhece <span class="t">· 5 min</span></li>
+<li><b>Anotar uma situação</b> em que um traço rendeu e uma em que custou caro <span class="t">· 5 min</span></li>
+<li><b>Escolher uma trava</b> para instalar hoje <span class="t">· 2 min</span></li>
+</ol></div>
+<p class="src">Fontes: Schippers LM e cols., <i>Frontiers in Psychiatry</i>, 2022. Sedgwick JA, Merwood A, Asherson P, <i>ADHD Attention Deficit and Hyperactivity Disorders</i>, 2019. Hoogman M e cols., <i>Neuroscience &amp; Biobehavioral Reviews</i>, 2020. Hupfeld KE, Abagis TR, Shah P, <i>ADHD Attention Deficit and Hyperactivity Disorders</i>, 2019. Barack DL e cols., <i>Proceedings of the Royal Society B</i>, 2024. Lasky AK e cols., <i>Social Science &amp; Medicine</i>, 2016.</p>
+<div class="related" data-rel="mapa hiperfoco ambientes"></div>
+<a class="back" href="#inicio">← Voltar ao início</a>
+</div></article>
+
+<article class="view art" id="hiperfoco" data-cat="forcas" data-min="3"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-forcas">Forças</a></p>
+<h1>Hiperfoco: como aproveitar sem se queimar</h1>
+<p class="dek">Horas que passam como minutos. O mergulho produz muito e também faz esquecer comida, sono e gente.</p>
+<p class="meta">Leitura de 3 min · Atualizado em 18/10/2026</p>
+<div class="key"><h2>Em resumo</h2><ul>
+<li>Hiperfoco é a absorção intensa e prolongada em uma tarefa, a ponto de desligar o resto.</li>
+<li>Adultos com mais sintomas de TDAH relatam mais hiperfoco no estudo e no trabalho, nos hobbies e nas telas.</li>
+<li>Ainda não existe uma definição científica única. A pesquisa é recente.</li>
+<li>A regra prática: decidir a hora de sair antes de entrar.</li>
+</ul></div>
+<p class="ev"><span>Grau de evidência:</span> hiperfoco no TDAH <span class="pill limitada">Limitada</span> travas <span class="pill pratica">Prática</span></p>
+<h2>Uma contradição só na aparência</h2>
+<p>TDAH não é falta de atenção. É dificuldade de dirigir a atenção para onde a tarefa pede. Quando o tema prende, ela pode ficar presa demais. Em duas amostras que somam mais de 600 adultos, quem tinha mais sintomas de TDAH relatou hiperfoco mais frequente. O fenômeno também é descrito no autismo, e os pesquisadores ainda discutem como defini-lo e medi-lo.</p>
+<h2>Onde rende e onde custa</h2>
+<div class="scroll-x"><table>
+<thead><tr><th>Rende</th><th>Custa</th></tr></thead>
+<tbody>
+<tr><td>Estudo de um tema que você escolheu</td><td>Refeição e sono pulados</td></tr>
+<tr><td>Projeto criativo, programação, escrita</td><td>Compromissos esquecidos</td></tr>
+<tr><td>Revisão profunda de um caso ou de um problema</td><td>Pessoas ignoradas sem querer</td></tr>
+<tr><td>Trabalho em blocos longos, sem interrupção</td><td>Madrugada em jogo, série ou rede social</td></tr>
+</tbody></table></div>
+<h2>Cinco travas para mergulhar com segurança</h2>
+<ol class="steps">
+<li><span><b>Alarme de saída antes de começar.</b> Programe antes, não depois. Deixe o celular longe, para ter de levantar.</span></li>
+<li><span><b>Corpo primeiro.</b> Água, comida e banheiro resolvidos antes do bloco.</span></li>
+<li><span><b>Bilhete de retorno.</b> Uma linha com o que precisa acontecer depois do bloco.</span></li>
+<li><span><b>Hiperfoco com hora marcada.</b> Ponha as tarefas que prendem nos horários em que você pode sumir por um tempo.</span></li>
+<li><span><b>Limite automático nas telas.</b> O celular permite limitar o tempo por aplicativo. Use no que mais prende.</span></li>
+</ol>
+<div class="note"><b class="t">Quando o mergulho vira problema</b>Sintomas de TDAH se associam a uso problemático de jogos eletrônicos, em grau moderado, segundo metanálise. Se jogos, apostas ou redes estão tomando o sono, o trabalho ou as relações, converse com um profissional. Sobre apostas, veja <a href="#apostas">como travar</a>.</div>
+<div class="do"><h2>Faça agora</h2><ol>
+<li><b>Programar um alarme de saída</b> para o próximo bloco <span class="t">· 1 min</span></li>
+<li><b>Deixar água e um lanche</b> na mesa antes de começar <span class="t">· 3 min</span></li>
+<li><b>Ligar o limite de tempo</b> no aplicativo que mais prende você <span class="t">· 3 min</span></li>
+</ol></div>
+<p class="src">Fontes: Hupfeld KE, Abagis TR, Shah P, <i>ADHD Attention Deficit and Hyperactivity Disorders</i>, 2019. Ashinoff BK, Abu-Akel A, <i>Psychological Research</i>, 2021. Koncz P e cols., <i>Clinical Psychology Review</i>, 2023.</p>
+<div class="related" data-rel="mapa-forcas sono rotina-minima"></div>
+<a class="back" href="#inicio">← Voltar ao início</a>
+</div></article>
+
+<article class="view art" id="sob-pressao" data-cat="forcas" data-min="3"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-forcas">Forças</a></p>
+<h1>Rendimento sob pressão: por que a urgência liga o motor</h1>
+<p class="dek">Na emergência, a calma aparece. Diante de um prazo distante, nada sai. Entender o porquê ajuda a usar a urgência sem viver dela.</p>
+<p class="meta">Leitura de 3 min · Atualizado em 18/10/2026</p>
+<div class="key"><h2>Em resumo</h2><ul>
+<li>Muitos adultos com TDAH dizem render melhor com prazo curto, emergência ou alguém esperando. É um relato frequente e ainda pouco medido.</li>
+<li>A explicação mais provável está no sistema de recompensa: o que está longe pesa menos do que o que está perto.</li>
+<li>A urgência funciona, mas cobra juros: estresse, sono curto e qualidade irregular.</li>
+<li>A saída é criar urgências pequenas e saudáveis, em vez de esperar a véspera.</li>
+</ul></div>
+<p class="ev"><span>Grau de evidência:</span> rendimento sob pressão <span class="pill limitada">Limitada</span> preferência pelo imediato <span class="pill moderada">Moderada</span> travas <span class="pill pratica">Prática</span></p>
+<h2>O que pode explicar</h2>
+<ul>
+<li><b>Recompensa distante pesa menos.</b> Uma metanálise de 21 estudos mostrou que pessoas com TDAH escolhem mais a recompensa menor e imediata do que a maior e tardia, com efeito de tamanho médio.</li>
+<li><b>Aversão à espera.</b> Um dos modelos clássicos do TDAH descreve um estilo motivacional que tenta escapar da espera.</li>
+<li><b>Via da recompensa.</b> Em exames de imagem, adultos com TDAH sem medicação tinham menos marcadores de dopamina nessa via, e isso acompanhava os sintomas de desatenção.</li>
+<li><b>Contexto.</b> Em entrevistas, jovens adultos com TDAH relataram funcionar melhor em tarefas estressantes, rápidas e desafiadoras.</li>
+</ul>
+<p>São peças de um quebra-cabeça, não uma regra para todos. Há quem tenha TDAH e trave sob pressão.</p>
+<h2>O preço de viver de véspera</h2>
+<ul>
+<li>Sono sacrificado na reta final.</li>
+<li>Entrega sem tempo de revisão.</li>
+<li>Ansiedade constante, porque tudo vira urgente.</li>
+<li>Relações e saúde no limite.</li>
+</ul>
+<h2>Como criar urgência saudável</h2>
+<ol class="steps">
+<li><span><b>Prazo falso com testemunha.</b> Combine uma entrega parcial com alguém, antes do prazo real.</span></li>
+<li><span><b>Prazo obrigatório separado de data desejada.</b> Na agenda, use uma cor para o que tem consequência real e outra para o que é só vontade.</span></li>
+<li><span><b>Relógio à vista.</b> Blocos de 25 minutos com o tempo visível.</span></li>
+<li><span><b>Trabalhar acompanhado.</b> Outra pessoa por perto, presencial ou por vídeo. Há pouca pesquisa e muito relato a favor.</span></li>
+<li><span><b>Descanso depois do pico.</b> Sono e pausa entram na agenda depois de cada entrega grande.</span></li>
+</ol>
+<div class="do"><h2>Faça agora</h2><ol>
+<li><b>Marcar uma entrega parcial</b> com alguém para depois de amanhã <span class="t">· 3 min</span></li>
+<li><b>Separar na agenda</b> prazo obrigatório e data desejada <span class="t">· 5 min</span></li>
+<li><b>Programar 25 minutos</b> de trabalho com o cronômetro à vista <span class="t">· 1 min</span></li>
+</ol></div>
+<p class="src">Fontes: Jackson JNS, MacKillop J, <i>Biological Psychiatry: Cognitive Neuroscience and Neuroimaging</i>, 2016. Sonuga-Barke EJS, <i>Neuroscience &amp; Biobehavioral Reviews</i>, 2003. Volkow ND e cols., <i>JAMA</i>, 2009. Lasky AK e cols., <i>Social Science &amp; Medicine</i>, 2016.</p>
+<div class="related" data-rel="produtividade ambientes hiperfoco"></div>
+<a class="back" href="#inicio">← Voltar ao início</a>
+</div></article>
+
+<article class="view art" id="ambientes" data-cat="forcas" data-min="3"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-forcas">Forças</a></p>
+<h1>Ambientes e carreiras em que muitos adultos com TDAH rendem</h1>
+<p class="dek">Não existe profissão certa para quem tem TDAH. Existem características de trabalho que ajudam, e dá para procurá-las em quase todas as áreas.</p>
+<p class="meta">Leitura de 3 min · Atualizado em 18/10/2026</p>
+<div class="key"><h2>Em resumo</h2><ul>
+<li>Em entrevistas com 125 jovens adultos diagnosticados na infância, muitos disseram que os sintomas mudavam conforme o ambiente.</li>
+<li>Eles rendiam mais em tarefas desafiadoras, novas, rápidas, práticas ou de interesse próprio.</li>
+<li>Use critérios, não uma lista de profissões. Com os ajustes certos, qualquer carreira é possível.</li>
+</ul></div>
+<p class="ev"><span>Grau de evidência:</span> <span class="pill limitada">Limitada</span> estudos qualitativos e relatos</p>
+<h2>Seis critérios para avaliar um trabalho</h2>
+<div class="scroll-x"><table>
+<thead><tr><th>Critério</th><th>Pergunta</th><th>Por que importa</th></tr></thead>
+<tbody>
+<tr><td><b>Interesse</b></td><td>O tema prende você?</td><td>Interesse sustenta a atenção.</td></tr>
+<tr><td><b>Movimento</b></td><td>Dá para levantar, sair, variar o lugar?</td><td>A inquietação vira energia útil.</td></tr>
+<tr><td><b>Variedade</b></td><td>As tarefas mudam ao longo da semana?</td><td>Novidade mantém o engajamento.</td></tr>
+<tr><td><b>Retorno rápido</b></td><td>Você vê o resultado logo?</td><td>Recompensa próxima motiva mais.</td></tr>
+<tr><td><b>Estrutura para o rotineiro</b></td><td>Há processo, checklist ou alguém para a parte burocrática?</td><td>Protege dos esquecimentos.</td></tr>
+<tr><td><b>Autonomia com prazos</b></td><td>Você decide como fazer, com entregas combinadas?</td><td>Liberdade sem ficar solto.</td></tr>
+</tbody></table></div>
+<h2>Áreas citadas com frequência</h2>
+<p>Urgência e emergência, vendas, empreendedorismo, artes, tecnologia, comunicação, esportes e ofícios práticos aparecem muito nos relatos. É tendência, não regra: há pessoas com TDAH em todas as profissões, e a mesma área tem funções muito diferentes. Dentro de um hospital, o plantão de emergência e o setor de faturamento pedem cérebros diferentes.</p>
+<h2>Concursos e seleções</h2>
+<p>Nos concursos federais, quem é reconhecido como pessoa com deficiência pede tecnologias assistivas e condições especiais na inscrição, e pode pedir tempo adicional com parecer de equipe multiprofissional ou de especialista (Decreto 9.508/2018, com a redação de 2025). Sem esse reconhecimento, vale o edital: peça atendimento especial com laudo, dentro do prazo. Veja <a href="#tdah-deficiencia">quando o TDAH conta como deficiência</a>.</p>
+<h2>No emprego atual</h2>
+<p>Pequenos ajustes costumam custar pouco: instruções por escrito, prazos intermediários, um canto mais silencioso. Veja <a href="#adaptacoes">como pedir</a> e use o <a href="#manual-de-mim">Manual de Mim</a> para explicar o que ajuda.</p>
+<div class="do"><h2>Faça agora</h2><ol>
+<li><b>Listar três momentos</b> em que você rendeu muito e o que eles tinham em comum <span class="t">· 10 min</span></li>
+<li><b>Dar nota de 0 a 2</b> ao seu trabalho em cada um dos seis critérios <span class="t">· 5 min</span></li>
+<li><b>Escolher um ajuste pequeno</b> para testar ou pedir <span class="t">· 5 min</span></li>
+</ol></div>
+<p class="src">Fontes: Lasky AK e cols., <i>Social Science &amp; Medicine</i>, 2016. Schippers LM e cols., <i>Frontiers in Psychiatry</i>, 2022. Decreto 9.508/2018, art. 4º, com redação do Decreto 12.533/2025.</p>
+<div class="related" data-rel="adaptacoes sob-pressao mapa-forcas"></div>
+<a class="back" href="#inicio">← Voltar ao início</a>
+</div></article>
+
+<!-- ===== TRAVAS ===== -->
+<article class="view art" id="apostas" data-cat="travas" data-min="4"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-travas">Travas</a></p>
+<h1>Apostas online: como travar antes que vire dívida</h1>
+<p class="dek">A aposta junta o que o TDAH tem mais dificuldade de frear: recompensa imediata, novidade e a promessa de recuperar o que perdeu.</p>
+<p class="meta">Leitura de 4 min · Atualizado em 18/10/2026</p>
+<div class="key"><h2>Em resumo</h2><ul>
+<li>Sintomas de TDAH e gravidade do jogo andam juntos, em grau modesto, segundo metanálise.</li>
+<li>Desde dezembro de 2025, qualquer pessoa pode se autoexcluir de todas as casas de apostas autorizadas, em gov.br/autoexclusaoapostas.</li>
+<li>As casas autorizadas não podem aceitar cartão de crédito.</li>
+<li>O SUS oferece teleatendimento gratuito para quem tem problema com apostas, pelo aplicativo Meu SUS Digital.</li>
+</ul></div>
+<p class="ev"><span>Grau de evidência:</span> TDAH e jogo problemático <span class="pill moderada">Moderada</span> travas <span class="pill pratica">Prática</span></p>
+<h2>Sinais de alerta</h2>
+<ul>
+<li>Apostar para recuperar o que perdeu.</li>
+<li>Precisar de valores cada vez maiores para sentir a mesma emoção.</li>
+<li>Esconder quanto aposta ou mentir sobre isso.</li>
+<li>Pegar emprestado ou atrasar contas para apostar.</li>
+<li>Ficar irritado quando tenta diminuir, ou tentar parar e não conseguir.</li>
+</ul>
+<p>Se você se reconhece em algum desses sinais, vale instalar as travas abaixo e conversar com um profissional.</p>
+<h2>Travas, da mais forte para a mais leve</h2>
+<ol class="steps">
+<li><span><b>Autoexclusão centralizada.</b> Em <a href="https://www.gov.br/autoexclusaoapostas" target="_blank" rel="noopener">gov.br/autoexclusaoapostas</a>, com conta gov.br prata ou ouro. Você escolhe 1, 3, 6 ou 12 meses, ou tempo indeterminado. O bloqueio impede cadastro e acesso a contas em todas as casas autorizadas e corta a publicidade dirigida. Prazo fixo não pode ser desfeito antes do fim. No indeterminado, dá para desistir em até um mês.</span></li>
+<li><span><b>Dinheiro longe da aposta.</b> Reduza o limite do Pix, o que vale na hora, e não salve dados bancários em aplicativo de aposta.</span></li>
+<li><span><b>Aplicativos fora do celular.</b> Apague os aplicativos e bloqueie os sites com o controle de conteúdo do aparelho.</span></li>
+<li><span><b>Uma pessoa sabendo.</b> Conte a alguém de confiança e combine o que essa pessoa pode perguntar.</span></li>
+<li><span><b>Tratamento.</b> No Meu SUS Digital, abra a área de miniaplicativos, escolha apostas e faça o autoteste. Se o risco for moderado ou alto, a consulta por vídeo é agendada: até 13 encontros com equipe de psicologia e terapia ocupacional, de graça e em sigilo. Risco baixo é encaminhado à UBS ou ao CAPS. Grupos de ajuda mútua, como os Jogadores Anônimos, também ajudam.</span></li>
+</ol>
+<h2>Se já virou dívida</h2>
+<ul>
+<li>Não pegue empréstimo para cobrir aposta.</li>
+<li>Dívidas com banco e cartão podem entrar na renegociação da Lei do Superendividamento. Veja o <a href="#kit-travas">Kit de Travas Financeiras</a>.</li>
+</ul>
+<h2>O que a lei já diz</h2>
+<ul>
+<li><b>Lei 14.790/2023:</b> regulamentou as apostas de quota fixa. Só podem operar empresas autorizadas pelo Ministério da Fazenda.</li>
+<li><b>Portaria SPA/MF 615/2024:</b> aposta só se paga por Pix, TED, débito ou cartão pré-pago. Dinheiro vivo, cartão de crédito, boleto, cheque e criptoativos são proibidos.</li>
+<li><b>Portaria SPA/MF 1.231/2024:</b> regras de jogo responsável e de publicidade para as casas autorizadas.</li>
+</ul>
+<div class="note alert"><b class="t">Se a dívida ou a vergonha pesarem demais</b>Se aparecer pensamento de morte, ligue <a href="tel:188">188</a> (CVV, 24 horas) ou procure um serviço de emergência.</div>
+<div class="do"><h2>Faça agora</h2><ol>
+<li><b>Fazer a autoexclusão</b> em gov.br/autoexclusaoapostas <span class="t">· 10 min</span></li>
+<li><b>Reduzir o limite do Pix noturno</b> no aplicativo do banco <span class="t">· 3 min</span></li>
+<li><b>Contar para uma pessoa de confiança</b> e combinar como ela pode ajudar <span class="t">· 10 min</span></li>
+</ol></div>
+<p class="src">Fontes: Theule J e cols., <i>Journal of Attention Disorders</i>, 2019. Ministério da Fazenda, Plataforma Centralizada de Autoexclusão, dezembro de 2025. Ministério da Saúde, teleatendimento para apostas no Meu SUS Digital, março de 2026. Lei 14.790/2023. Portarias SPA/MF 615/2024 e 1.231/2024. Lei 14.181/2021.</p>
+<div class="related" data-rel="kit-travas dinheiro decisoes"></div>
+<a class="back" href="#inicio">← Voltar ao início</a>
+</div></article>
+
+<article class="view art" id="volante" data-cat="travas" data-min="3"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-travas">Travas</a></p>
+<h1>TDAH ao volante: o risco que dá para reduzir</h1>
+<p class="dek">Distração e pressa somam risco no trânsito. As travas são simples, e o tratamento ajuda.</p>
+<p class="meta">Leitura de 3 min · Atualizado em 18/10/2026</p>
+<div class="key"><h2>Em resumo</h2><ul>
+<li>Uma metanálise de 16 estudos estimou risco de acidente cerca de 23% maior em motoristas com TDAH, considerando o quanto cada um dirige. É parecido com o de quem tem doença cardiovascular.</li>
+<li>O famoso “risco quatro vezes maior” vinha de casos com transtorno de conduta associado e não se confirmou para o TDAH em geral.</li>
+<li>Em 2,3 milhões de pessoas com TDAH, os meses com medicação tiveram 38% (homens) e 42% (mulheres) menos acidentes atendidos em emergência.</li>
+<li>Celular, sono curto, álcool e pressa são os alvos das travas.</li>
+</ul></div>
+<p class="ev"><span>Grau de evidência:</span> risco um pouco maior <span class="pill forte">Forte</span> menos acidentes com tratamento <span class="pill moderada">Moderada</span> travas <span class="pill pratica">Prática</span></p>
+<h2>O que aumenta o risco</h2>
+<ul>
+<li><b>Distração:</b> celular e pensamento que voa.</li>
+<li><b>Velocidade:</b> motoristas com TDAH recebem mais multas por excesso de velocidade.</li>
+<li><b>Sono curto:</b> o cansaço piora atenção e reflexo.</li>
+<li><b>Álcool:</b> reduz ainda mais o freio do impulso. No Brasil, a tolerância ao volante é zero.</li>
+<li><b>Pressa:</b> sair atrasado empurra para o risco.</li>
+</ul>
+<h2>Travas para o dia a dia</h2>
+<ol class="steps">
+<li><span><b>Celular fora do alcance,</b> em modo direção, com resposta automática.</span></li>
+<li><span><b>Rota, música e ligação resolvidas</b> antes de ligar o carro.</span></li>
+<li><span><b>Dez minutos de folga</b> na saída. Atraso vira pressa, e pressa vira risco.</span></li>
+<li><span><b>Dormiu mal?</b> Dirija menos, divida a direção ou vá de outro jeito.</span></li>
+<li><span><b>Bebeu, não dirija.</b> Nenhuma quantidade é segura ao volante.</span></li>
+<li><span><b>Converse com quem trata você</b> sobre os horários em que dirige. Não ajuste remédio por conta própria.</span></li>
+</ol>
+<div class="do"><h2>Faça agora</h2><ol>
+<li><b>Ativar o modo direção</b> do celular <span class="t">· 2 min</span></li>
+<li><b>Definir rota e música</b> antes de ligar o carro <span class="t">· 1 min</span></li>
+<li><b>Combinar consigo:</b> noite mal dormida, menos direção <span class="t">· 1 min</span></li>
+</ol></div>
+<p class="src">Fontes: Vaa T, <i>Accident Analysis &amp; Prevention</i>, 2014. Chang Z e cols., <i>JAMA Psychiatry</i>, 2017. Lei 12.760/2012.</p>
+<div class="related" data-rel="sono decisoes tratamento-brasil"></div>
+<a class="back" href="#inicio">← Voltar ao início</a>
+</div></article>
+
+<article class="view art" id="decisoes" data-cat="travas" data-min="4"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-travas">Travas</a></p>
+<h1>Decisões grandes com segunda pessoa</h1>
+<p class="dek">Empréstimo, contrato, sociedade, carro, investimento. Decidir rápido ajuda na urgência e sai caro no papel assinado.</p>
+<p class="meta">Leitura de 4 min · Atualizado em 18/10/2026</p>
+<div class="key"><h2>Em resumo</h2><ul>
+<li>Pessoas com TDAH tendem a preferir o ganho imediato ao maior e mais tardio. Golpes e vendas agressivas exploram justamente a pressa.</li>
+<li>Regra simples: decisão grande não se assina no mesmo dia, e ninguém decide sozinho.</li>
+<li>A segunda pessoa é alguém de confiança, sem interesse no negócio.</li>
+<li>Para pessoas com deficiência, a lei prevê a tomada de decisão apoiada, que dá apoio sem tirar o poder de decidir.</li>
+</ul></div>
+<p class="ev"><span>Grau de evidência:</span> preferência pelo imediato <span class="pill moderada">Moderada</span> dificuldade financeira ao longo da vida <span class="pill forte">Forte</span> método <span class="pill pratica">Prática</span></p>
+<h2>Três filtros</h2>
+<ol class="steps">
+<li><span><b>Tempo.</b> Um dia para decisões médias. Três dias para as grandes.</span></li>
+<li><span><b>Segunda pessoa.</b> Ela lê o contrato e faz as perguntas incômodas.</span></li>
+<li><span><b>Checklist.</b> As perguntas abaixo, respondidas por escrito.</span></li>
+</ol>
+<h2>Checklist antes de assinar</h2>
+<ul id="checklist-decisoes">
+<li>Qual é o custo total, com juros, taxas e seguros?</li>
+<li>Dá para desistir? Em quanto tempo e com que multa?</li>
+<li>O que acontece se eu atrasar uma parcela?</li>
+<li>Quem ganha com a minha pressa?</li>
+<li>A empresa existe e está autorizada? Investimento se confere na CVM; banco e financeira, no Banco Central.</li>
+<li>Eu faria isso se tivesse de esperar uma semana?</li>
+</ul>
+<div class="actions noprint"><button class="btn ghost" type="button" data-copy="checklist-decisoes">Copiar checklist</button></div>
+<h2>Sinais de golpe ou de pressão indevida</h2>
+<ul>
+<li>“Só hoje”, “última vaga”, “não conte a ninguém”, “retorno garantido”.</li>
+<li>Pressionar alguém para contratar crédito é proibido, sobretudo quando a pessoa está doente ou em vulnerabilidade agravada (Código de Defesa do Consumidor, art. 54-C).</li>
+<li>Compra feita fora de loja física, como pela internet ou por telefone, pode ser desfeita em sete dias (CDC, art. 49).</li>
+</ul>
+<h2>Tomada de decisão apoiada</h2>
+<p>Prevista no Código Civil (art. 1.783-A), permite que a pessoa com deficiência escolha pelo menos duas pessoas de confiança para apoiá-la em decisões da vida civil. O pedido parte da própria pessoa e vai ao juiz, com um termo que define os limites do apoio e o prazo. Não é interdição: quem decide continua sendo a pessoa. A Defensoria Pública pode dizer se faz sentido no seu caso.</p>
+<div class="do"><h2>Faça agora</h2><ol>
+<li><b>Escolher sua segunda pessoa</b> e avisar a ela <span class="t">· 10 min</span></li>
+<li><b>Copiar o checklist</b> para o celular <span class="t">· 2 min</span></li>
+<li><b>Combinar consigo:</b> nada grande se assina no mesmo dia <span class="t">· 1 min</span></li>
+</ol></div>
+<p class="src">Fontes: Jackson JNS, MacKillop J, <i>Biological Psychiatry: Cognitive Neuroscience and Neuroimaging</i>, 2016. Beauchaine TP, Ben-David I, Bos M, <i>Science Advances</i>, 2020. Código Civil (Lei 10.406/2002), art. 1.783-A. Código de Defesa do Consumidor (Lei 8.078/1990), arts. 49 e 54-C, este incluído pela Lei 14.181/2021.</p>
+<div class="related" data-rel="kit-travas dinheiro apostas"></div>
+<a class="back" href="#inicio">← Voltar ao início</a>
+</div></article>
+
+<article class="view art" id="sono" data-cat="travas" data-min="4"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-travas">Travas</a></p>
+<h1>Sono no TDAH adulto: por que você dorme tarde e como ajustar</h1>
+<p class="dek">A cabeça acende quando a casa apaga. Não é só hábito: em muitos adultos com TDAH, o relógio biológico funciona atrasado.</p>
+<p class="meta">Leitura de 4 min · Atualizado em 18/10/2026</p>
+<div class="key"><h2>Em resumo</h2><ul>
+<li>Uma revisão estima que a fase do sono atrasada atinge de 73% a 78% das crianças e dos adultos com TDAH.</li>
+<li>Em adultos com TDAH e dificuldade para pegar no sono, a melatonina do próprio corpo começa a subir mais tarde.</li>
+<li>Sono curto piora atenção, humor e impulso. Vira um círculo.</li>
+<li>Para insônia crônica, o primeiro tratamento recomendado é a terapia cognitivo-comportamental para insônia, não o remédio.</li>
+</ul></div>
+<p class="ev"><span>Grau de evidência:</span> relógio atrasado no TDAH <span class="pill moderada">Moderada</span> terapia para insônia <span class="pill forte">Forte</span> ajustes de rotina <span class="pill pratica">Prática</span></p>
+<h2>O que acontece</h2>
+<ul>
+<li><b>Relógio atrasado.</b> Em um estudo com 40 adultos com TDAH, 31 tinham insônia para iniciar o sono. Neles, o sono e a melatonina começavam mais tarde do que nos demais.</li>
+<li><b>Cabeça acelerada à noite,</b> somada ao hiperfoco em telas.</li>
+<li><b>Horário do remédio.</b> Estimulante tomado tarde pode atrapalhar o sono. Ajuste só com o médico.</li>
+<li><b>Outras causas.</b> Ronco com pausas na respiração, pernas inquietas, ansiedade e depressão também tiram o sono e têm tratamento.</li>
+</ul>
+<h2>Ajustes de maior retorno</h2>
+<ol class="steps">
+<li><span><b>Hora fixa para acordar,</b> todos os dias. O horário de dormir se ajusta atrás.</span></li>
+<li><span><b>Luz natural pela manhã,</b> de 10 a 15 minutos.</span></li>
+<li><span><b>Luz baixa e telas longe</b> na última hora antes de deitar.</span></li>
+<li><span><b>Cafeína só até o começo da tarde.</b></span></li>
+<li><span><b>Alarme para ir dormir,</b> não só para acordar.</span></li>
+<li><span><b>Cama é para dormir.</b> Se o sono não vier em uns 20 minutos, levante e volte quando der sono.</span></li>
+</ol>
+<h2>Tratamento</h2>
+<ul>
+<li><b>Terapia cognitivo-comportamental para insônia:</b> primeira escolha para insônia crônica em adultos, inclusive com outras condições, presencial ou digital, segundo a diretriz europeia de 2023.</li>
+<li><b>Melatonina e remédios para dormir:</b> só com orientação médica. Para o relógio atrasado, o horário de uso faz diferença.</li>
+<li><b>Ronco alto ou pausas na respiração:</b> peça avaliação de apneia do sono.</li>
+</ul>
+<div class="do"><h2>Faça agora</h2><ol>
+<li><b>Escolher uma hora fixa para acordar,</b> inclusive no fim de semana <span class="t">· 2 min</span></li>
+<li><b>Programar um alarme</b> de ir para a cama <span class="t">· 1 min</span></li>
+<li><b>Pegar luz natural</b> amanhã cedo <span class="t">· 15 min</span></li>
+</ol></div>
+<p class="src">Fontes: Bijlenga D e cols., <i>ADHD Attention Deficit and Hyperactivity Disorders</i>, 2019. Van Veen MM e cols., <i>Biological Psychiatry</i>, 2010. Riemann D e cols., <i>Journal of Sleep Research</i>, 2023.</p>
+<div class="related" data-rel="habitos hiperfoco volante"></div>
+<a class="back" href="#inicio">← Voltar ao início</a>
+</div></article>
+
+<!-- ===== SAÚDE ===== -->
+<article class="view art" id="relevar" data-cat="saude" data-min="3"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-saude">Saúde</a></p>
+<h1>Relevar sem se abandonar: autocompaixão com responsabilidade</h1>
+<p class="dek">Culpa não organiza a agenda. Desistir de si também não. Existe um caminho do meio, e ele se treina.</p>
+<p class="meta">Leitura de 3 min · Atualizado em 18/10/2026</p>
+<div class="key"><h2>Em resumo</h2><ul>
+<li>Em um estudo com 1.203 adultos, quem tinha TDAH relatou menos autocompaixão e mais crítica vinda dos outros. A crítica percebida explicou parte dessa diferença.</li>
+<li>Relevar é separar sintoma de caráter. Não é fingir que nada aconteceu.</li>
+<li>O roteiro: reconhecer, reparar o dano, ajustar o sistema e soltar o resto.</li>
+<li>Culpa que paralisa, ou que vem com desesperança, merece ajuda profissional.</li>
+</ul></div>
+<p class="ev"><span>Grau de evidência:</span> autocompaixão menor no TDAH <span class="pill limitada">Limitada</span> terapia cognitivo-comportamental para TDAH <span class="pill moderada">Moderada</span> roteiro <span class="pill pratica">Prática</span></p>
+<h2>Três perguntas depois de um erro</h2>
+<ol class="steps">
+<li><span><b>Foi sintoma, escolha ou os dois?</b> Esquecer a reunião é sintoma. Não avisar depois é escolha.</span></li>
+<li><span><b>Qual foi o dano e como eu reparo?</b> Um pedido de desculpas específico, devolver, refazer.</span></li>
+<li><span><b>Que sistema evita a próxima vez?</b> Alarme, débito automático, segunda pessoa.</span></li>
+</ol>
+<p>Respondidas as três, o resto pode ser relevado.</p>
+<h2>Fala de juiz e fala de técnico</h2>
+<div class="scroll-x"><table>
+<thead><tr><th>Juiz: paralisa</th><th>Técnico: ajusta</th></tr></thead>
+<tbody>
+<tr><td>“Eu sou um desastre.”</td><td>“Esqueci a reunião. Vou pôr dois alarmes.”</td></tr>
+<tr><td>“Nunca vou mudar.”</td><td>“Ainda não achei o sistema certo para isso.”</td></tr>
+<tr><td>“Todo mundo consegue, menos eu.”</td><td>“Meu cérebro precisa de estrutura de fora. Qual vou testar?”</td></tr>
+</tbody></table></div>
+<h2>O que relevar não é</h2>
+<ul>
+<li>Não é licença para repetir o dano.</li>
+<li>Não é dispensar tratamento.</li>
+<li>Não é aceitar desrespeito, nem dos outros nem de si.</li>
+</ul>
+<p>A terapia cognitivo-comportamental para TDAH trabalha exatamente esses pensamentos de fracasso e, em ensaio clínico com adultos, melhorou os sintomas além do remédio.</p>
+<div class="note alert"><b class="t">Quando procurar ajuda logo</b>Se a culpa vier com pensamento de morte, ligue <a href="tel:188">188</a> (CVV, 24 horas) ou procure um serviço de emergência.</div>
+<div class="do"><h2>Faça agora</h2><ol>
+<li><b>Escrever uma coisa</b> pela qual você se culpa e responder às três perguntas <span class="t">· 10 min</span></li>
+<li><b>Trocar uma frase de juiz</b> por uma de técnico <span class="t">· 2 min</span></li>
+<li><b>Marcar consulta</b> se a culpa está paralisando <span class="t">· 5 min</span></li>
+</ol></div>
+<p class="src">Fontes: Beaton DM, Sirois FM, Milne E, <i>Mindfulness</i>, 2020. Safren SA e cols., <i>JAMA</i>, 2010.</p>
+<div class="related" data-rel="emocoes mapa-forcas rotina-minima"></div>
+<a class="back" href="#inicio">← Voltar ao início</a>
+</div></article>
+
+<!-- ===== VÍNCULOS ===== -->
+<article class="view art" id="manual-de-mim" data-cat="vinculos" data-min="3"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-vinculos">Vínculos</a></p>
+<h1>Manual de Mim: como explicar o seu jeito de funcionar</h1>
+<p class="dek">Uma página para mostrar a quem convive ou trabalha com você: o que ajuda, o que atrapalha e como pedir as coisas.</p>
+<p class="meta">Leitura de 3 min · Atualizado em 18/10/2026</p>
+<div class="key"><h2>Em resumo</h2><ul>
+<li>O Manual de Mim é um resumo prático, escrito por você, sobre como você funciona melhor.</li>
+<li>Serve para parceiro, família, chefe ou colegas. Não precisa citar diagnóstico.</li>
+<li>Funciona melhor quando escrito em um dia bom e revisto a cada três meses.</li>
+</ul></div>
+<p class="ev"><span>Grau de evidência:</span> <span class="pill pratica">Prática</span> segue a recomendação de informar quem convive sobre como o TDAH afeta a vida</p>
+<h2>Modelo para copiar</h2>
+<pre class="model" id="modelo-manual">MANUAL DE MIM
+Eu funciono melhor quando:
+O que me ajuda:
+O que me atrapalha:
+Sinais de que estou sobrecarregado:
+Como me pedir algo:
+Como me dar um retorno:
+No que eu sou bom:
+O que estou fazendo para melhorar:</pre>
+<div class="actions noprint"><button class="btn ghost" type="button" data-copy="modelo-manual">Copiar modelo</button></div>
+<h2>Exemplo preenchido</h2>
+<p>“Funciono melhor com pedido por escrito e prazo claro. Me ajudam agenda compartilhada e lembrete na véspera. Me atrapalham várias tarefas faladas de uma vez e interrupção no meio de um bloco. Quando estou sobrecarregado, fico calado ou irritado. Peça uma coisa de cada vez, por mensagem. Sou bom em crise, ideia nova e solução rápida. Estou usando alarmes e uma lista única.”</p>
+<h2>No trabalho</h2>
+<p>Você não é obrigado a revelar diagnóstico. Dado de saúde é dado sensível pela Lei Geral de Proteção de Dados, e a decisão de contar é sua. O manual pode falar só de preferências de trabalho. Para pedir ajustes formais, veja <a href="#adaptacoes">adaptações razoáveis</a>.</p>
+<div class="do"><h2>Faça agora</h2><ol>
+<li><b>Copiar o modelo</b> e preencher três itens <span class="t">· 10 min</span></li>
+<li><b>Escolher uma pessoa</b> para mostrar <span class="t">· 2 min</span></li>
+<li><b>Marcar no calendário</b> uma revisão daqui a três meses <span class="t">· 1 min</span></li>
+</ol></div>
+<p class="src">Fontes: NICE, diretriz NG87 sobre TDAH, 2018, recomendações 1.4.3 a 1.4.10. Lei 13.709/2018 (LGPD), arts. 5º e 11.</p>
+<div class="related" data-rel="convivio relacionamentos adaptacoes"></div>
+<a class="back" href="#inicio">← Voltar ao início</a>
+</div></article>
+
+<article class="view art" id="convivio" data-cat="vinculos" data-min="4"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-vinculos">Vínculos</a></p>
+<h1>Guia para quem convive com um adulto com TDAH</h1>
+<p class="dek">Para parceiros, família, chefes, colegas e líderes religiosos: o que ajuda, o que piora e como cuidar de você também.</p>
+<p class="meta">Leitura de 4 min · Atualizado em 18/10/2026</p>
+<div class="key"><h2>Em resumo</h2><ul>
+<li>Esquecimento e atraso fazem parte do quadro. Não são descaso nem falta de caráter.</li>
+<li>Sistemas visíveis funcionam melhor do que cobrança falada.</li>
+<li>Quem convive também precisa de apoio. A diretriz britânica do NICE recomenda que familiares busquem avaliação das próprias necessidades e grupos de apoio.</li>
+<li>Com o consentimento da pessoa, a família pode participar do tratamento.</li>
+</ul></div>
+<p class="ev"><span>Grau de evidência:</span> <span class="pill pratica">Prática</span> recomendações de diretriz clínica e de experiência</p>
+<h2>O que ajuda</h2>
+<ul>
+<li><b>Pedidos curtos,</b> um de cada vez, de preferência por escrito.</li>
+<li><b>Sistemas à vista:</b> agenda compartilhada, quadro na cozinha, lembrete automático.</li>
+<li><b>Elogio específico:</b> “Você chegou na hora, e isso fez diferença.”</li>
+<li><b>Separar a pessoa do sintoma.</b> O adversário é o esquecimento, não ela.</li>
+<li><b>Sinal de pausa</b> combinado para conversas que esquentam.</li>
+</ul>
+<h2>O que piora</h2>
+<ul>
+<li>Rótulos como “irresponsável” e “preguiçoso”.</li>
+<li>Comparação com irmãos, colegas ou ex.</li>
+<li>Correção em público.</li>
+<li>Ironia do tipo “de novo o TDAH?”.</li>
+<li>Espiritualizar o sintoma: “isso é falta de fé”. Veja <a href="#fe-frases">como responder</a>.</li>
+<li>Virar gerente da vida do outro. Desgasta os dois.</li>
+</ul>
+<h2>Para chefes e colegas</h2>
+<ul>
+<li>Pergunte o que ajuda. Não presuma.</li>
+<li>Instrução por escrito e prazos intermediários.</li>
+<li>Ajustes simples costumam custar pouco. Veja <a href="#adaptacoes">adaptações razoáveis</a>.</li>
+<li>Diagnóstico é dado sensível. Não comente com outras pessoas.</li>
+</ul>
+<h2>Para líderes religiosos</h2>
+<p>Acolhimento começa por não tratar sintoma como pecado ou falta de fé. Veja o <a href="#fe-guia">guia para comunidades de fé</a>.</p>
+<h2>Cuide de você também</h2>
+<ul>
+<li>Converse sobre como o TDAH afeta você e a casa.</li>
+<li>Procure grupos de apoio para familiares, como os da <a href="https://tdah.org.br" target="_blank" rel="noopener">ABDA</a>.</li>
+<li>Terapia de casal ou de família com profissional que conheça TDAH.</li>
+</ul>
+<div class="note alert"><b class="t">Quando agir rápido</b>Fala de morte ou de se machucar: <a href="tel:188">188</a> (CVV) ou <a href="tel:192">192</a> (SAMU). Dívida escondida, aposta ou direção perigosa: proponha as <a href="#kit-travas">travas</a> e ajuda profissional, sem humilhar.</div>
+<div class="do"><h2>Faça agora</h2><ol>
+<li><b>Combinar um sistema visível,</b> como agenda compartilhada ou quadro <span class="t">· 15 min</span></li>
+<li><b>Trocar uma cobrança falada</b> por um lembrete automático <span class="t">· 5 min</span></li>
+<li><b>Reservar 15 minutos por semana</b> para alinhar a agenda, sem celular <span class="t">· 2 min</span></li>
+</ol></div>
+<p class="src">Fontes: NICE, diretriz NG87 sobre TDAH, 2018, recomendações 1.4.6, 1.4.7, 1.4.10, 1.5.3 e 1.5.5. Faraone SV e cols., <i>Neuroscience &amp; Biobehavioral Reviews</i>, 2021.</p>
+<div class="related" data-rel="manual-de-mim relacionamentos fe-guia"></div>
+<a class="back" href="#inicio">← Voltar ao início</a>
+</div></article>
+
+<!-- ===== ROTINA E TRABALHO ===== -->
+<article class="view art" id="rotina-minima" data-cat="rotina" data-min="3"><div class="wrap narrow">
+<p class="crumb"><a href="#inicio">Início</a> › <a href="#c-rotina">Rotina e trabalho</a></p>
+<h1>Rotina mínima para dias difíceis</h1>
+<p class="dek">Tem dia em que nada funciona. Nesses dias, o objetivo muda: fazer o mínimo que mantém você de pé.</p>
+<p class="meta">Leitura de 3 min · Atualizado em 18/10/2026</p>
+<div class="key"><h2>Em resumo</h2><ul>
+<li>Em dia difícil, vale uma prioridade essencial e uma ação curta. O resto espera.</li>
+<li>Cuidados básicos vêm primeiro: água, comida, remédio como prescrito, banho e sono.</li>
+<li>Pequenas ações planejadas ajudam o humor. Na depressão, essa estratégia, chamada ativação comportamental, tem boa evidência.</li>
+<li>Se os dias difíceis viram semanas, ou se aparece pensamento de morte, procure ajuda.</li>
+</ul></div>
+<p class="ev"><span>Grau de evidência:</span> ativação comportamental na depressão <span class="pill moderada">Moderada</span> roteiro para dia difícil <span class="pill pratica">Prática</span></p>
+<h2>O roteiro de três linhas</h2>
+<ol class="steps">
+<li><span><b>Uma prioridade:</b> a única coisa que, feita, salva o dia.</span></li>
+<li><span><b>Uma ação de até 10 minutos:</b> o primeiro passo dela, ou um cuidado básico.</span></li>
+<li><span><b>O resto espera:</b> anote para tirar da cabeça e feche a lista.</span></li>
+</ol>
+<p>O botão <b>Dia difícil</b>, no alto e no fim de cada página, abre esse roteiro e guarda o que você escrever só neste aparelho.</p>
+<div class="actions noprint"><button class="btn" type="button" data-open-dd>Abrir o Modo Dia Difícil</button></div>
+<h2>Lista mínima de cuidados</h2>
+<p>Escolha três para os dias ruins: beber água, comer algo simples, tomar o remédio como prescrito, tomar banho, sair cinco minutos ao ar livre, mandar mensagem para alguém de confiança, deitar no horário.</p>
+<h2>Prepare num dia bom</h2>
+<ul>
+<li>Uma mensagem pronta para remarcar compromissos: “Hoje não consigo. Posso remarcar até sexta?”</li>
+<li>Comida fácil em casa.</li>
+<li>Uma pessoa avisada de que, em dia ruim, você pode pedir ajuda.</li>
+</ul>
+<h2>Quando é mais que um dia difícil</h2>
+<ul>
+<li>Mais de duas semanas com tristeza, perda de prazer ou desesperança podem ser depressão, que é comum junto com o TDAH e tem tratamento.</li>
+<li>Cansaço que não passa com descanso merece consulta.</li>
+</ul>
+<div class="note alert"><b class="t">Pensamento de morte</b>Ligue <a href="tel:188">188</a> agora (CVV, 24 horas, gratuito) ou procure um serviço de emergência. Também há chat em cvv.org.br.</div>
+<div class="do"><h2>Faça agora</h2><ol>
+<li><b>Abrir o Modo Dia Difícil</b> e escrever a prioridade de hoje <span class="t">· 2 min</span></li>
+<li><b>Deixar pronta uma mensagem</b> para remarcar compromissos <span class="t">· 5 min</span></li>
+<li><b>Escolher seus três cuidados mínimos</b> <span class="t">· 3 min</span></li>
+</ol></div>
+<p class="src">Fontes: Ekers D e cols., <i>PLoS One</i>, 2014. Faraone SV e cols., <i>Neuroscience &amp; Biobehavioral Reviews</i>, 2021.</p>
+<div class="related" data-rel="relevar emocoes apoio"></div>
+<a class="back" href="#inicio">← Voltar ao início</a>
+</div></article>
+
 <!-- ===== APOIO ===== -->
 <section class="view" id="apoio"><div class="wrap narrow art">
 <p class="crumb"><a href="#inicio">Início</a> › Apoio</p>
@@ -1096,7 +1798,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 <a href="tel:100"><b>100</b><span>Disque Direitos Humanos. Denúncia, 24 horas</span></a>
 <a href="tel:129"><b>129</b><span>Defensoria Pública, em vários estados, inclusive o Ceará</span></a>
 </div>
-<p class="small">No celular, toque no número para ligar.</p>
+<p class="small">No celular, toque no número para ligar. Em sobrecarga, use o <button class="linkbtn" type="button" data-open-dd style="font-family:inherit;font-size:inherit;font-weight:700;color:var(--link)">Modo Dia Difícil</button>.</p>
 <h2>Associações nacionais</h2>
 <ul class="list">
 <li><a href="https://tdah.org.br" target="_blank" rel="noopener">ABDA · Associação Brasileira do Déficit de Atenção</a><span>Informação, lista de leis e grupos de apoio sobre TDAH.</span></li>
@@ -1111,8 +1813,74 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 <li><a href="https://mpt.mp.br/pgt/servicos/servico-denuncie" target="_blank" rel="noopener">Ministério Público do Trabalho</a><span>Discriminação no emprego, cotas não cumpridas, assédio. Denúncia pela internet, com opção de sigilo.</span></li>
 <li><a href="https://www.defensoria.ce.def.br" target="_blank" rel="noopener">Defensoria Pública do Ceará</a><span>Ações de saúde, educação e benefícios, de graça. Cada estado tem a sua.</span></li>
 <li><b>Ministério Público</b><span>Recusa de matrícula e falha de serviço público. Procure a promotoria da sua cidade.</span></li>
+<li><a href="#apostas">Problema com apostas</a><span>Teleatendimento gratuito do SUS pelo aplicativo Meu SUS Digital e autoexclusão em gov.br/autoexclusaoapostas.</span></li>
 <li><b>Na sua cidade</b><span>UBS e CAPS para cuidado. CRAS para benefícios. Procon para dívidas e golpes.</span></li>
 </ul>
+<a class="back" href="#inicio">← Voltar ao início</a>
+</div></section>
+
+<!-- ===== MANIFESTO E PRIVACIDADE ===== -->
+<section class="view" id="manifesto" data-cat="sobre"><div class="wrap narrow art">
+<p class="crumb"><a href="#inicio">Início</a> › Manifesto</p>
+<h1>Manifesto</h1>
+<p class="dek">Dignidade, simplicidade e humanidade: por que este site existe e no que ele acredita.</p>
+<p>Pessoas que pensam, sentem e se organizam de outro jeito existem muito antes de terem nome: variantes genéticas ligadas ao TDAH são antigas (<a href="#genes">veja o que a ciência diz</a>). Por séculos, foram chamadas de preguiçosas, rebeldes ou fracas de fé. O Brasil já tem leis que protegem parte delas. Falta essas leis chegarem à vida real e o preconceito sair de casa, da escola, do trabalho e da igreja.</p>
+<h2>Dignidade</h2>
+<p>Ninguém é o próprio diagnóstico. Sintoma não é defeito de caráter, e direito não é favor. Quem tem TDAH merece tratamento, adaptação e respeito, sem precisar provar que se esforça.</p>
+<h2>Simplicidade</h2>
+<p>Texto curto, linguagem clara e ferramentas que funcionam no celular mais simples, sem cadastro e sem pagar nada. O mais importante vem primeiro.</p>
+<h2>Humanidade</h2>
+<p>Acolher antes de corrigir. Falar com respeito a quem convive, a quem ensina e a quem lidera uma comunidade de fé. O alvo é o preconceito, nunca a pessoa.</p>
+<h2>O que não fazemos</h2>
+<ul>
+<li>Não vendemos curso, remédio, suplemento ou consulta.</li>
+<li>Não temos anúncio nem patrocínio de laboratório.</li>
+<li>Não prometemos cura.</li>
+<li>Não coletamos dados de quem lê. <a href="#privacidade">Veja como</a>.</li>
+</ul>
+<div class="note"><b class="t">Convicção do idealizador · não é afirmação científica</b>Acredito que as pessoas neurodivergentes acompanham a humanidade desde o início, quase sempre sem reconhecimento, e que carregam um potencial imenso. Muitas sabem ser felizes com o simples, sem a ambição que atropela os outros, movidas pelo afeto, pela humildade e pelo espírito humanitário que está na raiz de todos nós.</div>
+<p class="small">Uma iniciativa do Projeto 360X, de Aldenir Rocha de Oliveira Filho. Responsável técnico: Dr. Aldenir Rocha de Oliveira Filho, médico, CRM-CE 16587, Clínica Médica (RQE 11846).</p>
+<a class="back" href="#inicio">← Voltar ao início</a>
+</div></section>
+
+<section class="view" id="privacidade" data-cat="sobre"><div class="wrap narrow art">
+<p class="crumb"><a href="#inicio">Início</a> › Privacidade</p>
+<h1>Privacidade</h1>
+<p class="dek">Sem cadastro, sem anúncio e sem rastreamento. O que você marca nas ferramentas fica no seu aparelho.</p>
+<div class="key"><h2>Em resumo</h2><ul>
+<li>O site não pede nome, e-mail nem login.</li>
+<li>As ferramentas guardam suas marcações só no navegador deste aparelho. Nada é enviado para nós.</li>
+<li>Não usamos cookies de rastreamento, anúncios nem contador de visitas.</li>
+<li>Você pode exportar ou apagar tudo a qualquer momento, nesta página.</li>
+</ul></div>
+<h2>O que fica guardado no seu aparelho</h2>
+<div class="scroll-x"><table>
+<thead><tr><th>O quê</th><th>Para quê</th></tr></thead>
+<tbody>
+<tr><td><b>Tema e tamanho da letra</b></td><td>Manter sua preferência de leitura.</td></tr>
+<tr><td><b>Traços marcados no Mapa Força–Trava</b></td><td>Mostrar o seu mapa quando você voltar.</td></tr>
+<tr><td><b>Itens do Kit de Travas Financeiras</b></td><td>Mostrar o seu progresso.</td></tr>
+<tr><td><b>Prioridade, ação e anotações do Modo Dia Difícil</b></td><td>Guardar o seu dia. A prioridade e a ação se apagam sozinhas no dia seguinte.</td></tr>
+</tbody></table></div>
+<p>A lista de sinais não é guardada: as marcações somem quando você fecha a página.</p>
+<h2>Serviços de terceiros</h2>
+<ul>
+<li><b>GitHub Pages</b> hospeda o site e registra o endereço IP de quem visita, por segurança, conforme a política de privacidade do GitHub.</li>
+<li><b>Google Fonts</b> entrega as fontes do texto. Nesse carregamento, o Google recebe o endereço IP do aparelho.</li>
+<li><b>Links externos,</b> como leis e associações, seguem a política de cada site.</li>
+</ul>
+<h2>Por que isso importa</h2>
+<p>Dado de saúde é dado pessoal sensível pela Lei Geral de Proteção de Dados (Lei 13.709/2018, arts. 5º e 11). Por isso as ferramentas foram feitas para funcionar sem enviar nada. Em aparelho compartilhado, apague os dados ao terminar.</p>
+<h2>Seus dados</h2>
+<div class="actions">
+<button class="btn ghost" type="button" id="dados-exportar">Exportar meus dados</button>
+<button class="btn ghost" type="button" id="dados-apagar">Apagar meus dados</button>
+</div>
+<p class="small" id="dados-msg" aria-live="polite"></p>
+<textarea id="dados-txt" rows="6" readonly hidden aria-label="Seus dados em texto"></textarea>
+<h2>Correções e sugestões</h2>
+<p>Encontrou um erro ou uma lei desatualizada? Abra uma sugestão no <a href="https://github.com/aldenirfilho/neurodiversidade-brasil/issues" target="_blank" rel="noopener">repositório do site</a>. Não inclua dados pessoais nem de saúde.</p>
+<p class="small">Atualizado em 18/10/2026.</p>
 <a class="back" href="#inicio">← Voltar ao início</a>
 </div></section>
 
@@ -1131,26 +1899,67 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
 <footer><div class="wrap">
 <div class="cols">
-<div><h2>DiversaMente</h2><p>Projeto independente e sem fins lucrativos. O formato de revista se inspira em portais internacionais sobre TDAH, como a norte-americana ADDitude, com a qual não tem vínculo. O conteúdo é próprio, escrito para as leis e a realidade do Brasil.</p></div>
+<div><h2>DiversaMente</h2><p>Uma iniciativa do Projeto 360X, de Aldenir Rocha de Oliveira Filho. Sem fins lucrativos, sem anúncio, sem venda de produto e sem vínculo com laboratório.</p><p>O formato de revista se inspira na norte-americana ADDitude, com a qual não tem vínculo. O conteúdo é próprio, escrito para as leis e a realidade do Brasil.</p><p><a href="#manifesto">Manifesto</a> · <a href="#privacidade">Privacidade</a></p></div>
 <div><h2>Editorias</h2><ul>
-<li><a href="#c-tdah">TDAH adulto</a></li><li><a href="#c-sintomas">Sinais e testes</a></li><li><a href="#c-tratamento">Tratamento</a></li><li><a href="#c-vida">Vida adulta</a></li><li><a href="#c-direitos">Direitos</a></li><li><a href="#c-fe">Fé e estigma</a></li><li><a href="#c-familia">Família e escola</a></li><li><a href="#c-ciencia">Pesquisa</a></li>
+<li><a href="#c-entenda">Entenda</a></li><li><a href="#c-forcas">Forças</a></li><li><a href="#c-travas">Travas</a></li><li><a href="#c-rotina">Rotina e trabalho</a></li><li><a href="#c-vinculos">Vínculos</a></li><li><a href="#c-saude">Saúde</a></li><li><a href="#c-direitos">Direitos</a></li><li><a href="#c-fe">Fé e estigma</a></li><li><a href="#c-ferramentas">Ferramentas</a></li>
 </ul></div>
-<div><h2>Precisa de ajuda agora?</h2><p><a href="tel:188"><b>188</b></a> CVV, 24 horas · <a href="tel:192"><b>192</b></a> SAMU · <a href="tel:100"><b>100</b></a> Direitos Humanos</p><p><a href="#apoio">Ver a rede de apoio</a></p></div>
-<div><h2>Aviso</h2><p>Conteúdo educativo. Não substitui consulta médica, psicológica ou jurídica. Leis e projetos conferidos em 09/10/2026.</p></div>
+<div><h2>Precisa de ajuda agora?</h2><p><a href="tel:188"><b>188</b></a> CVV, 24 horas · <a href="tel:192"><b>192</b></a> SAMU · <a href="tel:100"><b>100</b></a> Direitos Humanos</p><p><a href="#apoio">Ver a rede de apoio</a></p><p><button class="btn ghost" type="button" data-open-dd>Dia difícil</button></p></div>
+<div><h2>Responsável técnico</h2><p>Dr. Aldenir Rocha de Oliveira Filho, médico. CRM-CE 16587. Clínica Médica, RQE 11846.</p><h2 class="mt">Aviso</h2><p>Conteúdo educativo. Não substitui consulta médica, psicológica ou jurídica. Leis e projetos conferidos em 09/10/2026; regras de Pix e de apostas, em 18/10/2026.</p></div>
 </div>
 </div></footer>
+
+<dialog class="ddlg" id="dd" aria-labelledby="dd-t">
+<div class="dd-in">
+<p class="label">Modo Dia Difícil</p>
+<h2 id="dd-t">Hoje vale o mínimo</h2>
+<p>Uma prioridade e uma ação curta. O resto espera, e está tudo bem.</p>
+<label class="step" for="dd-prio">1. A única prioridade de hoje</label>
+<input type="text" id="dd-prio" maxlength="140" placeholder="Ex.: pagar a conta de luz" autocomplete="off">
+<p class="step" id="dd-acao-t">2. Uma ação de até 10 minutos</p>
+<div class="chips" id="dd-acoes" role="group" aria-labelledby="dd-acao-t">
+<button class="chip" type="button" aria-pressed="false">Beber um copo de água · 1 min</button>
+<button class="chip" type="button" aria-pressed="false">Comer alguma coisa · 10 min</button>
+<button class="chip" type="button" aria-pressed="false">Tomar o remédio como prescrito · 1 min</button>
+<button class="chip" type="button" aria-pressed="false">Tomar banho · 10 min</button>
+<button class="chip" type="button" aria-pressed="false">Sair 5 minutos ao ar livre · 5 min</button>
+<button class="chip" type="button" aria-pressed="false">Mandar mensagem para alguém de confiança · 3 min</button>
+<button class="chip" type="button" aria-pressed="false">Dar o primeiro passo da prioridade · 10 min</button>
+</div>
+<label class="step" for="dd-parque">3. Tirar da cabeça <span class="small">(fica guardado neste aparelho para outro dia)</span></label>
+<textarea id="dd-parque" rows="3" placeholder="O que está pesando e pode esperar"></textarea>
+<div class="dd-help">
+<b>Se a dor estiver grande demais, não fique sozinho.</b>
+<div class="phones">
+<a href="tel:188"><b>188</b><span>CVV, apoio emocional, 24 horas, gratuito</span></a>
+<a href="tel:192"><b>192</b><span>SAMU, emergência médica</span></a>
+</div>
+<p class="small">Se houver pensamento de morte, ligue 188 agora ou vá a um serviço de emergência. Também há chat em cvv.org.br.</p>
+</div>
+<div class="actions">
+<button class="btn" type="button" id="dd-fechar">Voltar ao site</button>
+<a class="btn ghost" href="#rotina-minima" id="dd-ler">Ler: rotina mínima</a>
+<button class="btn ghost" type="button" id="dd-limpar">Limpar o dia</button>
+</div>
+</div>
+</dialog>
 
 <script>
 (function () {
   var root = document.documentElement;
+  var SITE = 'https://aldenirfilho.github.io/neurodiversidade-brasil/';
   var store = {
     get: function (k) { try { return window.localStorage.getItem(k); } catch (e) { return null; } },
-    set: function (k, v) { try { window.localStorage.setItem(k, v); } catch (e) {} }
+    set: function (k, v) { try { window.localStorage.setItem(k, v); } catch (e) {} },
+    del: function (k) { try { window.localStorage.removeItem(k); } catch (e) {} }
   };
+  var KEYS = ['dm-tema', 'dm-escala', 'dm-mapa', 'dm-kit', 'dm-dd'];
+  var framed = (function () { try { return window.top !== window.self; } catch (e) { return true; } })();
   function $(id) { return document.getElementById(id); }
   function all(sel, el) { return Array.prototype.slice.call((el || document).querySelectorAll(sel)); }
   function el(tag, cls, text) { var n = document.createElement(tag); if (cls) n.className = cls; if (text) n.textContent = text; return n; }
   function norm(s) { return (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function readJSON(k, fallback) { try { var v = JSON.parse(store.get(k)); return v === null || v === undefined ? fallback : v; } catch (e) { return fallback; } }
   root.classList.add('js');
 
   /* Ajustes de leitura */
@@ -1163,17 +1972,52 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     root.setAttribute('data-theme', next); store.set('dm-tema', next);
   });
   var scale = parseFloat(store.get('dm-escala')) || 1;
-  function setScale(v) {
+  function setScale(v, keep) {
     scale = Math.min(1.4, Math.max(0.9, Math.round(v * 100) / 100));
-    root.style.setProperty('--scale', String(scale)); store.set('dm-escala', String(scale));
+    root.style.setProperty('--scale', String(scale));
+    if (keep !== false) store.set('dm-escala', String(scale));
   }
-  setScale(scale);
+  setScale(scale, false);
   $('btn-maior').addEventListener('click', function () { setScale(scale + 0.1); });
   $('btn-menor').addEventListener('click', function () { setScale(scale - 0.1); });
 
+  /* Copiar e confirmar sem diálogos do navegador (a prévia não mostra confirm() e pode recusar a área de transferência) */
+  function flash(btn, msg) {
+    if (!btn.getAttribute('data-label')) btn.setAttribute('data-label', btn.textContent);
+    btn.textContent = msg;
+    clearTimeout(btn._t);
+    btn._t = setTimeout(function () { btn.textContent = btn.getAttribute('data-label'); }, 2500);
+  }
+  function selectNode(n) {
+    try {
+      if (n.select) { n.focus(); n.select(); return; }
+      var r = document.createRange(); r.selectNodeContents(n);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    } catch (e) {}
+  }
+  function copyText(txt, btn, node) {
+    function fail() { if (node) { node.hidden = false; selectNode(node); } flash(btn, 'Selecione e copie'); }
+    try { navigator.clipboard.writeText(txt).then(function () { flash(btn, 'Copiado'); }, fail); }
+    catch (e) { fail(); }
+  }
+  function twoStep(btn, ask, action) {
+    var label = btn.textContent, armed = false, t;
+    btn.addEventListener('click', function () {
+      if (!armed) {
+        armed = true; btn.textContent = ask;
+        t = setTimeout(function () { armed = false; btn.textContent = label; }, 5000);
+        return;
+      }
+      clearTimeout(t); armed = false; btn.textContent = label; action();
+    });
+  }
+
   /* Índice de artigos */
-  var CATS = { tdah: 'TDAH adulto', sintomas: 'Sinais e testes', tratamento: 'Tratamento', vida: 'Vida adulta', direitos: 'Direitos', fe: 'Fé e estigma', familia: 'Família e escola', ciencia: 'Pesquisa' };
-  var EXTRA = { familia: ['perfis', 'sus-plano', 'mitos', 'fe-guia'], vida: ['trabalho', 'adaptacoes', 'habitos'] };
+  var CATS = { entenda: 'Entenda', forcas: 'Forças', travas: 'Travas', rotina: 'Rotina e trabalho', vinculos: 'Vínculos', saude: 'Saúde', direitos: 'Direitos', fe: 'Fé e estigma', ferramentas: 'Ferramentas' };
+  var LABEL = { ferramentas: 'Ferramenta', apoio: 'Apoio', sobre: 'Sobre o site' };
+  var EXTRA = { entenda: ['expectativa-vida'], forcas: ['mapa', 'relevar'], travas: ['kit-travas'], rotina: ['habitos', 'trabalho'], vinculos: ['emocoes', 'escola', 'fe-guia'], saude: ['sono'], ferramentas: ['sinais', 'leis'] };
+  var ALIAS = { 'c-tdah': 'c-entenda', 'c-sintomas': 'c-entenda', 'c-ciencia': 'c-entenda', 'c-tratamento': 'c-saude', 'c-vida': 'c-rotina', 'c-familia': 'c-vinculos' };
+  var NAVOF = { mapa: 'forcas', 'kit-travas': 'travas' };
   var arts = {}, order = [];
   function bodyText(a) {
     var c = a.cloneNode(true);
@@ -1182,17 +2026,18 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     while ((n = w.nextNode())) parts.push(n.nodeValue);
     return norm(parts.join(' '));
   }
-  all('article.art, #apoio').forEach(function (a) {
+  all('article.art, #apoio, #manifesto, #privacidade').forEach(function (a) {
     var h = a.querySelector('h1'), d = a.querySelector('.dek');
     arts[a.id] = { id: a.id, cat: a.getAttribute('data-cat') || 'apoio', min: a.getAttribute('data-min'), title: h ? h.textContent : a.id, dek: d ? d.textContent : '', text: bodyText(a), head: norm(h ? h.textContent : '') };
     order.push(a.id);
   });
+  function catLabel(cat) { return LABEL[cat] || CATS[cat] || ''; }
   function card(a) {
     var c = el('a', 'card'); c.href = '#' + a.id;
-    c.appendChild(el('span', 'label', CATS[a.cat] || ''));
+    c.appendChild(el('span', 'label', catLabel(a.cat)));
     c.appendChild(el('h3', '', a.title));
     c.appendChild(el('p', '', a.dek));
-    c.appendChild(el('span', 'min', 'Leitura de ' + a.min + ' min'));
+    if (a.min) c.appendChild(el('span', 'min', (a.cat === 'ferramentas' ? 'Uso de ' : 'Leitura de ') + a.min + ' min'));
     return c;
   }
   function item(a) {
@@ -1228,7 +2073,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
         try { navigator.clipboard.writeText(url).then(function () { done('Link copiado'); }, function () { done(url); }); }
         catch (err) { done(url); }
       }
-      if (navigator.share && window.top === window.self) {
+      if (navigator.share && !framed) {
         navigator.share({ title: arts[art.id].title + ' · DiversaMente', url: url }).catch(function (err) { if (!err || err.name !== 'AbortError') copy(); });
       } else copy();
     });
@@ -1247,7 +2092,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
   /* Editorias na capa */
   var ed = $('editorias');
-  ['vida', 'tratamento', 'direitos', 'sintomas', 'fe', 'ciencia'].forEach(function (cat) {
+  ['entenda', 'forcas', 'travas', 'rotina', 'vinculos', 'saude', 'direitos', 'fe'].forEach(function (cat) {
     var sec = el('div', 'sec');
     sec.appendChild(el('h2', '', CATS[cat]));
     var ul = el('ul', 'list');
@@ -1268,8 +2113,9 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   var baseTitle = document.title;
   function show(view, target) {
     views.forEach(function (v) { v.classList.toggle('on', v === view); });
+    var ac = arts[view.id];
     if (view.id === 'categoria') markNav('#c-' + curCat);
-    else if (arts[view.id] && CATS[arts[view.id].cat]) markNav('#c-' + arts[view.id].cat);
+    else if (ac && (NAVOF[view.id] || CATS[ac.cat])) markNav('#c-' + (NAVOF[view.id] || ac.cat));
     else markNav('#' + view.id);
     var h1 = view.querySelector('h1');
     document.title = (view.id === 'inicio' || !h1) ? baseTitle : h1.textContent + ' · DiversaMente';
@@ -1280,6 +2126,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     } else { window.scrollTo(0, 0); }
   }
   function go(id) {
+    if (ALIAS[id]) id = ALIAS[id];
     if (id && id.indexOf('c-') === 0 && CATS[id.slice(2)]) {
       curCat = id.slice(2);
       $('cat-titulo').textContent = CATS[curCat];
@@ -1357,12 +2204,14 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   var TOPICS = {
     adulto: [
       ['Será que eu tenho TDAH?', ['sinais', 'tdah-adulto', 'diagnostico-tardio', 'tdah-mulheres']],
-      ['O que parece TDAH e não é?', ['parece-tdah', 'emocoes']],
+      ['Como usar as minhas forças?', ['mapa', 'mapa-forcas', 'hiperfoco', 'ambientes']],
+      ['Como travar impulsos com dinheiro e apostas?', ['kit-travas', 'dinheiro', 'apostas', 'decisoes']],
+      ['Durmo tarde e me distraio dirigindo', ['sono', 'volante', 'habitos']],
+      ['Hoje está tudo pesado', ['rotina-minima', 'relevar', 'emocoes', 'apoio']],
       ['O que preciso saber sobre tratamento?', ['tratamento-brasil', 'sus-plano', 'habitos']],
-      ['Como render mais no dia a dia?', ['produtividade', 'adaptacoes', 'habitos']],
-      ['Como lidar com emoções e relacionamentos?', ['emocoes', 'relacionamentos']],
-      ['Como proteger meu dinheiro?', ['dinheiro']],
-      ['Quais são meus direitos no trabalho?', ['trabalho', 'adaptacoes', 'tdah-deficiencia', 'discriminacao']],
+      ['Como render mais no dia a dia?', ['produtividade', 'sob-pressao', 'adaptacoes']],
+      ['Como explicar o meu jeito para quem convive?', ['manual-de-mim', 'convivio', 'relacionamentos']],
+      ['Quais são os meus direitos no trabalho?', ['trabalho', 'adaptacoes', 'tdah-deficiencia', 'discriminacao']],
       ['Como lidar com preconceito na igreja e na família?', ['fe-frases', 'fe-escrituras', 'fe-guia']]
     ],
     crianca: [
@@ -1371,6 +2220,13 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
       ['Como conseguir tratamento?', ['sus-plano', 'tratamento-brasil']],
       ['Trabalho e preciso de tempo para cuidar', ['trabalho']],
       ['Dizem que é falta de vara ou de fé', ['fe-frases', 'fe-guia']]
+    ],
+    convive: [
+      ['Como ajudar sem virar gerente da vida do outro?', ['convivio', 'relacionamentos', 'manual-de-mim']],
+      ['Sou chefe ou colega de trabalho', ['convivio', 'adaptacoes', 'trabalho']],
+      ['Sou líder religioso', ['fe-guia', 'fe-frases', 'fe-escrituras']],
+      ['A pessoa está passando por uma fase difícil', ['rotina-minima', 'emocoes', 'apoio']],
+      ['Desconfio de dívidas ou apostas escondidas', ['apostas', 'kit-travas', 'decisoes']]
     ]
   };
   var quem = 'adulto', sel = $('tema-sel');
@@ -1394,7 +2250,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   sel.addEventListener('change', fillList);
   fillTopics();
 
-  /* Lista de sinais */
+  /* Lista de sinais (não é guardada) */
   function count(prefix) { var n = 0; for (var i = 1; i <= 9; i++) { if ($(prefix + i).checked) n++; } return n; }
   function sinais() {
     var a = count('a'), b = count('b'), inf = $('c1').checked, areas = $('c2').checked;
@@ -1425,6 +2281,213 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   all('#chips-s .chip').forEach(function (c) { c.addEventListener('click', function () { fS = c.getAttribute('data-s'); press($('chips-s'), c); applyFilter(); }); });
   all('#chips-t .chip').forEach(function (c) { c.addEventListener('click', function () { fT = c.getAttribute('data-t'); press($('chips-t'), c); applyFilter(); }); });
   applyFilter();
+
+  /* Botões de copiar (modelo do Manual de Mim, checklist de decisões) */
+  all('[data-copy]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var n = $(b.getAttribute('data-copy'));
+      if (n) copyText((n.innerText || n.textContent).trim(), b, n);
+    });
+  });
+
+  /* Modo Dia Difícil: uma prioridade, uma ação curta; o resto espera */
+  var dd = $('dd'), ddLast = null, chips = all('#dd-acoes .chip');
+  function hoje() { var d = new Date(); return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate(); }
+  function ddLoad() {
+    var o = readJSON('dm-dd', {}) || {};
+    if (o.dia !== hoje()) { o.prio = ''; o.acao = ''; }
+    $('dd-prio').value = o.prio || '';
+    $('dd-parque').value = o.parque || '';
+    chips.forEach(function (c) { c.setAttribute('aria-pressed', c.textContent === o.acao ? 'true' : 'false'); });
+  }
+  function ddSave() {
+    var acao = '';
+    chips.forEach(function (c) { if (c.getAttribute('aria-pressed') === 'true') acao = c.textContent; });
+    var o = { dia: hoje(), prio: $('dd-prio').value, acao: acao, parque: $('dd-parque').value };
+    if (!o.prio && !o.acao && !o.parque) store.del('dm-dd'); else store.set('dm-dd', JSON.stringify(o));
+  }
+  function ddReset() {
+    $('dd-prio').value = ''; $('dd-parque').value = '';
+    chips.forEach(function (x) { x.setAttribute('aria-pressed', 'false'); });
+  }
+  function ddAfter() { ddSave(); if (ddLast && ddLast.focus) { try { ddLast.focus(); } catch (e) {} } ddLast = null; }
+  function ddOpen() {
+    ddLast = document.activeElement;
+    ddLoad();
+    if (typeof dd.showModal === 'function') { if (!dd.open) dd.showModal(); }
+    else { dd.setAttribute('open', ''); dd.classList.add('fallback'); }
+    try { $('dd-prio').focus(); } catch (e) {}
+  }
+  function ddClose() {
+    if (typeof dd.close === 'function' && dd.open && !dd.classList.contains('fallback')) dd.close();
+    else { dd.removeAttribute('open'); dd.classList.remove('fallback'); ddAfter(); }
+  }
+  dd.addEventListener('close', ddAfter);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && dd.classList.contains('fallback')) ddClose(); });
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest ? e.target.closest('[data-open-dd]') : null;
+    if (b) { e.preventDefault(); ddOpen(); }
+  });
+  $('dd-fechar').addEventListener('click', ddClose);
+  $('dd-ler').addEventListener('click', function () { ddLast = null; ddClose(); });
+  chips.forEach(function (c) {
+    c.addEventListener('click', function () {
+      var on = c.getAttribute('aria-pressed') !== 'true';
+      chips.forEach(function (x) { x.setAttribute('aria-pressed', 'false'); });
+      if (on) c.setAttribute('aria-pressed', 'true');
+      ddSave();
+    });
+  });
+  $('dd-prio').addEventListener('input', ddSave);
+  $('dd-parque').addEventListener('input', ddSave);
+  twoStep($('dd-limpar'), 'Confirmar: limpar', function () { ddReset(); store.del('dm-dd'); });
+
+  /* Mapa Força–Trava */
+  var EV = { forte: 'Forte', moderada: 'Moderada', limitada: 'Limitada', pratica: 'Prática' };
+  var TRACOS = {
+    hiperfoco: { nome: 'Hiperfoco', ler: 'hiperfoco', art: 'hiperfoco',
+      forca: 'Profundidade e produção em blocos longos quando o tema interessa.',
+      risco: 'Refeição, sono, compromissos e pessoas esquecidos; madrugadas em tela.',
+      travas: [['Programar um alarme de saída antes de começar', '1 min', 'pratica'], ['Deixar água e lanche ao alcance', '3 min', 'pratica'], ['Escrever o que precisa acontecer depois do bloco', '2 min', 'pratica']],
+      ambiente: 'Projetos de tema escolhido, entregas por etapa e liberdade para trabalhar em blocos.' },
+    impulso: { nome: 'Ação rápida e impulso', ler: 'decisões com segunda pessoa', art: 'decisoes',
+      forca: 'Iniciativa, coragem para começar e decisão rápida na crise.',
+      risco: 'Compras, apostas, contratos, brigas e direção arriscada.',
+      travas: [['Reduzir o limite do Pix noturno no app do banco', '3 min', 'pratica'], ['Combinar a regra das 24 horas para compras fora do plano', '2 min', 'pratica'], ['Escolher uma segunda pessoa para decisões grandes', '10 min', 'pratica'], ['Fazer a autoexclusão de apostas, se apostar é um risco', '10 min', 'pratica']],
+      ambiente: 'Funções que pedem ação rápida com regras claras, ao lado de alguém que revisa antes de assinar.' },
+    novidade: { nome: 'Busca de novidade', ler: 'ambientes e carreiras', art: 'ambientes',
+      forca: 'Curiosidade, aprendizado rápido e coragem de explorar.',
+      risco: 'Projetos abandonados, tédio e trocas impulsivas de emprego ou de plano.',
+      travas: [['Limitar a três projetos ativos e pôr o resto em lista de espera', '10 min', 'pratica'], ['Criar um estacionamento de ideias no celular', '3 min', 'pratica'], ['Definir o próximo passo pequeno de cada projeto ativo', '10 min', 'pratica']],
+      ambiente: 'Trabalho com variedade, problemas novos e ciclos curtos, com alguém que ajude a concluir.' },
+    energia: { nome: 'Energia e inquietação', ler: 'sono', art: 'sono',
+      forca: 'Ritmo, resistência e disposição para trabalho em movimento.',
+      risco: 'Exaustão, irritação, insônia e dificuldade de parar.',
+      travas: [['Escolher uma hora fixa para acordar, inclusive no fim de semana', '2 min', 'moderada'], ['Marcar exercício com hora fixa na agenda', '5 min', 'moderada'], ['Fazer pausas ativas de 5 minutos entre blocos', '5 min', 'pratica']],
+      ambiente: 'Funções com deslocamento, trabalho de campo, atividade física ou plantões com ritmo.' },
+    emocao: { nome: 'Intensidade emocional', ler: 'emoções', art: 'emocoes',
+      forca: 'Empatia, senso de justiça e entusiasmo que contagia.',
+      risco: 'Explosões, mensagens de que se arrepende e dor forte diante de crítica.',
+      travas: [['Adotar a regra: mensagem difícil só depois de uma pausa', '1 min', 'pratica'], ['Combinar um sinal de pausa com quem convive', '10 min', 'pratica'], ['Agendar terapia cognitivo-comportamental para TDAH', '10 min', 'moderada']],
+      ambiente: 'Causas com propósito, cuidado de pessoas e equipes com respeito e retorno direto.' },
+    divergente: { nome: 'Pensamento divergente', ler: 'forças', art: 'mapa-forcas',
+      forca: 'Soluções originais e associações que outros não veem.',
+      risco: 'Dispersão e erros em processos repetitivos e em detalhes.',
+      travas: [['Montar um checklist para cada rotina que se repete', '15 min', 'pratica'], ['Reservar um bloco fixo na semana para criar', '5 min', 'pratica'], ['Pedir a alguém a revisão dos detalhes', '5 min', 'pratica']],
+      ambiente: 'Criação, pesquisa, comunicação e resolução de problemas, com processo simples para a parte burocrática.' },
+    pressao: { nome: 'Rendimento sob pressão', ler: 'rendimento sob pressão', art: 'sob-pressao',
+      forca: 'Calma e foco em emergência e prazo curto.',
+      risco: 'Tudo deixado para a véspera, estresse constante e qualidade irregular.',
+      travas: [['Marcar uma entrega parcial com alguém antes do prazo real', '3 min', 'pratica'], ['Separar prazo obrigatório de data desejada na agenda', '5 min', 'pratica'], ['Trabalhar acompanhado, presencial ou por vídeo', '25 min', 'limitada']],
+      ambiente: 'Urgência e emergência, eventos, jornalismo e operações, com descanso garantido depois do pico.' }
+  };
+  var TORDEM = ['hiperfoco', 'impulso', 'novidade', 'energia', 'emocao', 'divergente', 'pressao'];
+  var RISCO = ['impulso', 'emocao', 'energia', 'hiperfoco', 'pressao', 'novidade', 'divergente'];
+  function mapaSel() { return TORDEM.filter(function (k) { return $('m-' + k).checked; }); }
+  function primeiras(ids) {
+    var ord = RISCO.filter(function (k) { return ids.indexOf(k) > -1; }), out = [];
+    for (var i = 0; i < 3 && out.length < 3; i++) {
+      ord.forEach(function (k) { var t = TRACOS[k].travas[i]; if (t && out.length < 3) out.push(t); });
+    }
+    return out;
+  }
+  function mapaRender(save) {
+    var sel = mapaSel(), ex = !sel.length, ids = ex ? ['hiperfoco', 'impulso'] : sel;
+    var h = '<h2>' + (ex ? 'Exemplo de mapa' : 'Seu mapa') + '</h2>';
+    if (ex) h += '<p class="small">Assim fica o mapa de quem marca hiperfoco e ação rápida. Marque os seus traços acima para ver o seu.</p>';
+    h += '<div class="first"><h2>' + (ex ? 'As três primeiras travas do exemplo' : 'Comece por estas três travas') + '</h2><ol>';
+    primeiras(ids).forEach(function (t) { h += '<li>' + esc(t[0]) + ' <span class="t">· ' + esc(t[1]) + '</span></li>'; });
+    h += '</ol></div>';
+    ids.forEach(function (k) {
+      var t = TRACOS[k];
+      h += '<div class="trait"><h3>' + esc(t.nome) + '</h3><dl>' +
+        '<dt>Onde costuma render</dt><dd>' + esc(t.forca) + ' <span class="pill limitada">Limitada</span></dd>' +
+        '<dt>Onde costuma custar caro</dt><dd>' + esc(t.risco) + '</dd>' +
+        '<dt>Travas</dt><dd><ul>' + t.travas.map(function (x) {
+          return '<li>' + esc(x[0]) + ' <span class="t">· ' + esc(x[1]) + '</span> <span class="pill ' + x[2] + '">' + EV[x[2]] + '</span></li>';
+        }).join('') + '</ul></dd>' +
+        '<dt>Ambientes que ajudam</dt><dd>' + esc(t.ambiente) + '</dd></dl>' +
+        '<p class="more"><a href="#' + t.art + '">Ler sobre ' + esc(t.ler) + '</a></p></div>';
+    });
+    $('mapa-res').innerHTML = h;
+    if (save !== false) { if (sel.length) store.set('dm-mapa', JSON.stringify(sel)); else store.del('dm-mapa'); }
+  }
+  function mapaTexto() {
+    var sel = mapaSel(); if (!sel.length) return '';
+    var L = ['MAPA FORÇA–TRAVA · DiversaMente', 'Traços: ' + sel.map(function (k) { return TRACOS[k].nome; }).join(', '), '', 'Comece por:'];
+    primeiras(sel).forEach(function (t, i) { L.push((i + 1) + '. ' + t[0] + ' · ' + t[1]); });
+    sel.forEach(function (k) {
+      var t = TRACOS[k];
+      L.push('', t.nome.toUpperCase(), 'Rende: ' + t.forca, 'Custa caro: ' + t.risco,
+        'Travas: ' + t.travas.map(function (x) { return x[0] + ' (' + x[1] + ')'; }).join('; '), 'Ambientes: ' + t.ambiente);
+    });
+    L.push('', 'Não é teste nem diagnóstico. ' + SITE + '#mapa');
+    return L.join('\n');
+  }
+  var mSaved = readJSON('dm-mapa', []);
+  if (Object.prototype.toString.call(mSaved) === '[object Array]') mSaved.forEach(function (k) { var c = $('m-' + k); if (c) c.checked = true; });
+  all('#mapa-lista input').forEach(function (c) { c.addEventListener('change', function () { mapaRender(); }); });
+  mapaRender(false);
+  $('mapa-copiar').addEventListener('click', function () {
+    var txt = mapaTexto(), ta = $('mapa-txt');
+    if (!txt) { flash(this, 'Marque um traço primeiro'); return; }
+    ta.value = txt;
+    copyText(txt, this, ta);
+  });
+  var pb = $('mapa-imprimir');
+  if (framed || typeof window.print !== 'function') pb.hidden = true;
+  else pb.addEventListener('click', function () { window.print(); });
+  twoStep($('mapa-limpar'), 'Confirmar: apagar', function () {
+    all('#mapa-lista input').forEach(function (c) { c.checked = false; });
+    $('mapa-txt').hidden = true;
+    mapaRender();
+  });
+
+  /* Kit de Travas Financeiras */
+  var kitBoxes = all('#kit input[type="checkbox"]'), kSaved = readJSON('dm-kit', {}) || {};
+  function kitUpdate(save) {
+    var n = 0, o = {};
+    kitBoxes.forEach(function (c) { if (c.checked) { n++; o[c.id] = 1; } });
+    $('kit-cont').textContent = 'Travas instaladas: ' + n + ' de ' + kitBoxes.length;
+    $('kit-barra').style.width = Math.round(100 * n / kitBoxes.length) + '%';
+    if (save !== false) { if (n) store.set('dm-kit', JSON.stringify(o)); else store.del('dm-kit'); }
+  }
+  kitBoxes.forEach(function (c) { c.checked = !!kSaved[c.id]; c.addEventListener('change', function () { kitUpdate(); }); });
+  kitUpdate(false);
+  twoStep($('kit-limpar'), 'Confirmar: apagar', function () { kitBoxes.forEach(function (c) { c.checked = false; }); kitUpdate(); });
+
+  /* Privacidade: exportar e apagar */
+  function dadosMsg(t) { $('dados-msg').textContent = t; }
+  $('dados-exportar').addEventListener('click', function () {
+    var o = {}, b = this;
+    KEYS.forEach(function (k) { var v = store.get(k); if (v !== null) o[k] = v; });
+    if (!Object.keys(o).length) { dadosMsg('Não há dados guardados neste aparelho.'); return; }
+    var txt = JSON.stringify({ site: 'DiversaMente', exportado_em: new Date().toISOString(), dados: o }, null, 2);
+    if (!framed) {
+      try {
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(new Blob([txt], { type: 'application/json' }));
+        a.download = 'diversamente-meus-dados.json';
+        document.body.appendChild(a); a.click();
+        setTimeout(function () { URL.revokeObjectURL(a.href); a.parentNode.removeChild(a); }, 1000);
+        dadosMsg('Arquivo salvo: diversamente-meus-dados.json');
+        return;
+      } catch (e) {}
+    }
+    var ta = $('dados-txt'); ta.value = txt;
+    copyText(txt, b, ta);
+    ta.hidden = false;
+    dadosMsg('Seus dados aparecem abaixo, em texto.');
+  });
+  twoStep($('dados-apagar'), 'Confirmar: apagar tudo', function () {
+    all('#mapa-lista input').forEach(function (c) { c.checked = false; }); mapaRender(false);
+    kitBoxes.forEach(function (c) { c.checked = false; }); kitUpdate(false);
+    ddReset();
+    root.removeAttribute('data-theme'); setScale(1, false);
+    KEYS.forEach(function (k) { store.del(k); });
+    $('dados-txt').value = ''; $('dados-txt').hidden = true;
+    dadosMsg('Pronto. Os dados do DiversaMente foram apagados deste aparelho.');
+  });
 })();
 </script>
 </body>
