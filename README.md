@@ -1,5 +1,9 @@
 # DiversaMente
 
+[🧭 Portfólio Projeto 360X](https://github.com/aldenirfilho/aldenirmed89/blob/main/docs_usuario/PORTFOLIO_GITHUB/README.md) · [👤 Aldenir Rocha](https://github.com/aldenirfilho)
+
+**Área:** Sociedade, inclusão e acessibilidade
+
 Revista digital brasileira para **adultos com TDAH**: força no máximo, risco sob controle. Ciência, travas práticas, direitos e fé sem preconceito.
 
 🔗 **Site:** https://aldenirfilho.github.io/neurodiversidade-brasil/
