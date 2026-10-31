@@ -8,6 +8,10 @@ Revista digital brasileira para **adultos com TDAH**: força no máximo, risco s
 
 🔗 **Site:** https://aldenirfilho.github.io/neurodiversidade-brasil/
 
+📣 **Compartilhar o projeto:** [links, convite pronto e imagem](https://aldenirfilho.github.io/neurodiversidade-brasil/divulgue/) · [Novidades no GitHub](https://github.com/aldenirfilho/neurodiversidade-brasil/releases)
+
+🧠 **No AldenirMed89:** [Neurodiversidade e TDAH](https://aldenirfilho.github.io/aldenirmed89/ecossistema/neurodiversidade-tdah/)
+
 ## O que tem no site (v4 · Fase 1)
 
 - **37 artigos em 8 editorias:** Entenda · Forças · Travas · Rotina e trabalho · Vínculos · Saúde · Direitos · Fé e estigma. Mais as páginas **Apoio**, **Manifesto** e **Privacidade**.
@@ -87,3 +91,16 @@ Os comandos da nova habilidade são `/TDAH`, `/PESQUISAR-TDAH`, `/ESTUDOS-TDAH`,
 Datas: o guia novo foi consultado em 28/10/2026. Isso não revalida automaticamente as leis, finanças ou os demais artigos com datas anteriores. Registro de ensaio não demonstra eficácia; recomendação estrangeira, autorização sanitária e acesso local são verificados separadamente. O selo editorial não certifica tratamentos.
 
 Publicação deve ser verificada separadamente do merge. O endereço Pages mencionado acima constava no README original; a conferência de 28/10/2026 encontrou HTTP404 e Pages inativo. Não afirmar implantação a partir de código salvo. Para hospedagem na raiz pelo GitHub Pages: Settings→Pages→Deploy from a branch→main→/(root).
+
+
+## Divulgação nos canais do projeto — 30/10/2026
+
+A integração de NeuroVínculos, do guia TDAH e do FOCO CLARO foi publicada em 30/10/2026 (PR #1, commit d708d260). A seção do AldenirMed89 também foi publicada (PR #62, commit 0b636ce7). O registro de HTTP404 em 28/10 acima permanece como histórico; não é o estado atual.
+
+A área `divulgue/index.html` oferece quatro destinos, convites para copiar e a imagem original do projeto para baixar. O compartilhamento é iniciado pelo visitante; a página não posta em redes, não envia mensagens automaticamente e não mede alcance. O repositório ganhou prévias Twitter completas e um `sitemap.xml` com cinco páginas HTML canônicas, sem inventar páginas independentes para as âncoras da revista.
+
+O sitemap e os metadados ajudam a descoberta, sem garantir indexação, posição em buscas ou audiência. Não foi criado `robots.txt` no subdiretório: a política de rastreamento é definida na raiz do host, fora do escopo deste repositório.
+
+Referências técnicas: [Google — sitemaps](https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview), [Google — localização do robots.txt](https://developers.google.com/crawling/docs/robots-txt/create-robots-txt) e [Open Graph](https://ogp.me/).
+
+Verificação adicional: `node --check divulgue/compartilhar.js` e `python3 scripts/check_discovery.py`. A atualização de divulgação não altera as datas de revisão científica e jurídica dos conteúdos.
