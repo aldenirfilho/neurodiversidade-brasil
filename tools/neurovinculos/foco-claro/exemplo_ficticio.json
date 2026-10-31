@@ -1,0 +1,63 @@
+{
+  "title": "EXEMPLO FICTÍCIO — interface de demonstração",
+  "category": "app",
+  "scope": "Fluxo fictício de iniciar, executar, pausar e retomar uma tarefa; não é avaliação de produto real.",
+  "date": "2026-10-09",
+  "sample": true,
+  "personal_affinity": "não avaliada",
+  "gates": {
+    "seguranca_essencial": "verificado",
+    "autonomia_sem_coercao": "verificado",
+    "objeto_e_escopo_identificados": "verificado"
+  },
+  "ratings": {
+    "clareza": {
+      "rating": 4.6,
+      "evidence": "Dado sintético para testar a fórmula. Não representa observação real.",
+      "source": "Exemplo didático criado no pacote.",
+      "basis": "observacao_direta"
+    },
+    "fluxo": {
+      "rating": 4.6,
+      "evidence": "Dado sintético para testar a fórmula. Não representa observação real.",
+      "source": "Exemplo didático criado no pacote.",
+      "basis": "observacao_direta"
+    },
+    "entrada": {
+      "rating": 4.6,
+      "evidence": "Dado sintético para testar a fórmula. Não representa observação real.",
+      "source": "Exemplo didático criado no pacote.",
+      "basis": "observacao_direta"
+    },
+    "memoria": {
+      "rating": 4.6,
+      "evidence": "Dado sintético para testar a fórmula. Não representa observação real.",
+      "source": "Exemplo didático criado no pacote.",
+      "basis": "observacao_direta"
+    },
+    "engajamento": {
+      "rating": 4.6,
+      "evidence": "Dado sintético para testar a fórmula. Não representa observação real.",
+      "source": "Exemplo didático criado no pacote.",
+      "basis": "observacao_direta"
+    },
+    "retomada": {
+      "rating": 4.6,
+      "evidence": "Dado sintético para testar a fórmula. Não representa observação real.",
+      "source": "Exemplo didático criado no pacote.",
+      "basis": "observacao_direta"
+    },
+    "apresentacao": {
+      "rating": 4.6,
+      "evidence": "Dado sintético para testar a fórmula. Não representa observação real.",
+      "source": "Exemplo didático criado no pacote.",
+      "basis": "observacao_direta"
+    },
+    "autonomia": {
+      "rating": 4.6,
+      "evidence": "Dado sintético para testar a fórmula. Não representa observação real.",
+      "source": "Exemplo didático criado no pacote.",
+      "basis": "observacao_direta"
+    }
+  }
+}

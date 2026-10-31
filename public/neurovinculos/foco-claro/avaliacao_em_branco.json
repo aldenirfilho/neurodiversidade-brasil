@@ -1,0 +1,63 @@
+{
+  "title": "",
+  "category": "jogo",
+  "scope": "",
+  "date": "",
+  "sample": false,
+  "personal_affinity": "não avaliada",
+  "gates": {
+    "seguranca_essencial": "desconhecido",
+    "autonomia_sem_coercao": "desconhecido",
+    "objeto_e_escopo_identificados": "desconhecido"
+  },
+  "ratings": {
+    "clareza": {
+      "rating": null,
+      "evidence": "",
+      "source": "",
+      "basis": "inferencia"
+    },
+    "fluxo": {
+      "rating": null,
+      "evidence": "",
+      "source": "",
+      "basis": "inferencia"
+    },
+    "entrada": {
+      "rating": null,
+      "evidence": "",
+      "source": "",
+      "basis": "inferencia"
+    },
+    "memoria": {
+      "rating": null,
+      "evidence": "",
+      "source": "",
+      "basis": "inferencia"
+    },
+    "engajamento": {
+      "rating": null,
+      "evidence": "",
+      "source": "",
+      "basis": "inferencia"
+    },
+    "retomada": {
+      "rating": null,
+      "evidence": "",
+      "source": "",
+      "basis": "inferencia"
+    },
+    "apresentacao": {
+      "rating": null,
+      "evidence": "",
+      "source": "",
+      "basis": "inferencia"
+    },
+    "autonomia": {
+      "rating": null,
+      "evidence": "",
+      "source": "",
+      "basis": "inferencia"
+    }
+  }
+}

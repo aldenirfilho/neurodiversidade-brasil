@@ -1,0 +1,104 @@
+{
+  "version": "1.1.0",
+  "integration_date": "2026-10-10",
+  "original_archive_sha256": "83f96c0117e0ab4d582931e085128b438028f0101bc30e1603e96e4a5b6c2176",
+  "files": [
+    {
+      "file": "AGENTE.md",
+      "bytes": 3307,
+      "sha256": "c4b5668cf6f87ac5f2cf470ce4f651e8744ded5182638d7d5d8a5ecf8c81e732"
+    },
+    {
+      "file": "CURSOS.md",
+      "bytes": 14150,
+      "sha256": "a1b914ecc5f08f5ca544c3760d25138d3f91847b1f549732b8d4a3519e305dd2"
+    },
+    {
+      "file": "INTEGRACAO.md",
+      "bytes": 2794,
+      "sha256": "cc7647f78b5e26b2d12c4f6d756275473a93d58cb10910a008549f4af11eed60"
+    },
+    {
+      "file": "PAINEL.html",
+      "bytes": 13482,
+      "sha256": "a1b1280b2cb2cd19414bbc9c73fa6110fb55137d992878aab75a046bd1aa79b2"
+    },
+    {
+      "file": "README.md",
+      "bytes": 8173,
+      "sha256": "805894c6826389b5e2bee70432bba8cce1f8bc8cb092426153d17eb22425ded5"
+    },
+    {
+      "file": "SKILL.md",
+      "bytes": 12451,
+      "sha256": "07d190ea74f80752fe5572279b3f09a18a71481612c49cce950147054d2c5211"
+    },
+    {
+      "file": "avaliacao_em_branco.json",
+      "bytes": 1242,
+      "sha256": "44765f0b2b8cea53f1621f4889e6c3722d7d262bcf2ba2ce43e00e3c3d05b25c"
+    },
+    {
+      "file": "cursos.json",
+      "bytes": 26874,
+      "sha256": "b8fe036f369a32527fa4205d46c6afc1a11007549adb140f4e463cf2808b6a9f"
+    },
+    {
+      "file": "dados.js",
+      "bytes": 41122,
+      "sha256": "cd2e76bdc2f8575a927970ed5aa2bfee89d747cfc1b22aa5816607a21cac9dde"
+    },
+    {
+      "file": "exemplo_ficticio.json",
+      "bytes": 2316,
+      "sha256": "dcc9ef925f64e28a319e964c7e0b33c8daac0c2408a018304353497f99ce2dee"
+    },
+    {
+      "file": "fontes.json",
+      "bytes": 8816,
+      "sha256": "510022633b2c177867fba5b37fb172f1278e6dcbaaa73f22d27f2406b7f83644"
+    },
+    {
+      "file": "motor.js",
+      "bytes": 6539,
+      "sha256": "8437630e1c53220d5e6e4dbe1936f27470a9e633b157f6dabfc6338297a418db"
+    },
+    {
+      "file": "motor.py",
+      "bytes": 12685,
+      "sha256": "6de583cdab7a396846bc4889c2d3645d0efefffd9b2150c38ae17802092a9df9"
+    },
+    {
+      "file": "painel.js",
+      "bytes": 13700,
+      "sha256": "f012503be618f66e1b9d02a9d7fb4876bf7e6233473177df11b4369cd884f414"
+    },
+    {
+      "file": "perfil_preferencias.json",
+      "bytes": 1003,
+      "sha256": "8d60752c4f619fc469508e932b7ebdba147f21ea7da8090b8b6e17422f896a58"
+    },
+    {
+      "file": "resultado_ficticio.json",
+      "bytes": 3512,
+      "sha256": "533675d22808a62a16a4c2184aa9fcbf29ea894e69136a8c1c9b378d6076ccf4"
+    },
+    {
+      "file": "resultado_ficticio.md",
+      "bytes": 1816,
+      "sha256": "9c31ad0ba962c8476d3b2d4e995765ea08a82739aed5720ff4520f44b352cc5d"
+    },
+    {
+      "file": "rubricas.json",
+      "bytes": 11290,
+      "sha256": "d4f5e1b7a83afd76f892f2bcf3c930220fc540d37922a428f88233307619f06c"
+    },
+    {
+      "file": "test_motor.py",
+      "bytes": 9782,
+      "sha256": "98e95bb8580f5135de4d82427e14a113eeb5a2d708e3d92f8b389cd5b8b6c2b2"
+    }
+  ],
+  "package_revision": "1.2-rev1",
+  "note": "Inventário da pasta de trabalho FOCO CLARO; a lista pública e o pacote portátil usam scripts/public_inventory.py."
+}

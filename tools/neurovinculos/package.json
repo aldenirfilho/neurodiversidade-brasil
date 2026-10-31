@@ -1,0 +1,11 @@
+{
+  "name": "neurovinculos-brasil",
+  "version": "1.3.0",
+  "private": true,
+  "description": "Portal brasileiro de neurodiversidade, ciência, direitos e acolhimento",
+  "scripts": {
+    "check": "node --check content.js && node --check app.js && node --check foco-claro/motor.js && node --check foco-claro/painel.js && python3 scripts/check_site.py && python3 -m unittest discover -s foco-claro -p test_motor.py && python3 scripts/test_foco_parity.py && node --check pesquisa-tdah/guia.js && node --check pesquisa-tdah/dados.js && python3 scripts/check_research.py",
+    "build": "python3 scripts/build_site.py",
+    "preview": "python3 -m http.server 4173 --bind 127.0.0.1 --directory dist"
+  }
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "TDAH — Pesquisa e Inovação"
+  short_description: "Pesquise TDAH com fontes, contexto e incertezas."
+  default_prompt: "Use $tdah-pesquisa-inovacao para pesquisar esta pergunta sobre TDAH e separar evidências, hipóteses e acesso no Brasil."

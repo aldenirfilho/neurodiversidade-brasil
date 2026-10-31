@@ -1,0 +1,155 @@
+{
+  "consulted": "2026-10-10",
+  "sources": [
+    {
+      "id": "W3C-COGA",
+      "title": "Making Content Usable for People with Cognitive and Learning Disabilities",
+      "url": "https://www.w3.org/TR/coga-usable/",
+      "use": "Base para clareza, memória, foco, suporte e personalização; não valida os pesos ou selos propostos."
+    },
+    {
+      "id": "W3C-WCAG22",
+      "title": "Web Content Accessibility Guidelines (WCAG) 2.2",
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "use": "Referência de acessibilidade digital; este método não declara conformidade WCAG."
+    },
+    {
+      "id": "XAG109",
+      "title": "Xbox Accessibility Guideline 109 — Objective clarity",
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/109",
+      "use": "Objetivos e progresso consultáveis para reduzir dependência de memória."
+    },
+    {
+      "id": "XAG108",
+      "title": "Xbox Accessibility Guideline 108 — Game difficulty options",
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/108",
+      "use": "Dificuldade ajustável e diferentes habilidades; dificuldade não é sinônimo de atrito."
+    },
+    {
+      "id": "NIMH",
+      "title": "Attention-Deficit/Hyperactivity Disorder: What You Need to Know",
+      "url": "https://www.nimh.nih.gov/health/publications/attention-deficit-hyperactivity-disorder-what-you-need-to-know",
+      "use": "Contexto clínico geral e variabilidade individual; não fornece escala de dopamina por conteúdo nem probabilidade de sucesso por curso."
+    },
+    {
+      "id": "ACAS",
+      "title": "Adjustments for neurodiversity — Reasonable adjustments at work",
+      "url": "https://www.acas.org.uk/reasonable-adjustments/adjustments-for-neurodiversity",
+      "use": "Estrutura, ajustes individualizados e apoio no ambiente de trabalho; orientação britânica, não legislação brasileira."
+    },
+    {
+      "id": "XAG-GUIDE",
+      "title": "Xbox Accessibility Guidelines",
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/guidelines",
+      "use": "Boas práticas com participação da comunidade; não certificação de conformidade legal."
+    },
+    {
+      "id": "MEC-CNCST2024",
+      "title": "Portaria MEC nº 514/2024 — extrato da 4ª edição do Catálogo Nacional de Cursos Superiores de Tecnologia",
+      "url": "https://pesquisa.in.gov.br/imprensa/servlet/INPDFViewer?captchafield=firstAccess&data=06%2F06%2F2024&jornal=515&pagina=28",
+      "use": "Fonte oficial para as denominações Análise e Desenvolvimento de Sistemas e Jogos Digitais; não comprova a situação de uma oferta concreta.",
+      "published": "2024-06-06",
+      "type": "Documento oficial MEC/DOU",
+      "consulted": "2026-10-10"
+    },
+    {
+      "id": "INEP-CINE2025",
+      "title": "Tabela de correspondência de denominações de cursos e rótulos Cine Brasil — junho de 2025",
+      "url": "https://download.inep.gov.br/pesquisas_estatisticas_indicadores_educacionais/cinebrasil/documentos/tabela_de_correspondencia_entre_as_denominacoes_dos_cursos_e_as_sugestoes_de_rotulos_06_2025.pdf",
+      "use": "Referência oficial de denominações e graus; classificação não é reconhecimento de instituição, campus ou oferta. Consultada por trechos indexados.",
+      "published": "2025-06",
+      "type": "Documento oficial Inep",
+      "consulted": "2026-10-10"
+    },
+    {
+      "id": "MEC-DCN-GRAD",
+      "title": "Diretrizes Curriculares — Cursos de Graduação",
+      "url": "https://portal.mec.gov.br/secretaria-de-educacao-continuada-alfabetizacao-diversidade-e-inclusao/323-secretarias-112877938/orgaos-vinculados-82187207/12991-diretrizes-curriculares-cursos-de-graduacao",
+      "use": "Índice oficial com cursos e documentos de Design, Fisioterapia, Educação Física, Administração e Enfermagem. Usado para denominação/existência da formação, sem declarar que uma regra histórica seja a regra mais recente. Consultado por trechos indexados.",
+      "published": null,
+      "type": "Índice oficial MEC/CNE",
+      "consulted": "2026-10-10"
+    },
+    {
+      "id": "MEC-ESTATISTICA",
+      "title": "Parecer CNE/CES nº 214/2008 — Diretrizes Curriculares Nacionais de Estatística",
+      "url": "https://portal.mec.gov.br/cne/arquivos/pdf/2008/pces214_08.pdf",
+      "use": "Documento oficial que descreve a graduação de Estatística. Referência para existência e natureza da formação, sem declaração de vigência exclusiva ou validação de oferta concreta.",
+      "published": "2008",
+      "type": "Documento oficial MEC/CNE",
+      "consulted": "2026-10-10"
+    },
+    {
+      "id": "MEC-EMEC",
+      "title": "Cadastro Nacional de Cursos e IES",
+      "url": "https://www.gov.br/mec/pt-br/politica-regulacao-supervisao-educacao-superior/cadastro-nacional-de-cursos-e-ies",
+      "use": "Orienta consulta de instituição, curso, código, atos autorizativos e avaliações no Cadastro e-MEC; esta pesquisa não verificou ofertas particulares.",
+      "published": "2025-08-15",
+      "type": "Orientação oficial MEC",
+      "consulted": "2026-10-10"
+    },
+    {
+      "id": "FISHER2023",
+      "title": "Cognitive and perceptual load have opposing effects on brain network efficiency and behavioral variability in ADHD",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10727773/",
+      "use": "Três experimentos mostram efeitos dependentes da tarefa: carga cognitiva e carga perceptual tiveram efeitos distintos. Não valida a rubrica nem recomenda mais ou menos estímulo para todos.",
+      "published": "2023",
+      "type": "Pesquisa experimental primária",
+      "consulted": "2026-10-10"
+    },
+    {
+      "id": "ROSCH2013",
+      "title": "The effects of performance-based rewards on neurophysiological correlates of stimulus, error, and feedback processing in children with ADHD",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3807761/",
+      "use": "Recompensas por desempenho melhoraram aspectos de uma tarefa em crianças; não estabelece necessidade de dopamina constante nem efeito de um produto qualquer em adultos.",
+      "published": "2013",
+      "type": "Pesquisa experimental primária",
+      "consulted": "2026-10-10"
+    },
+    {
+      "id": "KOEPP1998",
+      "title": "Evidence for striatal dopamine release during a video game",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/9607763/",
+      "use": "Pesquisa com PET e radiotraçador durante uma tarefa específica; preferências, nota editorial e tempo de uso não equivalem a medida de dopamina.",
+      "published": "1998-05-21",
+      "type": "Pesquisa neuroquímica primária",
+      "consulted": "2026-10-10"
+    },
+    {
+      "id": "SALIMPOOR2011",
+      "title": "Anatomically distinct dopamine release during anticipation and experience of peak emotion to music",
+      "url": "https://www.nature.com/articles/nn.2726",
+      "use": "PET, medidas psicofisiológicas e neuroimagem durante música; não fornece escala de dopamina por gênero, título ou gosto individual.",
+      "published": "2011-01-09",
+      "type": "Pesquisa neuroquímica primária",
+      "consulted": "2026-10-10"
+    },
+    {
+      "id": "STARS2020",
+      "title": "A novel digital intervention for actively reducing severity of paediatric ADHD (STARS-ADHD): a randomised controlled trial",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33334505/",
+      "use": "Ensaio de uma intervenção digital específica em crianças de 8–12 anos; melhora em teste de atenção não certifica jogos comerciais, adultos, uso prolongado ou este selo editorial.",
+      "published": "2020",
+      "type": "Ensaio clínico randomizado primário",
+      "consulted": "2026-10-10"
+    },
+    {
+      "id": "DUPAUL2021",
+      "title": "Academic Trajectories of College Students with and without ADHD: Predictors of Four-Year Outcomes",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33529049/",
+      "use": "Coorte norte-americana de 201 estudantes com TDAH e 205 comparadores; resultados agregados e associações com suporte não são probabilidades individuais de emprego nem por curso brasileiro/TDAH grave.",
+      "published": "2021",
+      "type": "Coorte longitudinal primária",
+      "consulted": "2026-10-10"
+    },
+    {
+      "id": "HENNING2022",
+      "title": "ADHD and Academic Success in University Students: The Important Role of Impaired Attention",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34384265/",
+      "use": "Coorte de 3.688 universitários associou desatenção a resultados acadêmicos; não fornece ranking ou probabilidade individual por graduação no Brasil.",
+      "published": "2022",
+      "type": "Coorte longitudinal primária",
+      "consulted": "2026-10-10"
+    }
+  ]
+}
