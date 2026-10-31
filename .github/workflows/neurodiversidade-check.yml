@@ -16,5 +16,9 @@ jobs:
       - name: Reproduzir módulo público
         working-directory: tools/neurovinculos
         run: npm run build
+      - name: Conferir descoberta e compartilhamento
+        run: |
+          node --check divulgue/compartilhar.js
+          python3 scripts/check_discovery.py
       - name: Conferir preservação e espelho da revista
         run: python3 tools/neurovinculos/scripts/check_integration.py --repository .

@@ -6,8 +6,8 @@
   "files": [
     {
       "path": "index.html",
-      "sha256": "8a5162c3e1afcc8c7845768355e6b427fb7fb6e6b27bcf020ac0f23ac46cfee9",
-      "bytes": 23847
+      "sha256": "1a91559e8429a3d1ecded20b2c5287ac8a63998539e253e11c1c8a8b8ebe03fa",
+      "bytes": 25405
     },
     {
       "path": "styles.css",
@@ -51,8 +51,8 @@
     },
     {
       "path": "foco-claro/PAINEL.html",
-      "sha256": "a1b1280b2cb2cd19414bbc9c73fa6110fb55137d992878aab75a046bd1aa79b2",
-      "bytes": 13482
+      "sha256": "8f45ebe99e818a82f1295ae128b8654dcef9a1423883ed9649289cd5b3a04ee2",
+      "bytes": 15084
     },
     {
       "path": "foco-claro/painel.js",
@@ -116,8 +116,8 @@
     },
     {
       "path": "pesquisa-tdah/index.html",
-      "sha256": "26cfbab2a6219b93f85ced69d342be5947133e68461e212efe399dbae3c1a630",
-      "bytes": 13876
+      "sha256": "e79f2074a05083dbb8ef1e2ec09e115576ca97ddcda3cf8e238a62eb615ed8f9",
+      "bytes": 15434
     },
     {
       "path": "pesquisa-tdah/guia.css",
