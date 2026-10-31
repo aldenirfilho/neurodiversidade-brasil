@@ -1,0 +1,4 @@
+interface:
+  display_name: "FOCO CLARO — TDAH Friendly"
+  short_description: "Avalie atrito e acessibilidade com fontes e escopo."
+  default_prompt: "Use $foco-claro-tdah-friendly para avaliar este produto com fontes, cobertura e escopo documentados."

@@ -1,0 +1,158 @@
+{
+  "version": "1.3.0",
+  "content_reviewed": "2026-10-09",
+  "foco_integrated": "2026-10-10",
+  "research_guide_reviewed": "2026-10-28",
+  "files": [
+    {
+      "path": "index.html",
+      "sha256": "8a5162c3e1afcc8c7845768355e6b427fb7fb6e6b27bcf020ac0f23ac46cfee9",
+      "bytes": 23847
+    },
+    {
+      "path": "styles.css",
+      "sha256": "aeac8baa82d47974ce03afe980386abed43dd2c0eb8576aa182842fc28b29c36",
+      "bytes": 20101
+    },
+    {
+      "path": "app.js",
+      "sha256": "ca363c744dd0aeb8e26ee0eb3f933df2d2da444b3fa3939abb0d23853f4dd468",
+      "bytes": 10355
+    },
+    {
+      "path": "content.js",
+      "sha256": "591a8c7ab333f52cfc11cde83fc4067553a2e83e86575e9e44bdcabf133e655e",
+      "bytes": 30978
+    },
+    {
+      "path": "assets/simbolo.svg",
+      "sha256": "c2955ed1aa26932a32f0b03d0b8e51f7b64396b2e6d3eb1ea16c5a528c51df10",
+      "bytes": 288
+    },
+    {
+      "path": "assets/pertencer.svg",
+      "sha256": "69baaaa4c7c3dc9af3a0dec497f54fbe752bd5b679ef9e431aeb14d2db2e6d46",
+      "bytes": 1759
+    },
+    {
+      "path": "FONTES.md",
+      "sha256": "77c9a4f3f06094d06ed06333ba50c8039175fe40f58959521897d23ec0eb9b80",
+      "bytes": 9451
+    },
+    {
+      "path": "README.md",
+      "sha256": "57a37f451e9f2aa9740189080b93f4b42b6d6f1a98e3e4c394796271c7bd8f87",
+      "bytes": 6416
+    },
+    {
+      "path": ".nojekyll",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "foco-claro/PAINEL.html",
+      "sha256": "a1b1280b2cb2cd19414bbc9c73fa6110fb55137d992878aab75a046bd1aa79b2",
+      "bytes": 13482
+    },
+    {
+      "path": "foco-claro/painel.js",
+      "sha256": "f012503be618f66e1b9d02a9d7fb4876bf7e6233473177df11b4369cd884f414",
+      "bytes": 13700
+    },
+    {
+      "path": "foco-claro/motor.js",
+      "sha256": "8437630e1c53220d5e6e4dbe1936f27470a9e633b157f6dabfc6338297a418db",
+      "bytes": 6539
+    },
+    {
+      "path": "foco-claro/dados.js",
+      "sha256": "cd2e76bdc2f8575a927970ed5aa2bfee89d747cfc1b22aa5816607a21cac9dde",
+      "bytes": 41122
+    },
+    {
+      "path": "foco-claro/rubricas.json",
+      "sha256": "d4f5e1b7a83afd76f892f2bcf3c930220fc540d37922a428f88233307619f06c",
+      "bytes": 11290
+    },
+    {
+      "path": "foco-claro/cursos.json",
+      "sha256": "b8fe036f369a32527fa4205d46c6afc1a11007549adb140f4e463cf2808b6a9f",
+      "bytes": 26874
+    },
+    {
+      "path": "foco-claro/fontes.json",
+      "sha256": "510022633b2c177867fba5b37fb172f1278e6dcbaaa73f22d27f2406b7f83644",
+      "bytes": 8816
+    },
+    {
+      "path": "foco-claro/perfil_preferencias.json",
+      "sha256": "8d60752c4f619fc469508e932b7ebdba147f21ea7da8090b8b6e17422f896a58",
+      "bytes": 1003
+    },
+    {
+      "path": "foco-claro/avaliacao_em_branco.json",
+      "sha256": "44765f0b2b8cea53f1621f4889e6c3722d7d262bcf2ba2ce43e00e3c3d05b25c",
+      "bytes": 1242
+    },
+    {
+      "path": "foco-claro/AGENTE.md",
+      "sha256": "c4b5668cf6f87ac5f2cf470ce4f651e8744ded5182638d7d5d8a5ecf8c81e732",
+      "bytes": 3307
+    },
+    {
+      "path": "foco-claro/SKILL.md",
+      "sha256": "07d190ea74f80752fe5572279b3f09a18a71481612c49cce950147054d2c5211",
+      "bytes": 12451
+    },
+    {
+      "path": "foco-claro/CURSOS.md",
+      "sha256": "a1b914ecc5f08f5ca544c3760d25138d3f91847b1f549732b8d4a3519e305dd2",
+      "bytes": 14150
+    },
+    {
+      "path": "foco-claro/INTEGRACAO.md",
+      "sha256": "cc7647f78b5e26b2d12c4f6d756275473a93d58cb10910a008549f4af11eed60",
+      "bytes": 2794
+    },
+    {
+      "path": "pesquisa-tdah/index.html",
+      "sha256": "26cfbab2a6219b93f85ced69d342be5947133e68461e212efe399dbae3c1a630",
+      "bytes": 13876
+    },
+    {
+      "path": "pesquisa-tdah/guia.css",
+      "sha256": "b9a39889bb0e26511956c7b2a928b95357de60d5dc14d3b90b9e320de0fd6604",
+      "bytes": 6024
+    },
+    {
+      "path": "pesquisa-tdah/guia.js",
+      "sha256": "5f705066a3d80ec45698da6931292a21b6b77f2c584306318a7b7569025af440",
+      "bytes": 4712
+    },
+    {
+      "path": "pesquisa-tdah/dados.js",
+      "sha256": "edfc3022431da4e5398c3004152edfb303dc5ef882232ab33af168226dce866c",
+      "bytes": 20095
+    },
+    {
+      "path": "pesquisa-tdah/fontes.json",
+      "sha256": "b273c2e3d7daf4eae6eb70b36efa6a51e954f6fce2f5ac5f086a626051689f3d",
+      "bytes": 20016
+    },
+    {
+      "path": "pesquisa-tdah/GUIA_TDAH.md",
+      "sha256": "a508b496dfba4e3cc80d64f7d40816d789e3e5caa222696104c035e10cc01586",
+      "bytes": 11913
+    },
+    {
+      "path": "pesquisa-tdah/AGENTE.md",
+      "sha256": "2afff74da05f241ecefeea545075f9a49b05a724fa1fafc63bc0fe208fad6f69",
+      "bytes": 3925
+    },
+    {
+      "path": "pesquisa-tdah/PROTOCOLO_PESQUISA.md",
+      "sha256": "0795c77f97d2c7c9c806347cb1ce893c5cfa7e079e318654490ecf863e67150c",
+      "bytes": 16045
+    }
+  ]
+}

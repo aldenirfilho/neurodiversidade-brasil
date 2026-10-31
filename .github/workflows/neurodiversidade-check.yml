@@ -1,0 +1,20 @@
+name: Conferir revista e módulos TDAH
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Conferir fonte, motores e catálogo
+        working-directory: tools/neurovinculos
+        run: npm run check
+      - name: Reproduzir módulo público
+        working-directory: tools/neurovinculos
+        run: npm run build
+      - name: Conferir preservação e espelho da revista
+        run: python3 tools/neurovinculos/scripts/check_integration.py --repository .

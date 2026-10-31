@@ -1,0 +1,32 @@
+{
+  "scope": "Preferências declaradas; não constitui diagnóstico, validação clínica ou auditoria de jogos.",
+  "likes": [
+    "ação imediata",
+    "pouca narrativa obrigatória",
+    "poucas interrupções",
+    "controles essenciais diretos",
+    "sessões de 15–40 minutos",
+    "retomada simples"
+  ],
+  "anchors": [
+    {
+      "title": "Devil May Cry 5",
+      "edition": "não especificada neste pedido",
+      "declared_preference": "referência de ouro",
+      "audited_score": null
+    },
+    {
+      "title": "Ninja Gaiden",
+      "edition": "não especificada neste pedido",
+      "declared_preference": "referência de ouro",
+      "audited_score": null
+    },
+    {
+      "title": "Onimusha",
+      "edition": "não especificada neste pedido",
+      "declared_preference": "referência de baixa afinidade / sem selo pessoal",
+      "audited_score": null
+    }
+  ],
+  "rule": "As referências calibram preferências; nunca pré-preencher notas ou forçar resultados por título."
+}

@@ -69,3 +69,21 @@ Dr. Aldenir Rocha de Oliveira Filho, médico · CRM-CE 16587 · Clínica Médica
 Projeto sem fins lucrativos, sem anúncio e sem vínculo com laboratório. O formato de revista se inspira na norte-americana ADDitude, com a qual não tem vínculo. O conteúdo é próprio, escrito para as leis e a realidade do Brasil. Conteúdo educativo: não substitui consulta médica, psicológica ou jurídica.
 
 Leis e projetos conferidos em 09/10/2026; regras de Pix, MED e apostas, em 18/10/2026.
+
+
+## Integração DiversaMente + NeuroVínculos — 28/10/2026
+
+Os 37 artigos editoriais e as duas ferramentas anteriores foram preservados integralmente. A revista ganhou um hub pesquisável e links no menu para o guia de cuidado/pesquisa e o avaliador FOCO CLARO. A marca DiversaMente, o roteador e os dados locais existentes foram mantidos.
+
+- Guia: `public/neurovinculos/pesquisa-tdah/index.html` —12 referências oficiais selecionadas, infância e adultos, Brasil e referências internacionais, situação regulatória e limites das inovações.
+- Avaliador: `public/neurovinculos/foco-claro/PAINEL.html` —10 tipos de conteúdo, critérios documentados, cobertura e condições essenciais; pesos anteriores preservados.
+- Portal: `public/neurovinculos/index.html` — fonte em `tools/neurovinculos`.
+- Nova habilidade: `tools/neurovinculos/skills/tdah-pesquisa-inovacao/SKILL.md`; agente e protocolo em `tools/neurovinculos/pesquisa-tdah`.
+- Fonte e reprodução: `cd tools/neurovinculos`, `npm run check` e `npm run build`. Depois, compare `dist` com `../../public/neurovinculos`.
+- Verificação da fusão: `python3 tools/neurovinculos/scripts/check_integration.py --repository .`.
+
+Os comandos da nova habilidade são `/TDAH`, `/PESQUISAR-TDAH`, `/ESTUDOS-TDAH`, `/GUIA-TDAH` e `/INOVAR-TDAH`. A pesquisa por IA é feita no assistente; o site prepara pedidos e apresenta os guias. A presença dos arquivos não instala habilidades globalmente.
+
+Datas: o guia novo foi consultado em 28/10/2026. Isso não revalida automaticamente as leis, finanças ou os demais artigos com datas anteriores. Registro de ensaio não demonstra eficácia; recomendação estrangeira, autorização sanitária e acesso local são verificados separadamente. O selo editorial não certifica tratamentos.
+
+Publicação deve ser verificada separadamente do merge. O endereço Pages mencionado acima constava no README original; a conferência de 28/10/2026 encontrou HTTP404 e Pages inativo. Não afirmar implantação a partir de código salvo. Para hospedagem na raiz pelo GitHub Pages: Settings→Pages→Deploy from a branch→main→/(root).

@@ -1,0 +1,336 @@
+{
+  "name": "FOCO CLARO — TDAH Friendly",
+  "version": "1.1.0",
+  "date": "2026-10-09",
+  "status": "Método editorial experimental e personalizado; não é certificação clínica ou oficial.",
+  "axes": [
+    {
+      "id": "clareza",
+      "label": "Clareza do objetivo",
+      "description": "Entender o objetivo e a próxima ação sem adivinhar.",
+      "anchors": {
+        "0": "Objetivo ou próxima ação não identificável.",
+        "3": "Objetivo identificável, mas exige procura/ajuda em alguns momentos.",
+        "5": "Objetivo e próxima ação claros e disponíveis quando necessários."
+      }
+    },
+    {
+      "id": "fluxo",
+      "label": "Continuidade e pouco atrito",
+      "description": "Chegar à atividade principal e mantê-la sem interrupções desnecessárias.",
+      "anchors": {
+        "0": "Interrupções ou etapas alheias impedem a atividade principal.",
+        "3": "Fluxo utilizável com interrupções ocasionais documentadas.",
+        "5": "Atividade principal direta; interrupções raras, úteis ou controláveis."
+      }
+    },
+    {
+      "id": "entrada",
+      "label": "Simplicidade para começar",
+      "description": "Aprender o essencial e começar; profundidade opcional não equivale a barreira.",
+      "anchors": {
+        "0": "Entrada bloqueada por instruções, configuração ou comandos indecifráveis.",
+        "3": "É possível começar após orientação moderada.",
+        "5": "O essencial se aprende e se executa com pouca preparação; complexidade é progressiva."
+      }
+    },
+    {
+      "id": "memoria",
+      "label": "Baixa exigência de memória operacional",
+      "description": "Objetivos, contexto e caminhos visíveis; não depender de lembrar informações dispersas.",
+      "anchors": {
+        "0": "Exige lembrar contexto, regras e caminhos que não podem ser consultados.",
+        "3": "Algumas informações externas à memória estão disponíveis.",
+        "5": "Contexto, objetivos, exemplos ou referências recuperáveis com facilidade."
+      }
+    },
+    {
+      "id": "engajamento",
+      "label": "Engajamento significativo",
+      "description": "Interesse, progresso e retorno compreensível; não premiar compulsão ou tempo infinito de uso.",
+      "anchors": {
+        "0": "O conteúdo/retorno não atende ao objetivo e ao interesse declarado no escopo.",
+        "3": "Interesse e retorno úteis, mas irregulares.",
+        "5": "Interesse sustentado relatado/observado, progresso ou significado claros, sem depender de coerção."
+      }
+    },
+    {
+      "id": "retomada",
+      "label": "Pausa, retomada e recuperação",
+      "description": "Parar e voltar sem perder contexto/progresso; recuperar erros sem punição desproporcional.",
+      "anchors": {
+        "0": "Interromper causa perda importante de contexto/progresso sem recuperação.",
+        "3": "Retomada possível com algum retrabalho.",
+        "5": "Pausa, retomada, recapitulação ou recuperação simples e confiável."
+      }
+    },
+    {
+      "id": "apresentacao",
+      "label": "Apresentação e controle de estímulos",
+      "description": "Legibilidade e opções para ajustar sons, animações, densidade e outros estímulos.",
+      "anchors": {
+        "0": "Apresentação impede compreensão/uso no contexto avaliado.",
+        "3": "Apresentação utilizável, com limitações ou opções incompletas.",
+        "5": "Apresentação clara e controles adequados aos estímulos e necessidades do contexto."
+      }
+    },
+    {
+      "id": "autonomia",
+      "label": "Autonomia e ausência de coerção",
+      "description": "Liberdade para parar, sair, desfazer e recusar; sem pressão manipulativa.",
+      "anchors": {
+        "0": "Barreiras coercitivas à saída/recusa ou pressão manipulativa grave observada.",
+        "3": "É possível controlar e encerrar, mas há fricções evitáveis.",
+        "5": "Controle claro de pausas, saída e opções; ausência de coerção no escopo verificado."
+      }
+    }
+  ],
+  "categories": {
+    "jogo": {
+      "weights": {
+        "clareza": 15,
+        "fluxo": 20,
+        "entrada": 15,
+        "memoria": 10,
+        "engajamento": 15,
+        "retomada": 10,
+        "apresentacao": 10,
+        "autonomia": 5
+      },
+      "focus": [
+        "Tempo entre iniciar e jogar de fato",
+        "Interrupções obrigatórias, tutoriais e cenas não puláveis",
+        "Controles essenciais versus combinações opcionais avançadas",
+        "Inventários, coleta e deslocamentos obrigatórios",
+        "Objetivos e orientação consultáveis",
+        "Pausa, salvamento e repetição após erros",
+        "Leitura da tela, câmera e controles de áudio",
+        "Adequação de dificuldade sem confundir desafio com burocracia"
+      ]
+    },
+    "livro": {
+      "weights": {
+        "clareza": 15,
+        "fluxo": 10,
+        "entrada": 15,
+        "memoria": 20,
+        "engajamento": 10,
+        "retomada": 10,
+        "apresentacao": 15,
+        "autonomia": 5
+      },
+      "focus": [
+        "Edição e formato",
+        "Amostra representativa, inclusive capítulo denso",
+        "Estrutura e títulos",
+        "Parágrafos, exemplos e resumos",
+        "Dependências de leitura e glossário",
+        "Retomada e navegação",
+        "Rigor e precisão separados de apresentação",
+        "Interesse pelo tema sem presumir atenção universal"
+      ]
+    },
+    "pdf": {
+      "weights": {
+        "clareza": 15,
+        "fluxo": 10,
+        "entrada": 15,
+        "memoria": 20,
+        "engajamento": 10,
+        "retomada": 10,
+        "apresentacao": 15,
+        "autonomia": 5
+      },
+      "focus": [
+        "Arquivo exato e páginas avaliadas",
+        "Texto selecionável e pesquisável",
+        "Índice, marcadores e ordem de leitura",
+        "Hierarquia, contraste, tabelas e figuras",
+        "Verificação visual além da extração textual",
+        "Exemplos, resumos e recuperação do contexto",
+        "Conteúdo técnico não deve perder rigor para ficar curto",
+        "Amostra parcial não representa automaticamente o documento inteiro"
+      ]
+    },
+    "filme": {
+      "weights": {
+        "clareza": 15,
+        "fluxo": 20,
+        "entrada": 10,
+        "memoria": 20,
+        "engajamento": 15,
+        "retomada": 10,
+        "apresentacao": 5,
+        "autonomia": 5
+      },
+      "focus": [
+        "Título, ano e versão",
+        "Clareza de objetivo e personagens",
+        "Dependência de muitas linhas temporais",
+        "Ritmo e retorno narrativo relevantes ao gosto, não velocidade por si só",
+        "Carga de exposição e informação",
+        "Pausas e retomada dependem também da plataforma",
+        "Legendas, dublagem e áudio dependem da edição",
+        "Não confundir qualidade artística e afinidade pessoal"
+      ]
+    },
+    "serie": {
+      "weights": {
+        "clareza": 15,
+        "fluxo": 20,
+        "entrada": 10,
+        "memoria": 20,
+        "engajamento": 15,
+        "retomada": 10,
+        "apresentacao": 5,
+        "autonomia": 5
+      },
+      "focus": [
+        "Título, ano, temporada e amostra de episódios",
+        "Clareza de premissa e personagens",
+        "Continuidade obrigatória entre episódios",
+        "Recapitulação e retomada",
+        "Ritmo e carga narrativa",
+        "Não avaliar a série inteira só pelo piloto",
+        "Controles e publicidade pertencem à plataforma",
+        "Evitar spoilers e alegações de ter assistido sem acesso"
+      ]
+    },
+    "programa_tv": {
+      "weights": {
+        "clareza": 15,
+        "fluxo": 20,
+        "entrada": 10,
+        "memoria": 20,
+        "engajamento": 15,
+        "retomada": 10,
+        "apresentacao": 5,
+        "autonomia": 5
+      },
+      "focus": [
+        "Programa e edição/episódio",
+        "Objetivo de cada bloco",
+        "Mudanças de assunto e interrupções",
+        "Poluição audiovisual",
+        "Publicidade separada do conteúdo",
+        "Recapitulação e retomada",
+        "Controles disponíveis na plataforma",
+        "Não inferir transmissão completa a partir de sinopse"
+      ]
+    },
+    "site": {
+      "weights": {
+        "clareza": 15,
+        "fluxo": 15,
+        "entrada": 20,
+        "memoria": 15,
+        "engajamento": 10,
+        "retomada": 10,
+        "apresentacao": 10,
+        "autonomia": 5
+      },
+      "focus": [
+        "Página e fluxo exatos",
+        "Número de etapas e próxima ação",
+        "Consistência de menus e rótulos",
+        "Interrupções, publicidade e notificações",
+        "Ajuda e correção de erros",
+        "Retomada e dados preservados",
+        "Acessibilidade visual e teclado quando testável",
+        "Não acessar conta ou dados pessoais sem autorização"
+      ]
+    },
+    "app": {
+      "weights": {
+        "clareza": 15,
+        "fluxo": 15,
+        "entrada": 20,
+        "memoria": 15,
+        "engajamento": 10,
+        "retomada": 10,
+        "apresentacao": 10,
+        "autonomia": 5
+      },
+      "focus": [
+        "Versão, sistema e plano",
+        "Configuração inicial",
+        "Ação principal",
+        "Notificações e ruído",
+        "Rascunhos, desfazer e salvamento",
+        "Controles de estímulos",
+        "Saída e cancelamento claros",
+        "Separar privacidade e segurança de facilidade de uso"
+      ]
+    },
+    "software": {
+      "weights": {
+        "clareza": 15,
+        "fluxo": 15,
+        "entrada": 20,
+        "memoria": 15,
+        "engajamento": 10,
+        "retomada": 10,
+        "apresentacao": 10,
+        "autonomia": 5
+      },
+      "focus": [
+        "Versão e ambiente",
+        "Fluxo de tarefa representativo",
+        "Configuração e curva de entrada",
+        "Atalhos e comandos consistentes",
+        "Automação com revisão humana quando necessária",
+        "Histórico, desfazer e recuperação",
+        "Personalização de interface e alertas",
+        "Não desabilitar mecanismos de segurança para ganhar pontos"
+      ]
+    },
+    "produto": {
+      "weights": {
+        "clareza": 15,
+        "fluxo": 15,
+        "entrada": 20,
+        "memoria": 15,
+        "engajamento": 10,
+        "retomada": 10,
+        "apresentacao": 10,
+        "autonomia": 5
+      },
+      "focus": [
+        "Modelo e finalidade",
+        "Manual e sinalização",
+        "Montagem e primeira utilização",
+        "Controles físicos compreensíveis",
+        "Erros e manutenção",
+        "Feedback do estado",
+        "Segurança obrigatória preservada",
+        "Ficha comercial não substitui teste de uso"
+      ]
+    }
+  },
+  "boundaries": {
+    "SEM_SELO": "0 <= S <= 70",
+    "BRONZE": "70 < S <= 80",
+    "PRATA": "80 < S <= 90",
+    "OURO": "90 < S <= 100"
+  },
+  "gates": [
+    "seguranca_essencial",
+    "autonomia_sem_coercao",
+    "objeto_e_escopo_identificados"
+  ],
+  "bases": [
+    "observacao_direta",
+    "documentacao_primaria",
+    "relato_usuario",
+    "inferencia"
+  ],
+  "course_weights": {
+    "interesse": 25,
+    "pratica_verificada": 20,
+    "estrutura_e_apoio": 20,
+    "rotina_sustentavel": 15,
+    "viabilidade_custo": 10,
+    "trajetoria_e_mercado_verificados": 10
+  },
+  "integration_date": "2026-10-10"
+}
