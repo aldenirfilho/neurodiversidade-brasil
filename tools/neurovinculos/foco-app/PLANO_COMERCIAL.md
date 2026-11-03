@@ -2,6 +2,8 @@
 
 Pesquisa pública em **03/11/2026**. Modelo escolhido pelo usuário: **venda de relatórios avulsos**. Preço confirmado pelo usuário: **R$ 39,90 por relatório com revisão humana**. Os cenários de custos continuam ilustrativos. Esta pesquisa não criou cobrança ou receita real; produto e preço de teste foram provisionados depois, em sandbox isolado.
 
+Decisões comerciais posteriores: contato público **aldenirmed@gmail.com** e **prazo combinado em cada pedido**. Registrar data concreta e forma de entrega na cotação antes da contratação/pagamento. Os direitos do consumidor permanecem garantidos; os detalhes de operação e a integração hospedada ainda não liberam cobrança de produção.
+
 ## Oferta recomendada para o piloto
 
 **Um pedido = um objeto identificado, uma edição/plataforma e uma tarefa ou amostra delimitada.** Entrega: relatório editorial com nota/cobertura, selo quando elegível ou pendências, facilitadores/barreiras, fontes rastreáveis e limites da análise. PDF de até 2 MB/12 páginas no serviço atual; obra maior exige amostra identificada. A pessoa compra o trabalho de análise, **sem comprar aprovação ou selo**. Ausência de evidência pode produzir resultado pendente; isso precisa aparecer antes da compra.
@@ -40,7 +42,7 @@ Para esta conta de exemplo, assumimos **câmbio fictício de R$5,50/US$**, API d
 | R$19,90 | R$1,18 | R$18,50 | R$6,00 |
 | R$39,90 | R$1,98 | R$37,70 | R$25,20 |
 
-São contribuições parciais, **não lucro**: faltam impostos, câmbio efetivo, hospedagem, suporte, aquisição de clientes, reprocessamentos, reembolsos e contestações. R$39,90 é uma hipótese inicial mais compatível com revisão humana neste exemplo, não prova de aceitação do mercado. O preço final depende do tempo medido em relatórios reais e de validação com compradores.
+São contribuições parciais, **não lucro**: faltam impostos, câmbio efetivo, hospedagem, suporte, aquisição de clientes, reprocessamentos, reembolsos e contestações. R$39,90 foi o preço escolhido para o piloto; o exemplo não prova aceitação do mercado. Reavaliar sua sustentabilidade a partir do tempo medido em relatórios reais e da experiência de compradores, sem alterar unilateralmente cotações já aceitas.
 
 ## Pagamento e entrega: requisitos concretos
 
@@ -50,7 +52,7 @@ Desenvolver e conferir em sandbox isolado antes de cobrar em produção. [Testes
 
 ## Decisões que faltam para abrir vendas
 
-1. Confirmar preço, escopo entregue, prazo, política para resultado inconclusivo e reembolso; medir tempo e tokens em um relatório real.
+1. Preço e política de prazo confirmados. Formalizar escopo, data e forma de entrega por pedido, condições de resultado inconclusivo e reembolso; medir tempo e tokens em um relatório real.
 2. Confirmar conta/ambiente de pagamento e validar sandbox, webhook, pedido e entrega. A conta de produção conectada, por si só, não autoriza alterações financeiras nem prova cobrança.
 3. Validar oferta com um pequeno piloto pago autorizado. Contar pedidos, pagamentos, relatórios entregues e reembolsos separadamente; interface, checkout de teste e intenção de compra não são receita.
 
@@ -65,9 +67,9 @@ Desenho técnico para implementação revisável em 03/11/2026. **Não descreve 
 
 ## MVP aprovável agora
 
-Aplicativo instalável com descrição da entrega, briefing de um objeto, importação e comparação de relatórios e exportação de um **rascunho de pedido**. A interface diz que preço/compra aguardam configuração. Um rascunho gerado no navegador não é pedido enviado. Nenhum nome, e-mail ou material é transmitido sem ação/consentimento específicos. O operador pode revisar o briefing e decidir escopo, prazo e preço antes da cobrança.
+Aplicativo instalável com descrição da entrega, briefing de um objeto, importação e comparação de relatórios e exportação de um **rascunho de pedido**. A interface apresenta o preço confirmado e informa que o pagamento continua em validação. Um rascunho gerado no navegador não é pedido enviado. Nenhum nome, e-mail ou material é transmitido sem ação/consentimento específicos. O operador revisa o briefing e confirma escopo, disponibilidade, data e forma de entrega antes da cobrança.
 
-Estado público do catálogo proposto: `mode=pilot_no_charge`, `checkout_enabled=false`, `currency=brl`, `unit_amount=null`, `price_confirmed=false`, `global_daily_attempt_limit=3`. Não preencher preço com zero: zero pode parecer uma oferta gratuita. Sem acesso real ao contador, mostrar disponibilidade “a confirmar”, não inventar vagas.
+Estado público atual do catálogo: `mode=pilot_validation`, `checkout_enabled=false`, `currency=brl`, `unit_amount=3990`, `price_confirmed=true`, `global_daily_attempt_limit=3`, `support_email=aldenirmed@gmail.com`, `deadline_policy=per_order_agreement`. Sem acesso real ao contador, mostrar disponibilidade “a confirmar”, não inventar vagas. Cada cotação deve ter uma data concreta; a política geral não autoriza prazo indefinido após o pagamento.
 
 ## Contratos de servidor para a próxima etapa
 

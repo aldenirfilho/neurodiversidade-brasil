@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1",
   "mode": "pilot_validation",
   "product": "Relatório avulso FOCO CLARO",
   "unit_amount": 3990,
@@ -10,6 +10,8 @@
   "checkout_enabled": false,
   "global_daily_attempt_limit": 3,
   "fulfillment": "após revisão e confirmação de pagamento",
-  "deadline": "a confirmar antes da contratação",
+  "support_email": "aldenirmed@gmail.com",
+  "deadline_policy": "per_order_agreement",
+  "deadline": "combinado em cada pedido, com data registrada na cotação antes da contratação",
   "notice": "Pagamento compra análise editorial; não garante nota mínima, selo ou benefício clínico."
 }

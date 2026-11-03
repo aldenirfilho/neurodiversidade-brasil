@@ -97,3 +97,10 @@ Modelo comercial escolhido: relatório avulso por objeto/edição/amostra. Preç
 A chave da API foi criada e configurada no servidor com audiência privada, sem inclusão no GitHub. A conexão ao modelo foi verificada. Duas tentativas receberam recusa do provedor; a terceira completou após a concessão de créditos, mas a validação descartou as fontes e manteve nota/selo pendentes. O caso foi complementado por revisão assistida separada, sem nova chamada paga. Diagnóstico técnico seguro distingue acesso, quota, rate limit e falha de configuração. Isso atualiza o estado de preparação descrito na seção1.4, sem revalidar conteúdo clínico/jurídico.
 
 Validação: 15 testes do app, 48 do serviço, 30 do motor e 90 casos de equivalência; 39 artigos/ferramentas anteriores preservados. Instalação PWA depende do navegador e não foi homologada fisicamente em Safari/iOS. Não há cobrança ativa nem receita demonstrada.
+
+
+## Contato e prazo do FOCO CLARO — 03/11/2026
+
+Contato público autorizado: **aldenirmed@gmail.com**. O prazo será **combinado em cada pedido**, com data concreta, forma de entrega, escopo e disponibilidade registrados na cotação antes da contratação. O app, o rascunho e o catálogo apresentam essa política; os links `mailto:` não enviam mensagens automaticamente.
+
+As condições do piloto estão em `foco-app/index.html#contato` na fonte do módulo. Preço permanece R$39,90, cobrança desativada e cota global de três tentativas/dia preservada. E-mail e política de prazo definidos não comprovam homologação do pagamento/entrega. As datas dos artigos clínicos e jurídicos anteriores foram preservadas.

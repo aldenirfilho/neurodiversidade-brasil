@@ -109,3 +109,8 @@ Prévia de API do núcleo usada pelo harness: `createQuote(input, operator, {now
 Em sandbox isolado, o Checkout hospedado exibiu R$39,90 e o aviso de que nenhum pagamento real seria processado. Um cartão oficial de teste e identidade fictícia concluíram o fluxo. O evento real de teste `checkout.session.completed` foi encaminhado pelo listener oficial ao harness: resposta HTTP200, um evento processado, `payment_status:paid_confirmed` e `fulfillment_status:queued_assisted` no SQLite. Nenhuma análise OpenAI, selo ou entrega foi iniciada pelo pagamento.
 
 O retorno usou domínio de exemplo e não comprova a página de entrega. D1 hospedado, callback público, identidade dos compradores, conciliação de capacidade e entrega comercial permanecem pendentes. Este resultado valida o trajeto sandbox → listener → webhook assinado → banco local; não ativa a conta de produção.
+
+
+## Contato e política de prazo confirmados — 03/11/2026
+
+Contato público: **aldenirmed@gmail.com**. Prazo **combinado em cada pedido**; esta política não substitui a data futura concreta `deliveryDueAt` obrigatória em cada cotação antes do pagamento. Escopo, capacidade e forma de entrega precisam ser acordados. Cobrança de produção continua desativada; não foi realizada nova operação Stripe por esta atualização.

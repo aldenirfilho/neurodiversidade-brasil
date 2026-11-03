@@ -1,5 +1,5 @@
 {
-  "version": "1.5.0",
+  "version": "1.5.1",
   "content_reviewed": "2026-10-09",
   "foco_integrated": "2026-10-10",
   "research_guide_reviewed": "2026-10-28",
@@ -26,8 +26,8 @@
     },
     {
       "path": "foco-app/index.html",
-      "sha256": "c7e57064ad349bdd490b9bc5c9273f950387f88f714962adab545268ab6e0b11",
-      "bytes": 14200
+      "sha256": "167e8bd71205ebfd77763e4f7954fc1e52cedc417c84d9af580b49d078561f6b",
+      "bytes": 17058
     },
     {
       "path": "foco-app/app.css",
@@ -36,8 +36,8 @@
     },
     {
       "path": "foco-app/app.js",
-      "sha256": "e9da1a7a88f9b55a3685da8ff6caa907910a7b410cc03c45bd268aebc8f05876",
-      "bytes": 15471
+      "sha256": "25dd74992a62ccfcf70f6e8f7069d12ce485d73990d9a332e9d8f967ad7d9623",
+      "bytes": 15592
     },
     {
       "path": "foco-app/model.js",
@@ -46,7 +46,7 @@
     },
     {
       "path": "foco-app/sw.js",
-      "sha256": "a670ab13d44d187219149193d4e75ef5f66dcccc0fc98836fc0f2ca9d89ba01d",
+      "sha256": "9f55bb3ae0d52dda6c20725f1dc6faf9247b87c9e0f37ecf089ee05292ca0461",
       "bytes": 1249
     },
     {
@@ -61,8 +61,8 @@
     },
     {
       "path": "foco-app/catalogo.json",
-      "sha256": "a840d509b4436c847dee5f37d1cd21002e113206d73fd94c37b42ffd8025a7ff",
-      "bytes": 500
+      "sha256": "fb0f3b012d36e23a22736ae16d4ee7d1c460e3c975631fd0ec7c2011bef9234b",
+      "bytes": 634
     },
     {
       "path": "assets/simbolo.svg",
@@ -81,8 +81,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "28056d4e0aea6c9581ba95c68aa3bce78dd1a1cf03fe343cbeddbe059f8d644a",
-      "bytes": 9311
+      "sha256": "3dfea9c92bf2805e8eccc183fd327aefa0b4bc429268549e8e2f55e63edd5b9a",
+      "bytes": 10036
     },
     {
       "path": ".nojekyll",
