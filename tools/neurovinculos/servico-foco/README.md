@@ -6,7 +6,7 @@ Implementação de análise por nome, URL pública HTTPS ou PDF autorizado. A IA
 
 Serviço publicado com acesso privado: https://foco-claro-neurovinculos.aldenirmed.chatgpt.site
 
-**Análise paga ainda desativada.** A criação da chave foi autorizada, mas a seleção de conta/projeto e a gravação segura ainda precisam ser concluídas pelo fluxo OpenAI Developers. Nenhuma análise real com API foi executada nesta entrega. Os testes usam dados sintéticos e provedor simulado. Após configurar a chave, é necessário conferir uma análise real antes de anunciar ativação.
+**Chave criada e configurada no servidor privado.** A autenticação e o acesso ao modelo foram conferidos por GET técnico. Duas tentativas reais receberam recusa HTTP do provedor. A terceira foi concluída, mas fontes não aceitas produziram cobertura zero e nenhuma nota ou selo automático. A cota diária chegou a três e foi preservada. A cota conserva essas reservas. O diagnóstico é limitado e redigido sem chave, conteúdo enviado ou mensagens brutas. A correspondência de URLs de fontes recebeu ajuste para parâmetros de rastreamento e metadados de diagnóstico. A causa específica ainda não foi confirmada e o reteste do resultado automático aguarda cota disponível, sem quarta tentativa.
 
 O site GitHub oferece a nova interface e o link ao serviço privado. GitHub Pages hospeda os arquivos estáticos; a execução ocorre no servidor privado. O painel manual continua disponível.
 
@@ -29,6 +29,7 @@ O envio exige consentimento explícito na interface. O serviço exige identidade
 ## Contrato
 
 - `GET /api/foco/status`: estado real, cota, limites e modelo; nenhuma chamada paga.
+- `GET /api/foco/diagnostico`: consulta fixa ao modelo, sem gerar relatório ou consumir uma tentativa de análise.
 - `POST /api/foco/analisar`: `{request_id,query,category,scope,consent:true,pdf?:{name,data_base64}}`.
 - Resposta: `assessment`, `report`, `sources`, `limitations`, `usage`, `quota`.
 - Critérios sem fonte rastreável recebem `null`. Fontes apenas localizadas ou secundárias são inferências; travas sem evidência ficam desconhecidas. Cobertura integral sem inferências e três travas verificadas são necessárias para selo.

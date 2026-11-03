@@ -1,0 +1,15 @@
+{
+  "version": "0.1.0",
+  "mode": "pilot_validation",
+  "product": "Relatório avulso FOCO CLARO",
+  "unit_amount": 3990,
+  "currency": "brl",
+  "quantity": 1,
+  "human_review": true,
+  "price_confirmed": true,
+  "checkout_enabled": false,
+  "global_daily_attempt_limit": 3,
+  "fulfillment": "após revisão e confirmação de pagamento",
+  "deadline": "a confirmar antes da contratação",
+  "notice": "Pagamento compra análise editorial; não garante nota mínima, selo ou benefício clínico."
+}

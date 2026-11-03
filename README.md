@@ -70,7 +70,7 @@ Dr. Aldenir Rocha de Oliveira Filho, médico · CRM-CE 16587 · Clínica Médica
 
 ## Aviso
 
-Projeto sem fins lucrativos, sem anúncio e sem vínculo com laboratório. O formato de revista se inspira na norte-americana ADDitude, com a qual não tem vínculo. O conteúdo é próprio, escrito para as leis e a realidade do Brasil. Conteúdo educativo: não substitui consulta médica, psicológica ou jurídica.
+A revista e os guias têm acesso gratuito, sem anúncio e sem vínculo com laboratório. O FOCO CLARO prepara um serviço comercial opcional de relatórios editoriais avulsos; a cobrança permanece em validação. O formato de revista se inspira na norte-americana ADDitude, com a qual não tem vínculo. O conteúdo é próprio, escrito para as leis e a realidade do Brasil. Conteúdo educativo: não substitui consulta médica, psicológica ou jurídica.
 
 Leis e projetos conferidos em 09/10/2026; regras de Pix, MED e apostas, em 18/10/2026.
 
@@ -113,3 +113,14 @@ Nova interface: `public/neurovinculos/foco-claro/automatico.html` (na fonte do m
 **Ativação da API pendente da configuração segura da chave.** A interface publicada informa esse estado e preserva a alternativa manual. Testes com provedor simulado não comprovam execução real. A versão inicial prevê 3 pedidos/dia, intervalo de 1 minuto, 1 chamada por pedido, até 5.000 tokens de saída e PDFs de até 2 MB/12 páginas. São limites de uso, sem promessa de teto monetário.
 
 A chave fica somente no servidor; envio de material exige consentimento. O banco persiste apenas identificador/dia/horário da reserva, sem guardar perguntas ou PDFs. O serviço usa `store:false`; as políticas próprias de retenção do provedor e da hospedagem permanecem aplicáveis. Rubrica e datas clínicas/jurídicas anteriores preservadas.
+
+
+## App FOCO CLARO — piloto de relatórios avulsos (03/11/2026)
+
+App em `public/neurovinculos/foco-app/index.html`, fonte em `tools/neurovinculos/foco-app`. Prepara rascunhos locais, importa e recalcula relatórios, compara critérios e oferece acervo temporário por padrão. Persistência e cache da interface são opt-in separados; APIs, PDFs, pedidos e relatórios não entram no cache offline.
+
+Modelo comercial escolhido: relatório avulso por objeto/edição/amostra. Preço confirmado: R$ 39,90 por relatório com revisão humana. Projeto360x foi escolhida para produção após validar a integração; prazo, disponibilidade e pagamento continuam em validação. O app não transmite pedidos nem confirma compra; pagamento não garante selo. O operador usa o serviço privado, com cota GLOBAL de 3 tentativas/dia, compartilhada entre trabalhos e testes.
+
+A chave da API foi criada e configurada no servidor com audiência privada, sem inclusão no GitHub. A conexão ao modelo foi verificada. Duas tentativas receberam recusa do provedor; a terceira completou após a concessão de créditos, mas a validação descartou as fontes e manteve nota/selo pendentes. O caso foi complementado por revisão assistida separada, sem nova chamada paga. Diagnóstico técnico seguro distingue acesso, quota, rate limit e falha de configuração. Isso atualiza o estado de preparação descrito na seção1.4, sem revalidar conteúdo clínico/jurídico.
+
+Validação: 15 testes do app, 48 do serviço, 34 do comércio, 30 do motor e 90 casos de equivalência; 39 artigos/ferramentas anteriores preservados. Um Checkout Stripe real em sandbox de R$39,90 concluiu com cartão fictício e webhook assinado HTTP200, colocando o pedido na fila assistida local. Isso não homologa D1 hospedado, callback público ou entrega comercial. Instalação PWA depende do navegador e não foi homologada fisicamente em Safari/iOS. Não há cobrança ativa nem receita demonstrada.

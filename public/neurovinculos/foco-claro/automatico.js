@@ -6,17 +6,25 @@
   const labels = { clareza: 'Clareza do objetivo', fluxo: 'Continuidade e pouco atrito', entrada: 'Simplicidade para começar', memoria: 'Baixa exigência de memória', engajamento: 'Engajamento significativo', retomada: 'Pausa, retomada e recuperação', apresentacao: 'Apresentação e pouco ruído', autonomia: 'Autonomia e controle' };
   const gateLabels = { seguranca_essencial: 'Segurança essencial', autonomia_sem_coercao: 'Autonomia sem coerção', objeto_e_escopo_identificados: 'Objeto e escopo identificados' };
   const basisLabels = { observacao_direta: 'Observação direta documentada', documentacao_primaria: 'Documentação primária', relato_usuario: 'Relato do usuário', inferencia: 'Inferência identificada' };
+  const provenanceLabels = { declared: 'Fontes declaradas no relatório', accepted: 'Fontes declaradas aceitas na validação', provider_cited: 'URLs citadas pelo provedor', provider_located: 'URLs localizadas pela busca' };
+  const rejectionLabels = { sources_not_array: 'Lista de fontes ausente ou em formato inválido', limit_exceeded: 'Limite de referências excedido', not_object: 'Referência em formato inválido', invalid_id: 'Identificador de fonte inválido', duplicate_id: 'Identificador duplicado', missing_title_or_locator: 'Título ou localização ausente', invalid_pdf_reference: 'Referência ao PDF ou às páginas inválida', invalid_url: 'URL inválida ou não permitida', not_provider_attributed: 'URL sem atribuição correspondente do provedor' };
+  const accessLabels = { citado_pelo_modelo: 'Citada pelo provedor', localizado_na_busca: 'Localizada na busca' };
   const fmt = number => new Intl.NumberFormat('pt-BR', { maximumFractionDigits: 2 }).format(number);
   const text = value => typeof value === 'string' ? value : '';
   const list = value => Array.isArray(value) ? value : [];
   const finite = value => typeof value === 'number' && Number.isFinite(value);
+  const count = value => Number.isSafeInteger(value) && value >= 0;
   let service = null, active = null, reportData = null;
   let maxBytes = 2000000;
   let apiBase = '';
   let configured = config.enabled === true;
 
   function safeLink(value) {
-    try { const url = new URL(value); return url.protocol === 'https:' && !url.username && !url.password ? url.href : null; } catch { return null; }
+    if (typeof value !== 'string' || value.length > 2048) return null;
+    try {
+      const url = new URL(value), host = url.hostname.toLowerCase().replace(/\.$/, '');
+      return url.protocol === 'https:' && !url.username && !url.password && (!url.port || url.port === '443') && host.includes('.') && !host.endsWith('.localhost') && !host.endsWith('.local') && !host.endsWith('.internal') && !/^[\d.]+$/.test(host) && !host.includes(':') && !/(?:token|api[_-]?key|password|secret|signature|credential|auth)=/i.test(url.search) ? url.href : null;
+    } catch { return null; }
   }
   try {
     const base = new URL(text(config.apiBase) || '/', location.href);
@@ -118,6 +126,39 @@
       p.appendChild(a);
     });
   }
+  function consultedSources(data) {
+    if (!Array.isArray(data.consulted_sources)) return null;
+    return data.consulted_sources.slice(0, 100).filter(source => source && typeof source === 'object' && safeLink(source.url));
+  }
+  function rejectionRows(diagnostics) {
+    const raw = diagnostics?.rejected_reason_counts;
+    if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return [];
+    return Object.entries(rejectionLabels).filter(([key]) => count(raw[key]) && raw[key] > 0).map(([key, label]) => ({ label, value: raw[key] }));
+  }
+  function renderSourceProvenance(data) {
+    const consulted = consultedSources(data);
+    $('consulted-sources-section').hidden = consulted === null;
+    $('result-consulted-sources').replaceChildren();
+    if (consulted !== null) {
+      if (!consulted.length) { const li = document.createElement('li'); li.textContent = 'Nenhuma URL de busca foi registrada nesta análise.'; $('result-consulted-sources').appendChild(li); }
+      consulted.forEach(source => {
+        const li = document.createElement('li');
+        const a = document.createElement('a'); a.href = safeLink(source.url); a.target = '_blank'; a.rel = 'noopener noreferrer'; a.textContent = text(source.title) || a.href; li.appendChild(a);
+        paragraph(li, accessLabels[source.access_status] || 'URL atribuída pelo provedor; sem comprovação independente.');
+        if (text(source.recorded_at)) paragraph(li, 'Registro: ' + source.recorded_at);
+        $('result-consulted-sources').appendChild(li);
+      });
+    }
+    const diagnostics = data.source_diagnostics;
+    const present = diagnostics && typeof diagnostics === 'object' && !Array.isArray(diagnostics);
+    $('source-diagnostics-section').hidden = !present;
+    $('source-diagnostics-counts').replaceChildren(); $('source-diagnostics-rejections').replaceChildren();
+    if (!present) return;
+    for (const [key, label] of Object.entries(provenanceLabels)) { const li = document.createElement('li'); li.textContent = label + ': ' + (count(diagnostics[key]) ? fmt(diagnostics[key]) : 'não informado') + '.'; $('source-diagnostics-counts').appendChild(li); }
+    const rejected = rejectionRows(diagnostics);
+    if (!rejected.length) { const li = document.createElement('li'); li.textContent = 'Nenhuma rejeição com motivo reconhecido foi registrada.'; $('source-diagnostics-rejections').appendChild(li); }
+    for (const row of rejected) { const li = document.createElement('li'); li.textContent = row.label + ': ' + fmt(row.value) + '.'; $('source-diagnostics-rejections').appendChild(li); }
+  }
   function render(data) {
     if (!data || !data.report || typeof data.report.title !== 'string' || !Array.isArray(data.report.details)) throw Error('O serviço devolveu uma avaliação incompleta. Nenhum resultado foi exibido.');
     reportData = data;
@@ -156,7 +197,7 @@
     }
     $('result-sources').replaceChildren();
     if (!sources.length) {
-      const li = document.createElement('li'); li.textContent = 'Nenhuma fonte verificável foi devolvida. A avaliação permanece limitada às pendências indicadas.'; $('result-sources').appendChild(li);
+      const li = document.createElement('li'); li.textContent = 'Nenhuma fonte declarada foi aceita para sustentar os critérios. URLs localizadas ou citadas pelo provedor, quando disponíveis, aparecem separadamente abaixo. A nota e o selo permanecem sujeitos às pendências indicadas.'; $('result-sources').appendChild(li);
     }
     sources.forEach((source, index) => {
       const li = document.createElement('li'); li.id = 'source-' + index;
@@ -169,6 +210,7 @@
       if (text(source.access_status)) paragraph(li, 'Estado da fonte: ' + source.access_status);
       $('result-sources').appendChild(li);
     });
+    renderSourceProvenance(data);
     $('result-limitations').replaceChildren();
     const limitations = list(data.limitations).filter(item => typeof item === 'string');
     for (const limit of limitations.length ? limitations : ['A análise se limita às fontes e à amostra descritas; não confirma a experiência de todas as pessoas com TDAH.']) { const li = document.createElement('li'); li.textContent = limit; $('result-limitations').appendChild(li); }
@@ -185,7 +227,20 @@
   }
   function markdown(data) {
     const r = data.report;
-    return ['# FOCO CLARO — ' + r.title, '', '**Resultado:** ' + sealLabel(r), '**Nota completa:** ' + (finite(r.score) ? fmt(r.score) + '/100' : 'pendente'), '**Cobertura:** ' + (finite(r.coverage_percent) ? fmt(r.coverage_percent) + '%' : 'não informada'), '**Confiança:** ' + text(r.confidence), '**Escopo:** ' + text(r.scope), '', text(r.notice), '', '## Evidências por critério', ...r.details.map(d => '\n### ' + (labels[d.criterion] || d.criterion) + '\nNota: ' + (finite(d.rating) ? fmt(d.rating) + '/5' : 'pendente') + ' | Peso: ' + d.weight + '\n' + text(d.evidence) + '\nFonte: ' + text(d.source)), '', '## Condições pendentes', ...list(r.unresolved_gates).map(k => '- ' + (gateLabels[k] || k)), ...list(r.failed_gates).map(k => '- Falha: ' + (gateLabels[k] || k)), '', '## Fontes', ...list(data.sources).map(s => '- ' + [text(s.id), text(s.title), safeLink(s.url) || '', text(s.locator), text(s.recorded_at), text(s.access_status)].filter(Boolean).join(' · ')), '', '## Limites', ...list(data.limitations).map(s => '- ' + s), ''].join('\n');
+    const consulted = consultedSources(data), diagnostics = data.source_diagnostics;
+    const mdText = value => text(value).replace(/[\\`*_[\]<>]/g, '\\$&').replace(/[\r\n]+/g, ' ');
+    const provenance = [];
+    if (consulted !== null) {
+      provenance.push('', '## Fontes consultadas pela busca', 'Localizadas/citadas pelo provedor; não sustentam uma nota sem ligação ao critério. Esta lista não é uma avaliação dessas páginas nem uma certificação.',
+        ...consulted.map(s => '- ' + [mdText(s.title) || safeLink(s.url), safeLink(s.url), mdText(accessLabels[s.access_status] || 'URL atribuída pelo provedor'), mdText(s.recorded_at)].filter(Boolean).join(' · ')));
+      if (!consulted.length) provenance.push('Nenhuma URL de busca foi registrada nesta análise.');
+    }
+    if (diagnostics && typeof diagnostics === 'object' && !Array.isArray(diagnostics)) {
+      provenance.push('', '## Proveniência e validação das fontes', 'Contagens de atribuição e validação estrutural; não comprovam a veracidade das afirmações.',
+        ...Object.entries(provenanceLabels).map(([key, label]) => '- ' + label + ': ' + (count(diagnostics[key]) ? fmt(diagnostics[key]) : 'não informado') + '.'),
+        ...rejectionRows(diagnostics).map(row => '- Referência não aceita — ' + row.label + ': ' + fmt(row.value) + '.'));
+    }
+    return ['# FOCO CLARO — ' + r.title, '', '**Resultado:** ' + sealLabel(r), '**Nota completa:** ' + (finite(r.score) ? fmt(r.score) + '/100' : 'pendente'), '**Cobertura:** ' + (finite(r.coverage_percent) ? fmt(r.coverage_percent) + '%' : 'não informada'), '**Confiança:** ' + text(r.confidence), '**Escopo:** ' + text(r.scope), '', text(r.notice), '', '## Evidências por critério', ...r.details.map(d => '\n### ' + (labels[d.criterion] || d.criterion) + '\nNota: ' + (finite(d.rating) ? fmt(d.rating) + '/5' : 'pendente') + ' | Peso: ' + d.weight + '\n' + text(d.evidence) + '\nFonte: ' + text(d.source)), '', '## Condições pendentes', ...list(r.unresolved_gates).map(k => '- ' + (gateLabels[k] || k)), ...list(r.failed_gates).map(k => '- Falha: ' + (gateLabels[k] || k)), '', '## Fontes utilizadas', ...list(data.sources).map(s => '- ' + [text(s.id), text(s.title), safeLink(s.url) || '', text(s.locator), text(s.recorded_at), text(s.access_status)].filter(Boolean).join(' · ')), ...provenance, '', '## Limites', ...list(data.limitations).map(s => '- ' + s), ''].join('\n');
   }
 
   $('category').addEventListener('change', () => { $('pdf-area').hidden = $('category').value !== 'pdf'; });

@@ -79,7 +79,16 @@ function safeURL(value) {
     return url.href;
   } catch { return null; }
 }
-const urlKey = url => {const parsed = new URL(url); parsed.hash = ''; return parsed.href;};
+// Compare attributed URLs without known marketing parameters. Never alias hosts,
+// paths, trailing slashes or semantic query values to rescue an unsupported source.
+const TRACKING_PARAMS = new Set(['utm_source','utm_medium','utm_campaign','utm_term','utm_content',
+  'fbclid','gclid','dclid','msclkid','srsltid']);
+const urlKey = url => {
+  const parsed = new URL(url); parsed.hash = '';
+  for (const name of [...parsed.searchParams.keys()]) if (TRACKING_PARAMS.has(name)) parsed.searchParams.delete(name);
+  parsed.searchParams.sort();
+  return parsed.href;
+};
 function localPages(locator, pageCount) {
   if (!/^p(?:\.|áginas?\b|aginas?\b)/i.test(locator)) return false;
   const pages = locator.match(/\d+/g)?.map(Number) || [];
@@ -88,17 +97,26 @@ function localPages(locator, pageCount) {
   return true;
 }
 function providerSources(response) {
-  const cited = new Set(), located = new Set();
+  const cited = new Set(), located = new Set(), consulted = new Map();
+  const add = (value, title, citation) => {
+    const url = safeURL(value); if (!url) return;
+    const key = urlKey(url);
+    (citation ? cited : located).add(key);
+    const existing = consulted.get(key);
+    if (!existing || citation) consulted.set(key, {url:key,
+      title:text(title,240) || existing?.title || key,
+      access_status:citation ? 'citado_pelo_modelo' : 'localizado_na_busca'});
+  };
   for (const item of response.output || []) {
     if (item?.type === 'web_search_call') for (const source of item.action?.sources || []) {
-      const url = safeURL(source?.url); if (url) located.add(urlKey(url));
+      add(source?.url,source?.title,false);
     }
     if (item?.type === 'message') for (const part of item.content || []) for (const annotation of part.annotations || []) {
       if (annotation?.type !== 'url_citation') continue;
-      const url = safeURL(annotation.url); if (url) cited.add(urlKey(url));
+      add(annotation.url,annotation.title,true);
     }
   }
-  return {cited, located};
+  return {cited, located, consulted:[...consulted.values()]};
 }
 function parseOutput(response) {
   if (!isObject(response) || response.status !== 'completed' || !Array.isArray(response.output)) throw new Error('A análise não foi concluída. Nenhum selo foi emitido.');
@@ -115,25 +133,38 @@ export function normalizeResponse(providerResponse, request, config, evaluateMot
   const raw = parseOutput(providerResponse);
   const attribution = providerSources(providerResponse);
   const limitations = ['Análise automatizada editorial: citações identificam a atribuição da fonte, mas não comprovam a veracidade de cada afirmação nem substituem revisão humana.'];
-  const declared = Array.isArray(raw.sources) ? raw.sources.slice(0, 12) : [];
+  const declaredAll = Array.isArray(raw.sources) ? raw.sources : [];
+  const declared = declaredAll.slice(0, 12);
+  const rejected = {};
+  const reject = reason => {rejected[reason] = (rejected[reason] || 0) + 1;};
+  if (!Array.isArray(raw.sources)) reject('sources_not_array');
+  if (declaredAll.length > declared.length) rejected.limit_exceeded = declaredAll.length - declared.length;
   const counts = new Map();
-  for (const source of declared) if (isObject(source)) counts.set(source.id, (counts.get(source.id) || 0) + 1);
+  for (const source of declaredAll) if (isObject(source)) counts.set(source.id, (counts.get(source.id) || 0) + 1);
   const sources = [];
   for (const source of declared) {
-    if (!isObject(source) || !/^[a-zA-Z0-9_-]{1,40}$/.test(source.id || '') || counts.get(source.id) !== 1) continue;
+    if (!isObject(source)) {reject('not_object');continue;}
+    if (!/^[a-zA-Z0-9_-]{1,40}$/.test(source.id || '')) {reject('invalid_id');continue;}
+    if (counts.get(source.id) !== 1) {reject('duplicate_id');continue;}
     const title = text(source.title, 240), locator = text(source.locator, 350);
-    if (!title || !locator) continue;
+    if (!title || !locator) {reject('missing_title_or_locator');continue;}
     if (request.pdf) {
-      if (source.id !== 'arquivo' || source.url !== null || !localPages(locator, request.pdf.pages_count)) continue;
+      if (source.id !== 'arquivo' || source.url !== null || !localPages(locator, request.pdf.pages_count)) {reject('invalid_pdf_reference');continue;}
       sources.push({id: source.id, url: null, title: text(request.pdf.name, 120) || title, locator, primary_declared: true, access_status: 'arquivo_enviado', recorded_at: nowISO});
     } else {
-      const url = safeURL(source.url); if (!url) continue;
+      const url = safeURL(source.url); if (!url) {reject('invalid_url');continue;}
       const key = urlKey(url), cited = attribution.cited.has(key), located = attribution.located.has(key);
-      if (!cited && !located) continue;
+      if (!cited && !located) {reject('not_provider_attributed');continue;}
       sources.push({id: source.id, url, title, locator, primary_declared: source.primary === true, access_status: cited ? 'citado_pelo_modelo' : 'localizado_na_busca', recorded_at: nowISO});
     }
   }
-  if (sources.length < declared.length) limitations.push('Fontes sem atribuição verificável, duplicadas ou com localização inválida foram excluídas.');
+  if (sources.length < declaredAll.length) limitations.push('Fontes sem atribuição verificável, duplicadas ou com localização inválida foram excluídas.');
+  const source_diagnostics = {declared:declaredAll.length,accepted:sources.length,
+    provider_cited:attribution.cited.size,provider_located:attribution.located.size,rejected_reason_counts:rejected};
+  const consulted_sources = attribution.consulted.map(source => ({...source,recorded_at:nowISO,
+    notice:'URL atribuída pelo provedor; não é evidência pontuada por critério nem comprovação independente.'}));
+  if (!request.pdf && consulted_sources.length && !sources.length)
+    limitations.push('A pesquisa retornou URLs, mas nenhuma fonte declarada satisfez a validação de evidência. As URLs consultadas aparecem separadamente e não autorizam nota ou selo.');
   const byID = new Map(sources.map(source => [source.id, source]));
   function references(entry) {
     if (!Array.isArray(entry?.source_ids) || !entry.source_ids.length || entry.source_ids.length > 6 || new Set(entry.source_ids).size !== entry.source_ids.length) return null;
@@ -185,5 +216,6 @@ export function normalizeResponse(providerResponse, request, config, evaluateMot
     const value = providerResponse.usage?.[key]; if (Number.isSafeInteger(value) && value >= 0) usage[key] = value;
   }
   usage.web_search_calls = providerResponse.output.filter(item => item?.type === 'web_search_call').length;
-  return {assessment, report, sources, limitations: [...new Set(limitations)], service_version: SERVICE_VERSION, usage};
+  return {assessment, report, sources, consulted_sources, source_diagnostics,
+    limitations: [...new Set(limitations)], service_version: SERVICE_VERSION, usage};
 }

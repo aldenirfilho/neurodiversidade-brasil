@@ -1,13 +1,13 @@
 {
-  "version": "1.4.0",
+  "version": "1.5.0",
   "content_reviewed": "2026-10-09",
   "foco_integrated": "2026-10-10",
   "research_guide_reviewed": "2026-10-28",
   "files": [
     {
       "path": "index.html",
-      "sha256": "1a91559e8429a3d1ecded20b2c5287ac8a63998539e253e11c1c8a8b8ebe03fa",
-      "bytes": 25405
+      "sha256": "bd81c52a64f6450e0424d64d783e395b37e37849b1b79e8335d4dacbc0a6072c",
+      "bytes": 25434
     },
     {
       "path": "styles.css",
@@ -23,6 +23,46 @@
       "path": "content.js",
       "sha256": "591a8c7ab333f52cfc11cde83fc4067553a2e83e86575e9e44bdcabf133e655e",
       "bytes": 30978
+    },
+    {
+      "path": "foco-app/index.html",
+      "sha256": "c7e57064ad349bdd490b9bc5c9273f950387f88f714962adab545268ab6e0b11",
+      "bytes": 14200
+    },
+    {
+      "path": "foco-app/app.css",
+      "sha256": "3bbf06b5aa988bde546581958bc02586a792c5bd9f78bdfc7688b303a7a0f5d4",
+      "bytes": 13355
+    },
+    {
+      "path": "foco-app/app.js",
+      "sha256": "e9da1a7a88f9b55a3685da8ff6caa907910a7b410cc03c45bd268aebc8f05876",
+      "bytes": 15471
+    },
+    {
+      "path": "foco-app/model.js",
+      "sha256": "12eb8a06925371255b1ad98f43b5a0e4e67e366799b59f1603a00b4694624ebc",
+      "bytes": 6459
+    },
+    {
+      "path": "foco-app/sw.js",
+      "sha256": "a670ab13d44d187219149193d4e75ef5f66dcccc0fc98836fc0f2ca9d89ba01d",
+      "bytes": 1249
+    },
+    {
+      "path": "foco-app/manifest.webmanifest",
+      "sha256": "ec4fc361a1ddd1e31e86d8920038d41123c1560976c647ef309d82c7aadba663",
+      "bytes": 408
+    },
+    {
+      "path": "foco-app/icon.svg",
+      "sha256": "1a0244254da05e93828f2830b54d1d23e51202dd0700a418422ae0d8be688923",
+      "bytes": 339
+    },
+    {
+      "path": "foco-app/catalogo.json",
+      "sha256": "a840d509b4436c847dee5f37d1cd21002e113206d73fd94c37b42ffd8025a7ff",
+      "bytes": 500
     },
     {
       "path": "assets/simbolo.svg",
@@ -41,8 +81,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "99c374c0d8b767b02ff5ec6c8dab02c1989f2449f656fbac34dd7491657bdeab",
-      "bytes": 7584
+      "sha256": "28056d4e0aea6c9581ba95c68aa3bce78dd1a1cf03fe343cbeddbe059f8d644a",
+      "bytes": 9311
     },
     {
       "path": ".nojekyll",
@@ -51,8 +91,8 @@
     },
     {
       "path": "foco-claro/automatico.html",
-      "sha256": "a920afa603d19dad3e1b08c4cbfcb1046c590ac8d0497ba99cec9bcbefb984e3",
-      "bytes": 8362
+      "sha256": "450efb53aaf8bd22b11587253c0997c7df3d5a24dcc7f0a42d0ff442e07a736c",
+      "bytes": 9273
     },
     {
       "path": "foco-claro/automatico.css",
@@ -61,8 +101,8 @@
     },
     {
       "path": "foco-claro/automatico.js",
-      "sha256": "0ce8dcf120024e9a5c559fc7a8d2d5e66d67d7be3febc3fffe0c9945e88d0113",
-      "bytes": 18598
+      "sha256": "08e508004cc6ad5dcf0d9bda93381376b3f10339aa06c2beb0f002990db96e9c",
+      "bytes": 24098
     },
     {
       "path": "foco-claro/servico-config.js",
@@ -71,8 +111,8 @@
     },
     {
       "path": "foco-claro/PAINEL.html",
-      "sha256": "43ab77e07fbef5ad05609d2b5c6d2806cc32beef1412a39380b8dcaac3655968",
-      "bytes": 15441
+      "sha256": "8766032905ace957f844fb6064157efbcfb12ba416f600f200fe73a95bb6b110",
+      "bytes": 15582
     },
     {
       "path": "foco-claro/painel.js",

@@ -168,3 +168,95 @@ test('file-only PDF requests are supported without a separate name', () => {
   assert.equal(JSON.parse(body.input[0].content[0].text).query, 'PDF enviado');
   assert.equal(body.input[0].content[1].type, 'input_file');
 });
+
+test('known tracking parameters match provider attribution in both directions without changing evidence bases', () => {
+  const tracking=['utm_source','utm_medium','utm_campaign','utm_term','utm_content','fbclid','gclid','dclid','msclkid','srsltid'];
+  for(const name of tracking)for(const providerTracked of [true,false]) {
+    const tracked=url+'?'+name+'=chatgpt.com#section';
+    const raw=data();raw.sources[0].url=providerTracked?url:tracked;
+    const p=provider(raw);const providerURL=providerTracked?tracked:url;
+    p.output[0].action.sources=[{url:providerURL,title:'Provider manual'}];
+    p.output[1].content[0].annotations=[{type:'url_citation',url:providerURL,title:'Cited provider manual'}];
+    const result=normalizeResponse(p,request,config,motor.evaluate,time);
+    assert.equal(result.sources.length,1,name);assert.equal(result.report.score,96);
+    assert.equal(result.assessment.ratings.fluxo.basis,'documentacao_primaria');
+    assert.deepEqual(result.source_diagnostics,{declared:1,accepted:1,provider_cited:1,provider_located:1,rejected_reason_counts:{}});
+    assert.equal(result.consulted_sources.length,1);assert.equal(result.consulted_sources[0].url,url);
+    assert.equal(result.consulted_sources[0].access_status,'citado_pelo_modelo');
+  }
+  const raw=data();const p=provider(raw,{cited:false});p.output[0].action.sources=[{url:url+'?utm_source=chatgpt.com'}];
+  const result=normalizeResponse(p,request,config,motor.evaluate,time);
+  assert.equal(result.report.seal,null);assert.equal(result.report.inferred_criteria.length,8);
+  assert.equal(result.report.unresolved_gates.length,3);
+  assert.equal(result.sources[0].access_status,'localizado_na_busca');
+});
+
+test('query order is normalized but semantic values and duplicate-value order remain strict', () => {
+  const raw=data();raw.sources[0].url=url+'?edition=2026&platform=pc';
+  const p=provider(raw);p.output[1].content[0].annotations=[{type:'url_citation',url:url+'?platform=pc&utm_source=chatgpt.com&edition=2026'}];
+  p.output[0].action.sources=[];
+  assert.equal(normalizeResponse(p,request,config,motor.evaluate,time).sources.length,1);
+  for(const other of [url+'?edition=2025&platform=pc',url+'?edition=2026',url+'?edition=2026&platform=ps5',
+    url+'?edition=2026&platform=pc&ref=official',url+'?edition=2026&platform=pc&utm_custom=anything']) {
+    p.output[1].content[0].annotations=[{type:'url_citation',url:other}];
+    const result=normalizeResponse(p,request,config,motor.evaluate,time);
+    assert.equal(result.sources.length,0,other);assert.equal(result.report.seal,null);
+    assert.equal(result.source_diagnostics.rejected_reason_counts.not_provider_attributed,1);
+  }
+  raw.sources[0].url=url+'?chapter=1&chapter=2';
+  p.output[1].content[0].text=JSON.stringify(raw);
+  p.output[1].content[0].annotations=[{type:'url_citation',url:url+'?chapter=2&chapter=1'}];
+  assert.equal(normalizeResponse(p,request,config,motor.evaluate,time).sources.length,0);
+});
+
+test('attribution never aliases hostnames, HTTPS schemes, path spelling or trailing slashes', () => {
+  for(const other of ['https://www.example.com/manual','https://alias.example.com/manual','http://example.com/manual',
+    'https://example.com/manual/','https://example.com/Manual','https://example.com/other']) {
+    const p=provider(data());p.output[0].action.sources=[{url:other}];
+    p.output[1].content[0].annotations=[{type:'url_citation',url:other}];
+    const result=normalizeResponse(p,request,config,motor.evaluate,time);
+    assert.equal(result.sources.length,0,other);assert.equal(result.report.coverage_percent,0);assert.equal(result.report.seal,null);
+  }
+});
+
+test('consulted URLs expose only provider attribution and never rescue invented model sources', () => {
+  const raw=data();raw.sources[0].url='https://invented.example.org/proof';
+  const p=provider(raw);p.output[0].action.sources.push({url:'https://example.org/background?topic=1&utm_source=chatgpt.com',title:'Background source'});
+  p.output[1].content[0].annotations[0].title='Provider cited title';
+  const result=normalizeResponse(p,request,config,motor.evaluate,time);
+  assert.equal(result.sources.length,0);assert.equal(result.report.coverage_percent,0);assert.equal(result.report.seal,null);
+  assert.deepEqual(result.source_diagnostics,{declared:1,accepted:0,provider_cited:1,provider_located:2,rejected_reason_counts:{not_provider_attributed:1}});
+  assert.deepEqual(result.consulted_sources.map(s=>s.url),[url,'https://example.org/background?topic=1']);
+  assert.ok(!JSON.stringify(result.consulted_sources).includes('invented.example.org'));
+  assert.equal(result.consulted_sources[0].title,'Provider cited title');
+  for(const source of result.consulted_sources) {
+    assert.equal(source.recorded_at,time);assert.equal(source.id,undefined);assert.equal(source.rating,undefined);
+    assert.match(source.notice,/não é evidência pontuada/);
+  }
+  assert.ok(result.limitations.some(s=>s.includes('nenhuma fonte declarada satisfez')));
+});
+
+test('source rejection diagnostics use fixed reason counts without raw values', () => {
+  const raw=data();raw.sources=[null,{id:'invalid source secret'},
+    {...raw.sources[0],id:'duplicate'},{...raw.sources[0],id:'duplicate'},
+    {id:'missing_title',url,title:'',locator:'a'},
+    {id:'invalid_url',url:'javascript:secret()',title:'Test',locator:'a'},
+    {id:'not_attributed',url:'https://not-attributed.example.com/a',title:'Test',locator:'a'}];
+  const result=run(raw);
+  assert.deepEqual(result.source_diagnostics,{declared:7,accepted:0,provider_cited:1,provider_located:1,rejected_reason_counts:{
+    not_object:1,invalid_id:1,duplicate_id:2,missing_title_or_locator:1,invalid_url:1,not_provider_attributed:1}});
+  assert.ok(!JSON.stringify(result.source_diagnostics).includes('secret'));assert.equal(result.report.seal,null);
+  const absent=data();delete absent.sources;
+  assert.deepEqual(run(absent).source_diagnostics.rejected_reason_counts,{sources_not_array:1});
+  const limited=data();limited.sources=Array.from({length:13},(_,i)=>({...limited.sources[0],id:'manual_'+i}));
+  const extra=run(limited);assert.equal(extra.source_diagnostics.declared,13);assert.equal(extra.source_diagnostics.accepted,12);
+  assert.deepEqual(extra.source_diagnostics.rejected_reason_counts,{limit_exceeded:1});
+});
+
+test('an empty declared source list can show consulted URLs without assigning any score', () => {
+  const raw=data();raw.sources=[];const result=run(raw);
+  assert.equal(result.sources.length,0);assert.equal(result.consulted_sources.length,1);
+  assert.equal(result.source_diagnostics.declared,0);assert.equal(result.source_diagnostics.accepted,0);
+  assert.equal(result.report.score,null);assert.equal(result.report.coverage_percent,0);assert.equal(result.report.seal,null);
+  assert.equal(result.report.unresolved_gates.length,3);
+});
