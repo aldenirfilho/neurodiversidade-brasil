@@ -1,4 +1,4 @@
-# FOCO CLARO App — piloto 0.1.0
+# FOCO CLARO App — piloto 0.1.1
 
 Interface web instalável em português brasileiro para preparar pedidos, importar relatórios FOCO CLARO, consultar critérios e fontes e comparar duas avaliações da mesma categoria.
 
@@ -18,10 +18,14 @@ Modelo escolhido pelo usuário: venda de relatórios avulsos. A oferta identific
 
 Os recursos de acervo e comparação não têm paywall nesta versão. Não há promessa de geração de receita, benefício clínico, selo garantido ou retenção de atenção.
 
+Contato público autorizado: **aldenirmed@gmail.com**. Prazo escolhido: **combinado em cada pedido**. A cotação deve registrar escopo, disponibilidade, data concreta e forma de entrega antes da contratação/pagamento. Não há prazo automático de três ou cinco dias. Os links de e-mail apenas abrem o aplicativo de e-mail do visitante; o site não envia mensagens.
+
+A seção `#contato` descreve as condições do piloto e preserva os direitos do consumidor, com referências oficiais consultadas em 03/11/2026. Ela não representa checkout liberado, contrato já aceito ou validação jurídica integral da operação.
+
 ## Integração
 
 A pasta depende de `../foco-claro/dados.js` e `../foco-claro/motor.js`, preservados como fonte canônica. Incluir os arquivos desta pasta na lista pública e espelhá-los por build. O controle de integridade anterior deve permitir apenas nesta pasta os usos explícitos de armazenamento local e do cache opt-in; não remover a restrição geral das outras páginas.
 
 Abrir por servidor HTTP/HTTPS, sem executar arquivos recebidos. Para testes unitários: `node --test foco-app/test-model.cjs`, a partir da fonte NeuroVínculos. Nenhuma chamada paga é feita pelo app; pedidos reais ocorrem no serviço privado com consentimento próprio.
 
-Os originais da revista e as datas clínicas/jurídicas não foram alterados. Nenhuma chave, dado pessoal ou relatório real foi incluído no código. Dados sintéticos de teste não são avaliações reais.
+Os originais da revista e suas datas clínicas/jurídicas não foram alterados. Nenhuma chave ou relatório real foi incluído no código. O único contato adicionado nesta atualização é o e-mail público expressamente autorizado. Dados sintéticos de teste não são avaliações reais.

@@ -1,5 +1,5 @@
 'use strict';
-const CACHE='foco-app-shell-v0.1.0';
+const CACHE='foco-app-shell-v0.1.1';
 const SHELL=['./index.html','./app.css','./model.js','./app.js','./manifest.webmanifest','./icon.svg','../foco-claro/motor.js','../foco-claro/dados.js'];
 const allowed=new Set(SHELL.map(path=>new URL(path,self.location.href).href));
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll([...allowed]))));
