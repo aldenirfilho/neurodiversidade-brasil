@@ -104,3 +104,12 @@ O sitemap e os metadados ajudam a descoberta, sem garantir indexação, posiçã
 Referências técnicas: [Google — sitemaps](https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview), [Google — localização do robots.txt](https://developers.google.com/crawling/docs/robots-txt/create-robots-txt) e [Open Graph](https://ogp.me/).
 
 Verificação adicional: `node --check divulgue/compartilhar.js` e `python3 scripts/check_discovery.py`. A atualização de divulgação não altera as datas de revisão científica e jurídica dos conteúdos.
+
+
+## FOCO CLARO automático — preparação 1.4 (03/11/2026)
+
+Nova interface: `public/neurovinculos/foco-claro/automatico.html` (na fonte do módulo: `foco-claro/automatico.html`). Nome, URL pública e PDF; nota, cobertura, selo, evidências, fontes e exportação. Serviço privado: https://foco-claro-neurovinculos.aldenirmed.chatgpt.site . Código e contrato em `servico-foco/README.md` na fonte NeuroVínculos.
+
+**Ativação da API pendente da configuração segura da chave.** A interface publicada informa esse estado e preserva a alternativa manual. Testes com provedor simulado não comprovam execução real. A versão inicial prevê 3 pedidos/dia, intervalo de 1 minuto, 1 chamada por pedido, até 5.000 tokens de saída e PDFs de até 2 MB/12 páginas. São limites de uso, sem promessa de teto monetário.
+
+A chave fica somente no servidor; envio de material exige consentimento. O banco persiste apenas identificador/dia/horário da reserva, sem guardar perguntas ou PDFs. O serviço usa `store:false`; as políticas próprias de retenção do provedor e da hospedagem permanecem aplicáveis. Rubrica e datas clínicas/jurídicas anteriores preservadas.

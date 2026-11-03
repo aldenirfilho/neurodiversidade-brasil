@@ -2,6 +2,7 @@
 PUBLIC = [
     'index.html', 'styles.css', 'app.js', 'content.js',
     'assets/simbolo.svg', 'assets/pertencer.svg', 'FONTES.md', 'README.md', '.nojekyll',
+    'foco-claro/automatico.html', 'foco-claro/automatico.css', 'foco-claro/automatico.js', 'foco-claro/servico-config.js',
     'foco-claro/PAINEL.html', 'foco-claro/painel.js', 'foco-claro/motor.js', 'foco-claro/dados.js',
     'foco-claro/rubricas.json', 'foco-claro/cursos.json', 'foco-claro/fontes.json',
     'foco-claro/perfil_preferencias.json', 'foco-claro/avaliacao_em_branco.json',
@@ -21,4 +22,12 @@ SOURCE = PUBLIC + [
     'scripts/generate_research_data.py', 'scripts/check_research.py',
     'scripts/integrate_magazine.py', 'scripts/check_integration.py',
     'integracao/baseline-diversamente-20261028.json'
+]
+SOURCE += [
+    'servico-foco/.gitignore', 'servico-foco/README.md',
+    'servico-foco/package.json', 'servico-foco/package-lock.json',
+    'servico-foco/core.mjs', 'servico-foco/limits.mjs', 'servico-foco/worker.mjs',
+    'servico-foco/build.mjs', 'servico-foco/local.mjs',
+    'servico-foco/test-core.mjs', 'servico-foco/test-service.mjs',
+    'servico-foco/drizzle/0000_foco_quota.sql', 'servico-foco/drizzle/meta/_journal.json'
 ]

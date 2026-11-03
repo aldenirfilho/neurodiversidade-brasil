@@ -7,3 +7,7 @@ __pycache__/
 *.py[cod]
 .qa/
 ENTREGA_LOCAL.json
+.env
+.env.*
+!.env.example
+servico-foco/generated-assets.mjs
