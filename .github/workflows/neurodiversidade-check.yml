@@ -10,9 +10,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
       - name: Conferir fonte, motores e catálogo
         working-directory: tools/neurovinculos
         run: npm run check
+      - name: Testar serviço automático sem chamadas pagas
+        working-directory: tools/neurovinculos/servico-foco
+        run: |
+          npm ci --ignore-scripts --no-audit --no-fund
+          npm run build
+          npm test
       - name: Reproduzir módulo público
         working-directory: tools/neurovinculos
         run: npm run build

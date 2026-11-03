@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Análise assistida de jogos, filmes, séries, sites e PDFs com critérios FOCO CLARO, cobertura de evidências e fontes visíveis.">
+  <title>Análise assistida — FOCO CLARO</title>
+  <link rel="stylesheet" href="automatico.css">
+  <link rel="canonical" href="https://aldenirfilho.github.io/neurodiversidade-brasil/public/neurovinculos/foco-claro/automatico.html">
+</head>
+<body>
+<a class="skip" href="#main">Pular para a análise</a>
+<main id="main">
+  <nav class="top-links" aria-label="Navegação do projeto"><a href="../index.html#selo">← NeuroVínculos</a><a href="PAINEL.html">Painel manual</a></nav>
+  <header class="hero">
+    <p class="eyebrow">NEUROVÍNCULOS · FOCO CLARO</p>
+    <h1>Escolha com<br><span>mais clareza.</span></h1>
+    <p class="lead">Um nome, um link público ou um PDF. Uma análise de barreiras, com nota documentada, fontes e o que ainda falta verificar.</p>
+    <div class="method-tag">Rubrica editorial 1.1 · análise assistida por IA</div>
+  </header>
+  <section class="connection" aria-labelledby="connection-title">
+    <div><h2 id="connection-title">Conexão do serviço</h2><p id="connection-status" role="status" aria-live="polite">Aguardando ativação segura.</p></div>
+    <a id="open-service" class="button secondary" hidden>Abrir serviço privado ↗</a>
+    <button id="check-service" type="button" class="secondary" hidden>Verificar conexão</button>
+  </section>
+  <div class="workspace">
+    <section class="card input-card" aria-labelledby="form-title">
+      <div class="section-number">01 / SUA ESCOLHA</div>
+      <h2 id="form-title">O que você quer analisar?</h2>
+      <form id="analysis-form">
+        <label for="query">Nome ou link público</label>
+        <input id="query" name="query" type="text" maxlength="1200" placeholder="Ex.: jogo + edição, filme + ano ou endereço do site" autocomplete="off" aria-describedby="query-help">
+        <p id="query-help" class="hint">Use links públicos, sem senha, dados pessoais ou tokens de acesso. Para PDF enviado, o nome é opcional.</p>
+        <label for="category">Tipo de conteúdo</label>
+        <select id="category" name="category"><option value="jogo">Jogo</option><option value="filme">Filme</option><option value="serie">Série</option><option value="site">Site</option><option value="pdf">PDF</option></select>
+        <label for="scope">Edição, plataforma ou amostra <span class="optional">opcional</span></label>
+        <textarea id="scope" name="scope" maxlength="1200" rows="3" placeholder="Ex.: PC, edição de 2025; temporada 1, episódio 1; tarefa de cadastro no site."></textarea>
+        <div id="pdf-area" class="file-area" hidden>
+          <label for="pdf-file">Enviar PDF</label>
+          <input id="pdf-file" name="pdf" type="file" accept=".pdf,application/pdf" aria-describedby="pdf-help">
+          <p id="pdf-help" class="hint">Até 2 MB. Até 12 páginas no limite inicial do serviço. Documentos maiores precisam de uma amostra menor, identificada no escopo.</p>
+          <p id="file-status" class="hint" role="status"></p>
+        </div>
+        <label class="consent" for="consent"><input id="consent" type="checkbox"><span>Autorizo o envio deste pedido e do PDF selecionado ao serviço de análise e à API da OpenAI. Confirmo que posso compartilhar este material e que ele não contém dados pessoais, de saúde ou de terceiros.</span></label>
+        <p class="hint">As políticas de retenção dos provedores continuam aplicáveis. O resultado pode conter erros e precisa ser conferido nas fontes.</p>
+        <div class="actions"><button id="analyze" class="primary" type="submit" disabled>Analisar conteúdo</button><button id="cancel" type="button" class="secondary" hidden>Cancelar espera</button></div>
+        <p id="analysis-progress" class="progress" role="status" aria-live="polite"></p>
+        <p id="analysis-error" class="error" role="alert"></p>
+      </form>
+      <div id="manual-fallback" class="manual-fallback">
+        <strong>A análise automática aguarda ativação segura.</strong>
+        <p>Enquanto isso, prepare o pedido para usar com o agente no seu assistente ou abra o painel manual. Nenhum pedido ou arquivo é enviado por esta página nesse estado.</p>
+        <div class="actions"><button id="prepare-request" class="secondary" type="button">Preparar pedido para o agente</button><a href="PAINEL.html">Abrir painel manual →</a></div>
+        <label id="request-label" for="request-output" hidden>Pedido preparado — copie para seu assistente</label>
+        <textarea id="request-output" rows="8" readonly hidden></textarea>
+        <p id="request-help" class="hint" hidden>O arquivo não está incorporado ao texto. Se quiser analisá-lo, anexe-o diretamente no assistente escolhido.</p>
+      </div>
+    </section>
+    <aside class="sidebar" aria-label="Critérios e controle de uso">
+      <section class="card compact"><div class="section-number">USO CONSCIENTE</div><h2>Custos sob controle</h2><p id="cost-status">Sem conexão ativa: nenhuma chamada de análise é feita.</p><p id="service-limits" class="hint">Limites iniciais: até 3 análises por dia e PDFs de até 12 páginas e 2 MB. O servidor confere a cota antes de cada análise.</p><p class="hint">Os limites de uso reduzem o consumo. A contagem de pedidos não equivale a um saldo em reais ou dólares.</p></section>
+      <section class="card compact"><div class="section-number">O QUE A NOTA SIGNIFICA</div><h2>Clareza, fluxo e autonomia</h2><p>Oito critérios avaliam o material no escopo observado. A IA reúne evidências; o motor calcula a nota e a elegibilidade do selo.</p><ul class="seal-scale"><li><span>Bronze</span><strong>&gt; 70 até 80</strong></li><li><span>Prata</span><strong>&gt; 80 até 90</strong></li><li><span>Ouro</span><strong>&gt; 90 até 100</strong></li></ul><p class="hint">Até 70: sem selo. Evidências incompletas: pendente, mesmo com nota parcial alta. <a href="SKILL.md">Consultar o protocolo →</a></p></section>
+    </aside>
+  </div>
+  <section id="result" class="card result" aria-labelledby="result-title" hidden tabindex="-1">
+    <div class="section-number">02 / RESULTADO NO ESCOPO ANALISADO</div>
+    <h2 id="result-title"></h2>
+    <p id="result-scope" class="muted"></p>
+    <div id="result-seal" class="badge"></div>
+    <div class="metrics"><div><span class="metric-label">Nota completa</span><strong id="result-score" class="score"></strong></div><div><span class="metric-label">Cobertura</span><strong id="result-coverage"></strong></div><div><span class="metric-label">Confiança</span><strong id="result-confidence"></strong></div></div>
+    <p id="partial-score" class="note" hidden></p>
+    <p id="result-pending" class="pending"></p>
+    <p id="result-notice" class="hint"></p>
+    <details open><summary>Evidências por critério</summary><div id="result-criteria" class="criteria"></div></details>
+    <details><summary>Condições essenciais e pendências</summary><div id="result-gates"></div></details>
+    <section class="sources" aria-labelledby="sources-title"><h3 id="sources-title">Fontes utilizadas</h3><p class="hint">Confira se cada fonte sustenta a característica descrita. Uma fonte localizada não equivale a uma experiência completa com a obra.</p><ol id="result-sources"></ol></section>
+    <section aria-labelledby="limits-title"><h3 id="limits-title">Limites desta análise</h3><ul id="result-limitations"></ul></section>
+    <p id="result-usage" class="hint"></p>
+    <div class="actions"><button id="download-json" type="button" class="secondary">Baixar avaliação JSON</button><button id="download-md" type="button" class="secondary">Baixar relatório</button></div>
+  </section>
+  <footer><strong>FOCO CLARO</strong> · Selo editorial experimental e personalizado. Não é certificação clínica, oficial ou de conformidade WCAG. A nota não mede dopamina nem prevê atenção futura.<br><a href="fontes.json">Fontes do método</a> · <a href="PAINEL.html">Painel manual e cursos</a> · <a href="../index.html">NeuroVínculos Brasil</a></footer>
+</main>
+<script src="servico-config.js"></script><script src="automatico.js"></script>
+</body>
+</html>

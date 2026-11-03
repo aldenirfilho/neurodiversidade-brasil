@@ -72,7 +72,7 @@ for path in PUBLIC:
     for sensitive in ['16587', '11846', '62032110', 'Raimunda Lopes', 'Venvanse 70', 'token ghp_', 'github_pat_']:
         if sensitive in text:
             errors.append(f'Unexpected personal or credential string in {path}')
-    if path.endswith(('.js','.html')) and re.search(r'\b(?:fetch|XMLHttpRequest|sendBeacon|localStorage|sessionStorage)\b', text):
+    if path != 'foco-claro/automatico.js' and path.endswith(('.js','.html')) and re.search(r'\b(?:fetch|XMLHttpRequest|sendBeacon|localStorage|sessionStorage)\b', text):
         errors.append(f'Unexpected collection or persistence API in {path}')
 panel = DocumentCheck()
 panel.feed((ROOT / 'foco-claro/PAINEL.html').read_text())
@@ -93,4 +93,21 @@ if any(item.get('probabilidade_sucesso_profissional') is not None for item in co
     errors.append('Unexpected invented professional success probability')
 if errors:
     raise SystemExit('\n'.join(errors))
-print(f'PASS: {len(sources)} sources; {len(data["profiles"])} profiles; {len(data["science"])} evidence topics; {len(data["laws"])} legal cards; valid internal references and assets; no collection APIs.')
+print(f'PASS: {len(sources)} sources; {len(data["profiles"])} profiles; {len(data["science"])} evidence topics; {len(data["laws"])} legal cards; valid internal references and assets; rede somente no cliente FOCO opt-in autorizado.')
+
+# Network permission is limited to the explicitly consented same-origin automatic client.
+auto = (ROOT / 'foco-claro/automatico.js').read_text()
+if any(api in auto for api in ['XMLHttpRequest','sendBeacon','localStorage','sessionStorage']):
+    raise SystemExit('Unexpected collection or persistence in automatic client')
+if 'base.origin !== location.origin' not in auto or "$('consent').checked" not in auto:
+    raise SystemExit('Automatic client requires same-origin and explicit consent')
+config = (ROOT / 'foco-claro/servico-config.js').read_text()
+if 'enabled: false' not in config:
+    raise SystemExit('Public GitHub client must remain disabled until hosted activation is verified')
+page=DocumentCheck();page.feed((ROOT/'foco-claro/automatico.html').read_text())
+if len(page.ids)!=len(set(page.ids)):
+    raise SystemExit('Duplicate automatic page ID')
+for file in page.files:
+    target=(ROOT/'foco-claro'/file.split('#')[0]).resolve()
+    if not target.is_relative_to(ROOT) or not target.is_file():
+        raise SystemExit('Missing automatic-page asset '+file)
