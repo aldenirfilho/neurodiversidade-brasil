@@ -6,7 +6,7 @@ import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parent.parent
 BASE = 'https://aldenirfilho.github.io/neurodiversidade-brasil/'
-EXPECTED = {'': 'index.html', 'public/neurovinculos/index.html': 'public/neurovinculos/index.html', 'public/neurovinculos/pesquisa-tdah/index.html': 'public/neurovinculos/pesquisa-tdah/index.html', 'public/neurovinculos/foco-claro/PAINEL.html': 'public/neurovinculos/foco-claro/PAINEL.html', 'divulgue/': 'divulgue/index.html'}
+EXPECTED = {'': 'index.html', 'public/neurovinculos/index.html': 'public/neurovinculos/index.html', 'public/neurovinculos/pesquisa-tdah/index.html': 'public/neurovinculos/pesquisa-tdah/index.html', 'public/neurovinculos/foco-claro/PAINEL.html': 'public/neurovinculos/foco-claro/PAINEL.html', 'divulgue/': 'divulgue/index.html', 'public/neurovinculos/foco-app/index.html': 'public/neurovinculos/foco-app/index.html'}
 
 class Page(HTMLParser):
     def __init__(self, text):
@@ -53,4 +53,4 @@ text=(ROOT/'divulgue/index.html').read_text()
 assert 'role="status"' in text and 'aria-live="polite"' in text
 assert 'divulgue/index.html' in (ROOT/'index.html').read_text()
 assert (ROOT/'og-image.png').is_file()
-print('PASS: 5 sitemap/canonical/social-metadata pages; unique IDs, labels and sharing links/assets valid.')
+print('PASS: 6 sitemap/canonical/social-metadata pages; unique IDs, labels and sharing links/assets valid.')

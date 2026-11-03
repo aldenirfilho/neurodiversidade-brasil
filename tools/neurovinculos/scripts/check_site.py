@@ -72,7 +72,7 @@ for path in PUBLIC:
     for sensitive in ['16587', '11846', '62032110', 'Raimunda Lopes', 'Venvanse 70', 'token ghp_', 'github_pat_']:
         if sensitive in text:
             errors.append(f'Unexpected personal or credential string in {path}')
-    if path != 'foco-claro/automatico.js' and path.endswith(('.js','.html')) and re.search(r'\b(?:fetch|XMLHttpRequest|sendBeacon|localStorage|sessionStorage)\b', text):
+    if path not in ['foco-claro/automatico.js','foco-app/app.js','foco-app/sw.js'] and path.endswith(('.js','.html')) and re.search(r'\b(?:fetch|XMLHttpRequest|sendBeacon|localStorage|sessionStorage)\b', text):
         errors.append(f'Unexpected collection or persistence API in {path}')
 panel = DocumentCheck()
 panel.feed((ROOT / 'foco-claro/PAINEL.html').read_text())
@@ -111,3 +111,26 @@ for file in page.files:
     target=(ROOT/'foco-claro'/file.split('#')[0]).resolve()
     if not target.is_relative_to(ROOT) or not target.is_file():
         raise SystemExit('Missing automatic-page asset '+file)
+
+# The new app has its own explicit storage/cache consent; the other pages keep their policy.
+app=(ROOT/'foco-app/app.js').read_text()
+if re.search(r'\b(?:fetch|XMLHttpRequest|sendBeacon|sessionStorage)\b',app):
+    raise SystemExit('Unexpected network/collection API in the local report app')
+if "$('persist').checked" not in app or "$('offline').addEventListener('click'" not in app:
+    raise SystemExit('Report persistence and offline cache require separate opt-ins')
+sw=(ROOT/'foco-app/sw.js').read_text()
+if 'if(!isShell&&!isRoot)return' not in sw or "event.request.method!=='GET'" not in sw:
+    raise SystemExit('Service worker must remain limited to the static shell')
+doc=DocumentCheck();doc.feed((ROOT/'foco-app/index.html').read_text())
+if len(doc.ids)!=len(set(doc.ids)):
+    raise SystemExit('Duplicate app ID')
+for anchor in doc.anchors:
+    if anchor not in doc.ids:raise SystemExit('Broken app anchor '+anchor)
+for file in doc.files:
+    target=(ROOT/'foco-app'/file.split('#')[0]).resolve()
+    if not target.is_relative_to(ROOT) or not target.is_file() or str(target.relative_to(ROOT)) not in PUBLIC:
+        raise SystemExit('Missing or excluded app asset '+file)
+manifest=json.loads((ROOT/'foco-app/manifest.webmanifest').read_text())
+if manifest['scope']!='./' or manifest['start_url']!='./index.html':
+    raise SystemExit('PWA scope must stay inside its own app folder')
+print('PASS: app local, import recalculation, opt-in storage and shell-only offline scope.')

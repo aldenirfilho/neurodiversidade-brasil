@@ -22,6 +22,11 @@ jobs:
           npm ci --ignore-scripts --no-audit --no-fund
           npm run build
           npm test
+      - name: Validar comércio sem cobrança real
+        working-directory: tools/neurovinculos/comercio-foco
+        run: |
+          npm test
+          npm run build
       - name: Reproduzir módulo público
         working-directory: tools/neurovinculos
         run: npm run build

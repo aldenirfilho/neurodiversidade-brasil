@@ -205,6 +205,129 @@ test('provider HTTP failure or network timeout gets exactly one call and keeps t
   }
 });
 
+test('provider errors are safely classified without exposing raw messages or arbitrary parameters', async () => {
+  const marker='synthetic-provider-secret-never-display';
+  const cases=[
+    {status:401,code:'invalid_api_key',expected:'API_AUTH_FAILED'},
+    {status:429,code:'insufficient_quota',expected:'API_QUOTA_EXHAUSTED'},
+    {status:429,code:'rate_limit_exceeded',expected:'API_RATE_LIMITED'},
+    {status:429,code:marker,expected:'PROVIDER_FAILED'},
+    {status:403,code:'permission_denied',expected:'API_MODEL_ACCESS'},
+    {status:404,code:'model_not_found',expected:'API_MODEL_ACCESS'},
+    {status:400,code:'invalid_json_schema',param:'text.format.schema',expected:'API_REQUEST_REJECTED',safeParam:true},
+    {status:400,code:'unsupported_parameter',param:'tools',expected:'API_REQUEST_REJECTED',safeParam:true},
+    {status:400,code:marker,param:'model;'+marker,expected:'API_REQUEST_REJECTED'},
+    {status:503,code:marker,param:marker,expected:'PROVIDER_FAILED'},
+  ];
+  for(const item of cases) {
+    const db=database();let calls=0;
+    try {
+      const response=await handle(apiRequest(),environment(db),{now:()=>start,providerFetch:async()=>{
+        calls++;return Response.json({error:{code:item.code,param:item.param,message:marker,request_body:{key:marker}},secret:marker},{status:item.status});
+      }});
+      assert.equal(response.status,502);const raw=await response.text();const result=JSON.parse(raw);
+      assert.equal(result.code,item.expected);assert.match(result.error,/cota foi reservada/);
+      assert.equal(result.provider_http_status,item.status);assert.match(result.error,new RegExp('HTTP '+item.status));
+      assert.ok(!raw.includes(marker));assert.ok(!raw.includes(environment(db).OPENAI_API_KEY));
+      assert.equal(result.report,undefined);assert.equal(calls,1);assert.equal((await status(db)).used_today,1);
+      if(item.safeParam)assert.ok(result.error.includes('Parâmetro: '+item.param+'.'));
+      else assert.ok(!result.error.includes('Parâmetro:'));
+      if(item.code==='invalid_json_schema')assert.match(result.error,/esquema JSON/);
+    }finally{db.close();}
+  }
+});
+
+test('connection diagnostic makes only a fixed model GET and never consumes analysis quota', async () => {
+  const db=database();let calls=0;
+  try {
+    await reserve(db,randomUUID(),start);
+    const response=await handle(apiRequest(undefined,{method:'GET',path:'/api/foco/diagnostico?url=https://attacker.example.com'}),environment(db),{
+      now:()=>start,providerFetch:async(url,options)=>{
+        calls++;assert.equal(url,'https://api.openai.com/v1/models/'+LIMITS.model);assert.equal(options.method,'GET');
+        assert.equal(options.body,undefined);assert.ok(options.signal instanceof AbortSignal);
+        assert.equal(options.headers.authorization,'Bearer '+environment(db).OPENAI_API_KEY);
+        return Response.json({id:LIMITS.model,object:'model',created:1,owned_by:'synthetic-private-account'});
+      }});
+    assert.equal(response.status,200);const result=await response.json();
+    assert.deepEqual(result,{model:LIMITS.model,provider_http_status:200,connection_ok:true,error_code:null,response_type:'json'});
+    assert.equal(calls,1);assert.equal((await status(db)).used_today,1);
+    assert.ok(!JSON.stringify(result).includes('synthetic-private-account'));
+    assert.ok(!JSON.stringify(result).includes(environment(db).OPENAI_API_KEY));
+  }finally{db.close();}
+});
+
+test('connection diagnostic preserves authentication, origin, method and secure-configuration gates', async () => {
+  const db=database();let calls=0;const providerFetch=async()=>{calls++;throw Error('must not call');};
+  const base={method:'GET',path:'/api/foco/diagnostico'};
+  try {
+    for(const {options,env,expected}of [
+      {options:{...base,headers:{'oai-authenticated-user-id':null}},env:environment(db),expected:401},
+      {options:{...base,headers:{origin:'https://other.example.com'}},env:environment(db),expected:403},
+      {options:base,env:{...environment(db),OPENAI_API_KEY:''},expected:503},
+      {options:base,env:{...environment(db),FOCO_ENABLED:'false'},expected:503},
+      {options:base,env:{...environment(db),DB:undefined},expected:503},
+      {options:{...base,method:'POST'},env:environment(db),expected:404},
+    ]){
+      const response=await handle(apiRequest(undefined,options),env,{providerFetch,now:()=>start});
+      assert.equal(response.status,expected);assert.ok(!(await response.text()).includes(environment(db).OPENAI_API_KEY));
+    }
+    assert.equal(calls,0);assert.equal((await status(db)).used_today,0);
+  }finally{db.close();}
+});
+
+test('connection diagnostic returns only bounded redacted infrastructure metadata', async () => {
+  const marker='synthetic-diagnostic-secret-never-display';
+  const cases=[
+    {status:401,body:JSON.stringify({error:{code:'invalid_api_key',message:marker},secret:marker}),type:'application/json',code:'invalid_api_key',kind:'json'},
+    {status:429,body:JSON.stringify({error:{code:marker,message:marker}}),type:'application/json',code:'UNCLASSIFIED',kind:'json'},
+    {status:403,body:'<html>'+marker+'</html>',type:'text/html',code:'UNCLASSIFIED',kind:'html'},
+    {status:503,body:marker,type:'text/plain',code:'UNCLASSIFIED',kind:'other'},
+    {status:200,body:JSON.stringify({id:'other-model',secret:marker}),type:'application/json',code:'UNCLASSIFIED',kind:'json'},
+    {status:401,body:JSON.stringify({error:{code:'invalid_api_key',message:marker.repeat(1000)}}),type:'application/json',code:'UNCLASSIFIED',kind:'json'},
+  ];
+  for(const item of cases){
+    const db=database();let calls=0;
+    try {
+      const response=await handle(apiRequest(undefined,{method:'GET',path:'/api/foco/diagnostico'}),environment(db),{
+        now:()=>start,providerFetch:async()=>{calls++;return new Response(item.body,{status:item.status,headers:{'content-type':item.type}});}});
+      assert.equal(response.status,502);const text=await response.text();const result=JSON.parse(text);
+      assert.deepEqual(Object.keys(result),['model','provider_http_status','connection_ok','error_code','response_type']);
+      assert.equal(result.provider_http_status,item.status);assert.equal(result.connection_ok,false);
+      assert.equal(result.error_code,item.code);assert.equal(result.response_type,item.kind);
+      assert.ok(!text.includes(marker));assert.ok(!text.includes(environment(db).OPENAI_API_KEY));
+      assert.equal(calls,1);assert.equal((await status(db)).used_today,0);
+    }finally{db.close();}
+  }
+});
+
+test('connection diagnostic transport failures expose no error details and keep the analysis quota', async () => {
+  const db=database();let calls=0;
+  try {
+    const response=await handle(apiRequest(undefined,{method:'GET',path:'/api/foco/diagnostico'}),environment(db),{
+      now:()=>start,providerFetch:async()=>{calls++;throw new DOMException('synthetic-transport-secret','AbortError');}});
+    assert.equal(response.status,502);const text=await response.text();const result=JSON.parse(text);
+    assert.deepEqual(result,{model:LIMITS.model,provider_http_status:null,connection_ok:false,error_code:'UNCLASSIFIED',response_type:'other'});
+    assert.ok(!text.includes('synthetic-transport-secret'));assert.equal(calls,1);assert.equal((await status(db)).used_today,0);
+  }finally{db.close();}
+});
+
+test('provider error bodies are bounded at 16 KB and non-JSON errors remain safely classified', async () => {
+  for(const [code,body,statusCode,expected] of [
+    ['oversized',JSON.stringify({error:{code:'insufficient_quota',message:'sensitive-marker'.repeat(2000)}}),429,'PROVIDER_FAILED'],
+    ['non-json','<html>synthetic-sensitive-marker</html>',503,'PROVIDER_FAILED'],
+  ]) {
+    const db=database();let calls=0;
+    try {
+      const response=await handle(apiRequest(),environment(db),{now:()=>start,providerFetch:async()=>{
+        calls++;return new Response(body,{status:statusCode});
+      }});
+      assert.equal(response.status,502);const result=await response.json();
+      assert.equal(result.code,expected,code);assert.ok(!JSON.stringify(result).includes('sensitive-marker'));
+      assert.equal(calls,1);assert.equal((await status(db)).used_today,1);
+    }finally{db.close();}
+  }
+});
+
 test('completed fixture produces a deterministic report, visible sources and current remaining quota', async () => {
   const db = database(); let calls = 0; let sent;
   try {

@@ -19,7 +19,7 @@
     <div class="method-tag">Rubrica editorial 1.1 · análise assistida por IA</div>
   </header>
   <section class="connection" aria-labelledby="connection-title">
-    <div><h2 id="connection-title">Conexão do serviço</h2><p id="connection-status" role="status" aria-live="polite">Aguardando ativação segura.</p></div>
+    <div><h2 id="connection-title">Conexão do serviço</h2><p id="connection-status" role="status" aria-live="polite">A análise usa a área privada do operador.</p></div>
     <a id="open-service" class="button secondary" hidden>Abrir serviço privado ↗</a>
     <button id="check-service" type="button" class="secondary" hidden>Verificar conexão</button>
   </section>
@@ -48,8 +48,8 @@
         <p id="analysis-error" class="error" role="alert"></p>
       </form>
       <div id="manual-fallback" class="manual-fallback">
-        <strong>A análise automática aguarda ativação segura.</strong>
-        <p>Enquanto isso, prepare o pedido para usar com o agente no seu assistente ou abra o painel manual. Nenhum pedido ou arquivo é enviado por esta página nesse estado.</p>
+        <strong>Abra a área privada para executar a análise.</strong>
+        <p>Nesta página pública, você pode abrir o serviço privado, preparar um pedido ou usar o painel manual. Nenhum pedido ou arquivo é enviado por esta página.</p>
         <div class="actions"><button id="prepare-request" class="secondary" type="button">Preparar pedido para o agente</button><a href="PAINEL.html">Abrir painel manual →</a></div>
         <label id="request-label" for="request-output" hidden>Pedido preparado — copie para seu assistente</label>
         <textarea id="request-output" rows="8" readonly hidden></textarea>
@@ -73,6 +73,8 @@
     <details open><summary>Evidências por critério</summary><div id="result-criteria" class="criteria"></div></details>
     <details><summary>Condições essenciais e pendências</summary><div id="result-gates"></div></details>
     <section class="sources" aria-labelledby="sources-title"><h3 id="sources-title">Fontes utilizadas</h3><p class="hint">Confira se cada fonte sustenta a característica descrita. Uma fonte localizada não equivale a uma experiência completa com a obra.</p><ol id="result-sources"></ol></section>
+    <section id="consulted-sources-section" class="sources" aria-labelledby="consulted-sources-title" hidden><h3 id="consulted-sources-title">Fontes consultadas pela busca</h3><p class="note">Localizadas/citadas pelo provedor; não sustentam uma nota sem ligação ao critério. Esta lista não é uma avaliação dessas páginas nem uma certificação.</p><ol id="result-consulted-sources"></ol></section>
+    <details id="source-diagnostics-section" hidden><summary>Proveniência e validação das fontes</summary><p class="hint">As contagens descrevem a atribuição de URLs e a validação estrutural. Não comprovam a veracidade de uma afirmação nem substituem a evidência de cada critério. Uma mesma URL pode constar como localizada e citada.</p><ul id="source-diagnostics-counts"></ul><h4>Referências declaradas que não foram aceitas</h4><ul id="source-diagnostics-rejections"></ul></details>
     <section aria-labelledby="limits-title"><h3 id="limits-title">Limites desta análise</h3><ul id="result-limitations"></ul></section>
     <p id="result-usage" class="hint"></p>
     <div class="actions"><button id="download-json" type="button" class="secondary">Baixar avaliação JSON</button><button id="download-md" type="button" class="secondary">Baixar relatório</button></div>
